@@ -2,8 +2,8 @@
 
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import Image from "next/image";
 import { siteContent } from "@/data/siteContent";
+import Logo from "./Logo";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -11,15 +11,8 @@ export default function Header() {
   return (
     <header className="fixed left-0 right-0 top-0 z-50 border-b border-black/10 bg-white">
       <div className="mx-auto flex w-full min-w-0 max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
-        <a href="#top" className="flex min-w-0 shrink items-center gap-2">
-          <Image
-            src="/images/logo.png"
-            alt="YOO SCHOOL"
-            width={280}
-            height={72}
-            className="h-9 w-auto max-w-[min(190px,52vw)] sm:h-11 sm:max-w-[230px] lg:h-12 lg:max-w-[270px]"
-            priority
-          />
+        <a href="#top" className="flex min-w-0 shrink items-center gap-2" aria-label="YOO SCHOOL">
+          <Logo className="h-9 w-auto sm:h-10" />
         </a>
 
         <nav className="hidden items-center gap-5 lg:flex">
