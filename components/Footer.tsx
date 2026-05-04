@@ -1,85 +1,78 @@
 "use client";
 
-import Image from "next/image";
 import { siteContent } from "@/data/siteContent";
+import Logo from "./Logo";
+
+const footerColumns = [
+  {
+    title: "Обучение",
+    items: ["Школьный английский", "ОГЭ и ЕГЭ", "Взрослый английский", "Корпоративное обучение", "Разговорная практика"],
+  },
+  {
+    title: "Форматы",
+    items: ["Индивидуальные занятия", "Диагностика уровня", "Домашняя практика", "Прогресс-трекинг", "ИИ-помощники"],
+  },
+  {
+    title: "YOO SCHOOL",
+    items: ["О подходе", "Преподаватели", "Стоимость", "FAQ", "Контакты"],
+  },
+];
 
 export default function Footer() {
   return (
-    <footer className="border-t border-gray-200 bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+    <footer className="bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
       <div className="mx-auto w-full min-w-0 max-w-7xl">
-        {/* Tagline */}
-        <p className="mb-8 max-w-2xl text-lg font-semibold leading-snug text-[#1A1A2E] sm:mb-10 sm:text-xl md:text-2xl">
-          {siteContent.footer.tagline}
-        </p>
-
-        <div className="grid min-w-0 gap-10 md:grid-cols-3">
-          {/* Brand */}
+        <div className="mb-10 grid gap-6 lg:grid-cols-[1fr_1.1fr] lg:items-end">
           <div>
-            <a href="#top" className="inline-block">
-              <Image
-                src="/images/logo.png"
-                alt="YOO SCHOOL"
-                width={240}
-                height={62}
-                className="h-9 w-auto sm:h-10"
-              />
-            </a>
-            <p className="mt-4 text-sm text-gray-500">
-              Современный образовательный бренд для детей, подростков, взрослых и команд.
+            <Logo className="h-10 w-auto" />
+            <p className="mt-5 max-w-xl text-2xl font-extrabold leading-tight tracking-[-0.035em] text-[#050505] sm:text-3xl">
+              {siteContent.footer.tagline}
             </p>
           </div>
-
-          {/* Navigation */}
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-[#1A1A2E]">Разделы</p>
-            <div className="mt-4 flex flex-col gap-2">
-              {siteContent.navigation.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm text-gray-600 transition hover:text-[#FF5C00]"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
+          <div className="sky-panel p-5 sm:p-6">
+            <p className="text-3xl font-extrabold leading-none tracking-[-0.055em] text-[#050505]">
+              Бесплатно определим уровень и подберём программу обучения
+            </p>
+            <a href="#contact" className="mt-5 inline-flex items-center rounded-xl bg-[#050505] px-5 py-3 text-sm font-extrabold text-white">
+              Записаться на вводный урок
+            </a>
           </div>
+        </div>
 
-          {/* Contacts */}
+        <div className="grid min-w-0 gap-8 border-t border-black/10 pt-8 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wider text-[#1A1A2E]">Контакты</p>
+            <p className="text-sm font-extrabold uppercase tracking-[0.08em] text-[#5D646B]">Контакты</p>
             <div className="mt-4 space-y-3">
-              <a
-                href="https://t.me/yoo_school"
-                className="flex items-center gap-2 text-sm text-gray-600 transition hover:text-[#FF5C00]"
-              >
-                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
-                </svg>
+              <a href="https://t.me/yoo_school" className="block text-base font-extrabold text-[#050505] transition hover:text-[#129FC5]">
                 {siteContent.contacts.telegram}
               </a>
-              <a
-                href={`tel:${siteContent.contacts.phone.replace(/\D/g, "")}`}
-                className="flex items-center gap-2 text-sm text-gray-600 transition hover:text-[#FF5C00]"
-              >
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
+              <a href={`tel:${siteContent.contacts.phone.replace(/\D/g, "")}`} className="block text-base font-extrabold text-[#050505] transition hover:text-[#129FC5]">
                 {siteContent.contacts.phone}
               </a>
             </div>
           </div>
+
+          {footerColumns.map((column) => (
+            <div key={column.title}>
+              <p className="text-sm font-extrabold uppercase tracking-[0.08em] text-[#5D646B]">{column.title}</p>
+              <div className="mt-4 flex flex-col gap-2">
+                {column.items.map((item) => (
+                  <a key={item} href="#top" className="text-sm font-bold text-[#5D646B] transition hover:text-[#050505]">
+                    {item}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* Bottom bar */}
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-gray-200 pt-8 md:flex-row">
-          <p className="text-xs text-gray-400">
+        <div className="mt-10 flex flex-col justify-between gap-4 border-t border-black/10 pt-6 md:flex-row md:items-center">
+          <p className="text-xs font-bold text-[#8A9299]">
             © 2026 {siteContent.brand.name}. Все права защищены.
           </p>
-          <div className="flex items-center gap-2 text-xs text-gray-400">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#BFFF00]" />
-            Modern Creative Education Brand
-          </div>
+          <p className="text-xs font-bold text-[#8A9299]">
+            Creative education brand · English for kids, adults and teams
+          </p>
         </div>
       </div>
     </footer>
