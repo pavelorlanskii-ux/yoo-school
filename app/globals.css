@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Design system for YOO SCHOOL */
 @theme inline {
   --font-sans: 'Space Grotesk', system-ui, sans-serif;
   --color-cream: #F6F3EA;
