@@ -1,17 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { siteContent } from "@/data/siteContent";
+import { IconGraduation, IconHeadphones, IconChat, IconChart, IconRobot, IconGlobe } from "./Icons";
 
-const iconMap = [
-  "/images/icon-graduation.png",
-  "/images/icon-headphones.png",
-  "/images/icon-chat.png",
-  "/images/icon-chart.png",
-  "/images/icon-robot.png",
-  "/images/icon-globe.png",
-];
+const Icons = [IconGraduation, IconHeadphones, IconChat, IconChart, IconRobot, IconGlobe];
 
 const cardBgs = [
   "bg-gradient-to-br from-[#F0FFB3] to-[#E8FF8C]",
@@ -58,33 +51,30 @@ export default function MoreThanLessons() {
 
         {/* Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {siteContent.moreThanLessons.items.map((item, idx) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.08 }}
-            >
-              <div className={`${cardBgs[idx]} card-elevated flex h-full min-h-[260px] flex-col rounded-2xl p-6 sm:p-8`}>
-                <Image
-                  src={iconMap[idx]}
-                  alt=""
-                  width={64}
-                  height={64}
-                  className="icon-3d mb-4 h-12 w-12 sm:h-16 sm:w-16"
-                />
+          {siteContent.moreThanLessons.items.map((item, idx) => {
+            const IconComponent = Icons[idx % Icons.length];
+            return (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+              >
+                <div className={`${cardBgs[idx]} card-elevated flex h-full min-h-[260px] flex-col rounded-2xl p-6 sm:p-8`}>
+                  <IconComponent size={64} className="mb-4 h-12 w-12 sm:h-16 sm:w-16" />
 
-                <h3 className="text-lg font-bold text-[#1A1A2E] sm:text-xl">
-                  {item.title}
-                </h3>
+                  <h3 className="text-lg font-bold text-[#1A1A2E] sm:text-xl">
+                    {item.title}
+                  </h3>
 
-                <p className="mt-2 flex-1 text-sm text-gray-600 sm:text-base">
-                  {item.desc}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+                  <p className="mt-2 flex-1 text-sm text-gray-600 sm:text-base">
+                    {item.desc}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

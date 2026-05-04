@@ -3,35 +3,22 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { siteContent } from "@/data/siteContent";
+import { IconGlobe, IconGraduation, IconChat } from "./Icons";
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-white px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pb-24 lg:pt-36">
-      {/* Decorative 3D icons */}
+      {/* Decorative icons */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-        <Image 
-          src="/images/icon-globe.png" 
-          alt="" 
-          width={120} 
-          height={120} 
-          className="icon-3d icon-float absolute left-[5%] top-32 w-16 sm:w-20 lg:w-28"
-        />
-        <Image 
-          src="/images/icon-graduation.png" 
-          alt="" 
-          width={100} 
-          height={100} 
-          className="icon-3d icon-float absolute right-[8%] top-40 w-14 sm:w-16 lg:w-24"
-          style={{ animationDelay: "-1s" }}
-        />
-        <Image 
-          src="/images/icon-chat.png" 
-          alt="" 
-          width={90} 
-          height={90} 
-          className="icon-3d icon-float absolute bottom-20 left-[10%] w-12 sm:w-14 lg:w-20"
-          style={{ animationDelay: "-2s" }}
-        />
+        <div className="icon-float absolute left-[5%] top-32">
+          <IconGlobe size={80} className="w-14 sm:w-18 lg:w-20" />
+        </div>
+        <div className="icon-float absolute right-[8%] top-40" style={{ animationDelay: "-1s" }}>
+          <IconGraduation size={80} className="w-12 sm:w-16 lg:w-18" />
+        </div>
+        <div className="icon-float absolute bottom-20 left-[10%]" style={{ animationDelay: "-2s" }}>
+          <IconChat size={80} className="w-12 sm:w-14 lg:w-16" />
+        </div>
       </div>
 
       <div className="relative mx-auto w-full max-w-7xl">
@@ -162,13 +149,9 @@ export default function Hero() {
             </div>
 
             {/* Decorative icon */}
-            <Image 
-              src="/images/icon-robot.png" 
-              alt="" 
-              width={80} 
-              height={80} 
-              className="icon-3d absolute -bottom-6 -left-6 w-16 sm:w-20"
-            />
+            <div className="absolute -bottom-6 -left-6">
+              <IconChat size={72} className="w-14 sm:w-18" />
+            </div>
           </motion.div>
         </div>
       </div>

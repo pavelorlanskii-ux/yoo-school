@@ -1,13 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { siteContent } from "@/data/siteContent";
+import { IconGraduation, IconHeadphones, IconChart, IconRobot } from "./Icons";
 
 const cardConfigs = [
-  { bg: "bg-gradient-to-br from-[#F0FFB3] to-[#E8FF8C]", icon: "/images/icon-graduation.png", textColor: "text-[#1A1A2E]" },
-  { bg: "bg-gradient-to-br from-[#FFE0CC] to-[#FFD1B3]", icon: "/images/icon-headphones.png", textColor: "text-[#1A1A2E]" },
-  { bg: "bg-gradient-to-br from-[#EDE9FE] to-[#DDD6FE]", icon: "/images/icon-chart.png", textColor: "text-[#1A1A2E]" },
+  { bg: "bg-gradient-to-br from-[#F0FFB3] to-[#E8FF8C]", Icon: IconGraduation, textColor: "text-[#1A1A2E]" },
+  { bg: "bg-gradient-to-br from-[#FFE0CC] to-[#FFD1B3]", Icon: IconHeadphones, textColor: "text-[#1A1A2E]" },
+  { bg: "bg-gradient-to-br from-[#EDE9FE] to-[#DDD6FE]", Icon: IconChart, textColor: "text-[#1A1A2E]" },
 ];
 
 export default function DirectionCards() {
@@ -40,6 +40,7 @@ export default function DirectionCards() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {siteContent.directions.map((item, index) => {
             const config = cardConfigs[index];
+            const IconComponent = config.Icon;
             return (
               <motion.article
                 key={item.title}
@@ -52,13 +53,7 @@ export default function DirectionCards() {
                 <div className={`${config.bg} card-elevated flex h-full min-h-[340px] flex-col rounded-2xl p-6 sm:p-8`}>
                   {/* Icon */}
                   <div className="mb-6">
-                    <Image 
-                      src={config.icon} 
-                      alt="" 
-                      width={80} 
-                      height={80} 
-                      className="icon-3d h-16 w-16 sm:h-20 sm:w-20"
-                    />
+                    <IconComponent size={80} className="h-16 w-16 sm:h-20 sm:w-20" />
                   </div>
 
                   <h3 className={`text-xl font-bold ${config.textColor} sm:text-2xl`}>
@@ -94,13 +89,7 @@ export default function DirectionCards() {
         >
           <div className="card-dark flex flex-col items-center gap-6 rounded-2xl p-8 text-center sm:p-10 lg:flex-row lg:gap-10 lg:text-left">
             {/* Icon */}
-            <Image 
-              src="/images/icon-robot.png" 
-              alt="" 
-              width={100} 
-              height={100} 
-              className="icon-3d h-20 w-20 shrink-0 sm:h-24 sm:w-24"
-            />
+            <IconRobot size={96} className="h-20 w-20 shrink-0 sm:h-24 sm:w-24" />
 
             <div className="flex-1">
               <h3 className="text-2xl font-bold text-white sm:text-3xl">

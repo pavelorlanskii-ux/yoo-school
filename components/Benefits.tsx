@@ -1,17 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { siteContent } from "@/data/siteContent";
+import { IconChat, IconGlobe, IconChart, IconGraduation, IconHeadphones, IconRobot } from "./Icons";
 
-const iconMap = [
-  "/images/icon-chat.png",
-  "/images/icon-globe.png", 
-  "/images/icon-chart.png",
-  "/images/icon-graduation.png",
-  "/images/icon-headphones.png",
-  "/images/icon-robot.png",
-];
+const Icons = [IconChat, IconGlobe, IconChart, IconGraduation, IconHeadphones, IconRobot];
 
 export default function Benefits() {
   return (
@@ -40,34 +33,31 @@ export default function Benefits() {
 
         {/* Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {siteContent.benefits.map((item, idx) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.08 }}
-              className="group"
-            >
-              <div className="card flex h-full min-h-[220px] flex-col rounded-2xl p-6 sm:p-8">
-                <Image
-                  src={iconMap[idx]}
-                  alt=""
-                  width={64}
-                  height={64}
-                  className="icon-3d mb-4 h-12 w-12 sm:h-14 sm:w-14"
-                />
+          {siteContent.benefits.map((item, idx) => {
+            const IconComponent = Icons[idx % Icons.length];
+            return (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.08 }}
+                className="group"
+              >
+                <div className="card flex h-full min-h-[220px] flex-col rounded-2xl p-6 sm:p-8">
+                  <IconComponent size={56} className="mb-4 h-12 w-12 sm:h-14 sm:w-14" />
 
-                <h3 className="text-lg font-bold text-[#1A1A2E] sm:text-xl">
-                  {item.title}
-                </h3>
+                  <h3 className="text-lg font-bold text-[#1A1A2E] sm:text-xl">
+                    {item.title}
+                  </h3>
 
-                <p className="mt-2 flex-1 text-sm text-gray-600 sm:text-base">
-                  {item.desc}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+                  <p className="mt-2 flex-1 text-sm text-gray-600 sm:text-base">
+                    {item.desc}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
