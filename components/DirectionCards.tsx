@@ -20,7 +20,7 @@ export default function DirectionCards() {
               initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="heading-lg mt-5 max-w-none text-[#F6F6F2] lg:max-w-[15ch]"
+              className="heading-lg mt-5 max-w-none text-[#F6F6F2] lg:max-w-[18ch]"
             >
               Курсы и программы по целям
             </motion.h2>
@@ -46,7 +46,7 @@ export default function DirectionCards() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.36, delay: index * 0.06 }}
-                className={`${cardStyles[index]} min-w-0 p-6 sm:p-7`}
+                className={`${cardStyles[index]} flex h-full min-w-0 flex-col p-6 sm:p-7`}
               >
                 <div className="flex items-start justify-between gap-4">
                   <span className="badge bg-white/80">{labels[index]}</span>
@@ -57,10 +57,10 @@ export default function DirectionCards() {
                 <h3 className="mt-8 text-3xl font-extrabold leading-[0.92] tracking-[-0.055em] sm:mt-10 sm:text-4xl">
                   {item.title}
                 </h3>
-                <p className="mt-5 text-base font-extrabold leading-tight opacity-75">
+                <p className="mt-5 flex-1 text-base font-extrabold leading-tight opacity-75">
                   {item.description}
                 </p>
-                <a href="#contact" className="btn btn-primary mt-8 px-6 py-3 text-sm">
+                <a href="#contact" className="btn btn-primary mt-8 w-fit px-6 py-3 text-sm">
                   Попробовать
                   <ArrowRight className="h-4 w-4" />
                 </a>
@@ -77,7 +77,7 @@ export default function DirectionCards() {
         >
           <div className="creative-card p-6 sm:p-8 lg:p-10">
             <span className="badge">для компаний</span>
-            <h3 className="mt-6 max-w-none text-4xl font-extrabold leading-[0.92] tracking-[-0.055em] text-[#111111] sm:text-5xl lg:max-w-[15ch] lg:text-6xl">
+            <h3 className="mt-6 max-w-none text-4xl font-extrabold leading-[0.92] tracking-[-0.055em] text-[#111111] sm:text-5xl lg:max-w-[17ch] lg:text-6xl">
               Корпоративное обучение для вашей команды
             </h3>
             <p className="mt-5 max-w-3xl text-xl font-extrabold leading-tight text-[#5E5E58]">
