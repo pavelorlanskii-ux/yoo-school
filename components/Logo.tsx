@@ -1,47 +1,19 @@
+import Image from "next/image";
+
 type LogoProps = {
   className?: string;
-  variant?: "dark" | "light";
+  symbolOnly?: boolean;
 };
 
-export default function Logo({ className = "", variant = "dark" }: LogoProps) {
-  const fill = variant === "light" ? "#FFFFFF" : "#050505";
-  const secondary = variant === "light" ? "#BDEFFF" : "#06313D";
-
+export default function Logo({ className = "", symbolOnly = false }: LogoProps) {
   return (
-    <svg
+    <Image
+      src={symbolOnly ? "/images/yoo-school-symbol.svg" : "/images/yoo-school-logo.svg"}
+      alt="YOO SCHOOL"
+      width={symbolOnly ? 170 : 760}
+      height={170}
       className={className}
-      viewBox="0 0 256 64"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      role="img"
-      aria-label="YOO SCHOOL"
-    >
-      <path
-        d="M23.6 13.2L34.2 31.7L45.1 13.2H56.8L39.5 41.2V55H28.4V41.2L11.2 13.2H23.6Z"
-        fill={fill}
-      />
-      <path
-        d="M77.5 55.8C64.6 55.8 55.6 46.6 55.6 34.1C55.6 21.5 64.6 12.4 77.5 12.4C90.5 12.4 99.5 21.5 99.5 34.1C99.5 46.6 90.5 55.8 77.5 55.8ZM77.5 45.9C84 45.9 88.3 41.1 88.3 34.1C88.3 27 84 22.2 77.5 22.2C71.1 22.2 66.8 27 66.8 34.1C66.8 41.1 71.1 45.9 77.5 45.9Z"
-        fill={fill}
-      />
-      <path
-        d="M123.4 55.8C110.5 55.8 101.5 46.6 101.5 34.1C101.5 21.5 110.5 12.4 123.4 12.4C136.4 12.4 145.4 21.5 145.4 34.1C145.4 46.6 136.4 55.8 123.4 55.8ZM123.4 45.9C129.9 45.9 134.2 41.1 134.2 34.1C134.2 27 129.9 22.2 123.4 22.2C117 22.2 112.7 27 112.7 34.1C112.7 41.1 117 45.9 123.4 45.9Z"
-        fill={fill}
-      />
-      <path
-        d="M165.2 43.2C168.3 45.4 172.2 46.8 176.7 46.8C181 46.8 183.3 45.5 183.3 43.2C183.3 40.8 181.3 40 175.4 38.8C166.7 37 160.4 34 160.4 25.7C160.4 17.6 166.9 12.4 177.2 12.4C183.2 12.4 188.7 14.1 192.8 17.1L187.5 25.7C184.5 23.5 181 22.3 177.3 22.3C173.7 22.3 171.7 23.5 171.7 25.5C171.7 27.7 173.8 28.4 179.8 29.7C189.4 31.8 194.8 35 194.8 42.9C194.8 51.4 188.1 55.8 176.9 55.8C170.2 55.8 163.9 53.9 159.2 50.5L165.2 43.2Z"
-        fill={secondary}
-      />
-      <path
-        d="M214.7 55.8C201.6 55.8 193.3 46.7 193.3 34.2C193.3 21.5 202 12.4 214.8 12.4C223.8 12.4 231.1 17.1 234.1 25L224 29.1C222.4 24.8 219.2 22.3 214.8 22.3C208.6 22.3 204.5 27 204.5 34.1C204.5 41.3 208.6 45.9 215 45.9C219.5 45.9 222.8 43.4 224.4 39L234.5 42.7C231.6 50.8 224.1 55.8 214.7 55.8Z"
-        fill={secondary}
-      />
-      <path
-        d="M152 57.5C174.6 60.7 202.5 60.5 239.8 55.8"
-        stroke="#24C7F4"
-        strokeWidth="7"
-        strokeLinecap="round"
-      />
-    </svg>
+      priority
+    />
   );
 }
