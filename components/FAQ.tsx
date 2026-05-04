@@ -10,7 +10,7 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="section-padding bg-[#F8F9FA]">
-      <div className="container-xl max-w-3xl min-w-0">
+      <div className="creative-shell max-w-4xl min-w-0">
         {/* Section header */}
         <div className="mb-10 text-center lg:mb-14">
           <motion.span

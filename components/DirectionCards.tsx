@@ -20,7 +20,7 @@ export default function DirectionCards() {
               initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="heading-lg mt-5 max-w-4xl text-[#F6F6F2]"
+              className="heading-lg mt-5 max-w-none text-[#F6F6F2] lg:max-w-[15ch]"
             >
               Курсы и программы по целям
             </motion.h2>
@@ -30,7 +30,7 @@ export default function DirectionCards() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="max-w-2xl text-xl font-extrabold leading-tight text-white/80"
+            className="max-w-3xl text-lg font-extrabold leading-tight text-white/80 sm:text-xl"
           >
             После диагностики собираем программу под уровень, сроки и задачу: школа, экзамены, работа, путешествия или уверенное общение.
           </motion.p>
@@ -54,7 +54,7 @@ export default function DirectionCards() {
                     <Icon size={58} className="h-14 w-14" />
                   </div>
                 </div>
-                <h3 className="mt-10 text-4xl font-extrabold leading-none tracking-[-0.075em]">
+                <h3 className="mt-8 text-3xl font-extrabold leading-[0.92] tracking-[-0.055em] sm:mt-10 sm:text-4xl">
                   {item.title}
                 </h3>
                 <p className="mt-5 text-base font-extrabold leading-tight opacity-75">
@@ -77,7 +77,7 @@ export default function DirectionCards() {
         >
           <div className="creative-card p-6 sm:p-8 lg:p-10">
             <span className="badge">для компаний</span>
-            <h3 className="mt-6 max-w-4xl text-5xl font-extrabold leading-[0.9] tracking-[-0.08em] text-[#111111] sm:text-6xl">
+            <h3 className="mt-6 max-w-none text-4xl font-extrabold leading-[0.92] tracking-[-0.055em] text-[#111111] sm:text-5xl lg:max-w-[15ch] lg:text-6xl">
               Корпоративное обучение для вашей команды
             </h3>
             <p className="mt-5 max-w-3xl text-xl font-extrabold leading-tight text-[#5E5E58]">
@@ -89,8 +89,8 @@ export default function DirectionCards() {
             </a>
           </div>
           <div className="creative-lime p-6 sm:p-8">
-            <p className="text-7xl font-extrabold leading-none tracking-[-0.09em] text-[#111111]">24/7</p>
-            <p className="mt-4 text-4xl font-extrabold leading-none tracking-[-0.075em] text-[#111111]">
+            <p className="text-6xl font-extrabold leading-none tracking-[-0.08em] text-[#111111] sm:text-7xl">24/7</p>
+            <p className="mt-4 text-3xl font-extrabold leading-[0.92] tracking-[-0.055em] text-[#111111] sm:text-4xl">
               практика между уроками
             </p>
             <p className="mt-6 text-base font-extrabold leading-tight text-[#5E5E58]">

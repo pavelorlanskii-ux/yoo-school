@@ -32,13 +32,13 @@ export default function Pricing() {
               </p>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="grid min-w-0 gap-4 sm:grid-cols-2 xl:grid-cols-4">
               {plans.map((plan) => (
-                <div key={plan.title} className={`${plan.className} min-h-[280px] p-5`}>
-                  <div className="mx-auto mb-8 flex h-16 w-36 items-center justify-center rounded-b-2xl bg-[#EAF7A2] text-xl font-extrabold text-[#111111]">
+                <div key={plan.title} className={`${plan.className} min-w-0 min-h-[250px] p-5 sm:min-h-[280px]`}>
+                  <div className="mx-auto mb-8 flex h-14 w-32 items-center justify-center rounded-b-2xl bg-[#EAF7A2] text-lg font-extrabold text-[#111111] sm:h-16 sm:w-36 sm:text-xl">
                     {plan.title}
                   </div>
-                  <p className="text-3xl font-extrabold leading-none tracking-[-0.065em]">{plan.price}</p>
+                  <p className="text-2xl font-extrabold leading-none tracking-[-0.05em] sm:text-3xl">{plan.price}</p>
                   <div className="mt-6 space-y-3">
                     {["бесплатная диагностика", "домашняя практика", "гибкий график"].map((item) => (
                       <div key={item} className="flex gap-2 text-sm font-extrabold leading-tight">
@@ -56,18 +56,18 @@ export default function Pricing() {
           </div>
 
           <div className="mt-10 grid gap-4 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-            <div className="relative min-h-[360px] overflow-hidden rounded-[2rem] bg-[#ECEDE8]">
+            <div className="relative min-h-[300px] overflow-hidden rounded-[2rem] bg-[#ECEDE8] sm:min-h-[360px]">
               <Image
                 src="/images/teacher.png"
                 alt="Дарья Орлянская"
                 fill
-                className="object-cover object-top"
+                className="object-cover object-[50%_12%] sm:object-[50%_14%]"
                 sizes="(max-width: 1024px) 100vw, 40vw"
               />
             </div>
             <div className="grid gap-4 sm:grid-cols-[0.9fr_1.1fr]">
               <div className="creative-lime p-6">
-                <h3 className="text-3xl font-extrabold leading-none tracking-[-0.06em]">Бесплатный пробный урок</h3>
+                <h3 className="text-2xl font-extrabold leading-[0.92] tracking-[-0.04em] sm:text-3xl">Бесплатный пробный урок</h3>
                 <div className="mt-6 space-y-3">
                   <input className="input" placeholder="Имя" />
                   <input className="input" placeholder="Телефон" />
@@ -79,7 +79,7 @@ export default function Pricing() {
                 </a>
               </div>
               <div className="creative-orange p-6 text-white">
-                <h3 className="text-3xl font-extrabold leading-none tracking-[-0.06em]">Запишись на бесплатный урок и получи индивидуальный план</h3>
+                <h3 className="text-2xl font-extrabold leading-[0.92] tracking-[-0.04em] sm:text-3xl">Запишись на бесплатный урок и получи индивидуальный план</h3>
                 <p className="mt-5 text-base font-extrabold leading-tight text-white/80">
                   Дарья или преподаватель команды подскажет оптимальный формат и темп занятий.
                 </p>

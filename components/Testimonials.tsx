@@ -13,7 +13,7 @@ const cardBgs = [
 export default function Testimonials() {
   return (
     <section id="reviews" className="section-padding bg-white">
-      <div className="container-xl min-w-0">
+      <div className="creative-shell min-w-0">
         {/* Section header */}
         <div className="mb-12 text-center lg:mb-16">
           <motion.span
@@ -29,7 +29,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="heading-lg mx-auto mt-4 max-w-2xl"
+            className="heading-lg mx-auto mt-4 max-w-none lg:max-w-[14ch]"
           >
             Истории наших учеников
           </motion.h2>

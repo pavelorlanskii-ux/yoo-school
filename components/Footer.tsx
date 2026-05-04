@@ -21,11 +21,11 @@ const footerColumns = [
 export default function Footer() {
   return (
     <footer className="bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-      <div className="mx-auto w-full min-w-0 max-w-7xl">
+      <div className="creative-shell min-w-0">
         <div className="mb-10 grid gap-6 lg:grid-cols-[1fr_1.1fr] lg:items-end">
           <div>
             <Logo className="h-10 w-auto" />
-            <p className="mt-5 max-w-xl text-2xl font-extrabold leading-tight tracking-[-0.035em] text-[#050505] sm:text-3xl">
+            <p className="mt-5 max-w-2xl text-2xl font-extrabold leading-tight tracking-[-0.03em] text-[#050505] sm:text-3xl">
               {siteContent.footer.tagline}
             </p>
           </div>
