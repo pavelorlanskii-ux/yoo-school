@@ -3,105 +3,98 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { siteContent } from "@/data/siteContent";
+import Logo from "./Logo";
 
 export default function TeacherBlock() {
   return (
-    <section id="teacher" className="section-padding bg-white">
+    <section id="teacher" className="section-padding bg-[#F3F5F6]">
       <div className="container-xl min-w-0">
-        <div className="mb-10 lg:mb-14">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
+        <div className="mb-8 grid gap-5 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+          <div>
+            <motion.span
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="badge bg-[#DFFF20]"
+            >
+              основатель и методический лидер
+            </motion.span>
+            <motion.h2
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.08 }}
+              className="heading-lg mt-4 max-w-none"
+            >
+              Школа строится вокруг методики Дарьи Орлянской
+            </motion.h2>
+          </div>
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="badge badge-purple"
+            transition={{ delay: 0.14 }}
+            className="max-w-xl text-lg font-bold leading-tight text-[#5D646B]"
           >
-            Основатель и команда
-          </motion.span>
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="heading-lg mt-3 max-w-3xl sm:mt-4"
-          >
-            {siteContent.teacher.title}
-          </motion.h2>
+            Здесь важен не просто преподаватель на уроке, а цельная система: диагностика, маршрут, подбор педагога, практика и контроль результата.
+          </motion.p>
         </div>
 
-        <div className="grid min-w-0 gap-10 lg:grid-cols-[1fr_1fr] lg:gap-14">
+        <div className="grid min-w-0 gap-3 lg:grid-cols-[0.9fr_1.1fr]">
           <motion.div
-            initial={{ opacity: 0, x: -24 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mx-auto w-full min-w-0 max-w-md lg:mx-0"
+            transition={{ duration: 0.45 }}
+            className="relative min-h-[520px] overflow-hidden rounded-[1.45rem] bg-[#24C7F4] p-4 sm:min-h-[620px]"
           >
-            <div className="card-elevated overflow-hidden rounded-3xl bg-gradient-to-br from-[#EDE9FE] to-[#DDD6FE] p-4 sm:p-6">
-              <div className="photo-border-lime">
-                <div className="relative aspect-[4/5] w-full min-w-0 overflow-hidden rounded-2xl">
-                  <Image
-                    src="/images/teacher.png"
-                    alt={`${siteContent.teacher.name} — ${siteContent.teacher.role}`}
-                    fill
-                    className="object-cover object-top"
-                    sizes="(max-width: 1024px) 100vw, 40vw"
-                  />
-                </div>
-              </div>
-
-              <div className="mt-4 flex flex-wrap items-start justify-between gap-3 sm:mt-5">
-                <div className="min-w-0 flex-1">
-                  <p className="text-lg font-bold text-[#1A1A2E] sm:text-xl lg:text-2xl">{siteContent.teacher.name}</p>
-                  <p className="mt-1 text-sm text-gray-600 sm:text-base">{siteContent.teacher.role}</p>
-                </div>
-                <div className="shrink-0 rounded-xl border border-gray-100 bg-white px-3 py-2 shadow-md sm:px-4 sm:py-2">
-                  <p className="text-lg font-bold text-[#FF5C00] sm:text-xl lg:text-2xl">10+</p>
-                  <p className="text-xs text-gray-500">лет опыта</p>
-                </div>
-              </div>
+            <div className="absolute left-5 top-5 z-20 rounded-2xl bg-white px-4 py-3">
+              <p className="text-xs font-extrabold uppercase tracking-[0.08em] text-[#5D646B]">YOO SCHOOL</p>
+              <p className="text-xl font-extrabold leading-none tracking-[-0.04em] text-[#050505]">{siteContent.teacher.name}</p>
             </div>
+            <Image
+              src="/images/teacher.png"
+              alt={`${siteContent.teacher.name} — ${siteContent.teacher.role}`}
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 1024px) 100vw, 42vw"
+            />
           </motion.div>
 
-          <div className="min-w-0">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
+          <div className="grid gap-3">
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-base leading-relaxed text-gray-600 sm:text-lg"
+              className="sky-panel-dark p-6 sm:p-8"
             >
-              {siteContent.teacher.text}
-            </motion.p>
+              <Logo symbolOnly className="h-16 w-16" />
+              <h3 className="mt-6 text-4xl font-extrabold leading-none tracking-[-0.065em] text-white sm:text-5xl">
+                {siteContent.teacher.title}
+              </h3>
+              <p className="mt-5 max-w-3xl text-lg font-bold leading-tight text-white/72">
+                {siteContent.teacher.text}
+              </p>
+              <p className="mt-4 max-w-3xl text-lg font-bold leading-tight text-white/72">
+                {siteContent.teacher.teamText}
+              </p>
+            </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="mt-4 text-base leading-relaxed text-gray-600 sm:text-lg"
-            >
-              {siteContent.teacher.teamText}
-            </motion.p>
-
-            <ul className="mt-8 grid min-w-0 gap-3 sm:grid-cols-2">
+            <div className="grid gap-3 sm:grid-cols-2">
               {siteContent.teacher.facts.map((fact, idx) => (
-                <motion.li
+                <motion.div
                   key={fact}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: idx * 0.05 }}
-                  className="flex min-w-0 items-center gap-3 rounded-xl bg-[#F8F9FA] px-3 py-3 sm:px-4"
+                  transition={{ delay: idx * 0.04 }}
+                  className={`${idx === 0 ? "sky-panel" : "sky-card"} p-5`}
                 >
-                  <span
-                    className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-[#BFFF00] text-xs font-bold text-[#1A1A2E]"
-                    aria-hidden="true"
-                  >
-                    ✓
-                  </span>
-                  <span className="min-w-0 text-sm font-medium leading-snug text-[#1A1A2E] sm:text-[0.9375rem]">{fact}</span>
-                </motion.li>
+                  <span className="text-sm font-extrabold text-[#5D646B]">0{idx + 1}</span>
+                  <p className="mt-4 text-2xl font-extrabold leading-none tracking-[-0.05em] text-[#050505]">{fact}</p>
+                </motion.div>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </div>
