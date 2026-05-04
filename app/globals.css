@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@theme inline {
+  --font-sans: 'Space Grotesk', system-ui, sans-serif;
+  --color-cream: #F6F3EA;
+  --color-dark: #0E1017;
+  --color-text: #2A3142;
+  --color-blue: #0066FF;
+  --color-blue-dark: #0051cb;
+  --color-lime: #c7ff4d;
+  --color-yellow: #ffd452;
+  --color-cyan: #7ce8ff;
+}
+
 :root {
   color-scheme: light;
 }
@@ -27,6 +39,7 @@ body {
   color: #fff;
 }
 
+/* Premium glossy glass effect */
 .glossy-surface {
   position: relative;
   overflow: hidden;
@@ -36,10 +49,10 @@ body {
   content: "";
   position: absolute;
   inset: 0 auto auto -40%;
-  height: 65%;
-  width: 75%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0));
-  transform: rotate(-7deg);
+  height: 55%;
+  width: 85%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+  transform: rotate(-5deg);
   pointer-events: none;
 }
 
@@ -48,34 +61,150 @@ body {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
   pointer-events: none;
 }
 
+/* Deep 3D glass card */
+.glass-card-deep {
+  background: linear-gradient(145deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.35) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 
+    0 4px 6px rgba(14, 16, 23, 0.03),
+    0 12px 16px rgba(14, 16, 23, 0.06),
+    0 24px 50px rgba(14, 16, 23, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Floating 3D decorative elements */
+.float-element {
+  box-shadow: 
+    0 8px 32px rgba(14, 16, 23, 0.15),
+    0 2px 8px rgba(14, 16, 23, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Premium button styles */
+.btn-primary {
+  background: linear-gradient(135deg, #0066FF 0%, #0051cb 100%);
+  box-shadow: 
+    0 4px 12px rgba(0, 102, 255, 0.3),
+    0 12px 32px rgba(0, 102, 255, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 16px rgba(0, 102, 255, 0.35),
+    0 16px 40px rgba(0, 102, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-lime {
+  background: linear-gradient(135deg, #c7ff4d 0%, #b2e847 100%);
+  box-shadow: 
+    0 4px 12px rgba(199, 255, 77, 0.35),
+    0 12px 32px rgba(199, 255, 77, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-lime:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 16px rgba(199, 255, 77, 0.4),
+    0 16px 40px rgba(199, 255, 77, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+/* Animations */
 @keyframes sticker-float {
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-8px);
+    transform: translateY(-6px);
   }
 }
 
 @keyframes orbit-drift {
-  0%,
-  100% {
+  0%, 100% {
     transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translate3d(10px, -10px, 0);
+    transform: translate3d(8px, -8px, 0);
+  }
+}
+
+@keyframes soft-pulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }
 
 .sticker-float {
-  animation: sticker-float 4.6s ease-in-out infinite;
+  animation: sticker-float 4s ease-in-out infinite;
 }
 
 .orbit-drift {
-  animation: orbit-drift 7s ease-in-out infinite;
+  animation: orbit-drift 6s ease-in-out infinite;
+}
+
+.soft-pulse {
+  animation: soft-pulse 4s ease-in-out infinite;
+}
+
+.gradient-animate {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Premium card hover */
+.card-hover {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+}
+
+/* Badge styles */
+.badge-pill {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+  box-shadow: 
+    0 2px 8px rgba(14, 16, 23, 0.08),
+    0 8px 24px rgba(14, 16, 23, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Character sticker style */
+.character-sticker {
+  background: linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
+  box-shadow: 
+    0 4px 12px rgba(14, 16, 23, 0.1),
+    0 12px 32px rgba(14, 16, 23, 0.15),
+    inset 0 2px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Section divider gradient */
+.section-gradient {
+  background: linear-gradient(180deg, transparent 0%, rgba(14, 16, 23, 0.02) 50%, transparent 100%);
 }
