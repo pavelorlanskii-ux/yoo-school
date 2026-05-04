@@ -13,7 +13,7 @@ const cardBgs = [
 export default function Testimonials() {
   return (
     <section id="reviews" className="section-padding bg-white">
-      <div className="container-xl">
+      <div className="container-xl min-w-0">
         {/* Section header */}
         <div className="mb-12 text-center lg:mb-16">
           <motion.span
@@ -36,7 +36,7 @@ export default function Testimonials() {
         </div>
 
         {/* Testimonials grid */}
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid min-w-0 grid-cols-1 gap-6 md:grid-cols-2">
           {siteContent.testimonials.map((item, idx) => (
             <motion.div
               key={item.text}
@@ -44,8 +44,9 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
+              className="min-w-0"
             >
-              <div className={`${cardBgs[idx]} card-elevated flex h-full min-h-[260px] flex-col rounded-2xl p-6 sm:p-8`}>
+              <div className={`${cardBgs[idx]} card-elevated flex h-full min-h-[220px] flex-col rounded-2xl p-6 sm:min-h-[260px] sm:p-8`}>
                 {/* Quote icon */}
                 <div className="mb-4 flex items-center justify-between">
                   <svg className="h-8 w-8 text-[#1A1A2E]/20" fill="currentColor" viewBox="0 0 24 24">
@@ -57,7 +58,7 @@ export default function Testimonials() {
                 </div>
 
                 {/* Quote text */}
-                <p className="flex-1 text-base font-medium text-[#1A1A2E] sm:text-lg">
+                <p className="flex-1 text-base font-medium leading-relaxed text-[#1A1A2E] sm:text-lg">
                   {item.text}
                 </p>
 

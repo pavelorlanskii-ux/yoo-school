@@ -10,7 +10,7 @@ export default function FAQ() {
 
   return (
     <section id="faq" className="section-padding bg-[#F8F9FA]">
-      <div className="container-xl max-w-3xl">
+      <div className="container-xl max-w-3xl min-w-0">
         {/* Section header */}
         <div className="mb-10 text-center lg:mb-14">
           <motion.span
@@ -51,17 +51,19 @@ export default function FAQ() {
                   }`}
                 >
                   <button
-                    className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left sm:px-6"
+                    type="button"
+                    className="flex w-full min-w-0 items-center justify-between gap-3 px-4 py-4 text-left sm:gap-4 sm:px-6 sm:py-5"
                     onClick={() => setActive(opened ? null : idx)}
                     aria-expanded={opened}
                   >
-                    <span className="text-base font-semibold text-[#1A1A2E] sm:text-lg">
+                    <span className="min-w-0 flex-1 pr-2 text-base font-semibold leading-snug text-[#1A1A2E] sm:text-lg">
                       {item.q}
                     </span>
                     <div
                       className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition ${
                         opened ? "bg-[#BFFF00] text-[#1A1A2E]" : "bg-gray-100 text-gray-500"
                       }`}
+                      aria-hidden="true"
                     >
                       <ChevronDown
                         className={`h-4 w-4 transition-transform duration-300 ${opened ? "rotate-180" : ""}`}
@@ -77,7 +79,7 @@ export default function FAQ() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.25 }}
                       >
-                        <p className="px-5 pb-5 text-sm text-gray-600 sm:px-6 sm:pb-6 sm:text-base">
+                        <p className="px-4 pb-4 text-base leading-relaxed text-gray-600 sm:px-6 sm:pb-6">
                           {item.a}
                         </p>
                       </motion.div>

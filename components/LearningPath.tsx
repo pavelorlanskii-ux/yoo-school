@@ -8,7 +8,7 @@ const stepColors = ["#BFFF00", "#FF5C00", "#8B5CF6", "#3B82F6"];
 export default function LearningPath() {
   return (
     <section id="path" className="section-padding bg-[#F8F9FA]">
-      <div className="container-xl">
+      <div className="container-xl min-w-0">
         {/* Section header */}
         <div className="mb-12 text-center lg:mb-16">
           <motion.span
@@ -42,7 +42,7 @@ export default function LearningPath() {
         </div>
 
         {/* Steps */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid min-w-0 grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {siteContent.learningPath.map((item, idx) => (
             <motion.div
               key={item.step}
@@ -50,9 +50,9 @@ export default function LearningPath() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.1 }}
-              className="group"
+              className="group min-w-0"
             >
-              <div className="card-elevated flex h-full min-h-[260px] flex-col rounded-2xl p-6 sm:p-8">
+              <div className="card-elevated flex h-full min-h-[220px] flex-col rounded-2xl p-6 sm:min-h-[240px] sm:p-8 lg:min-h-[260px]">
                 {/* Step number */}
                 <div
                   className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl text-lg font-bold text-white"

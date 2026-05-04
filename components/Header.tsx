@@ -9,16 +9,15 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
-      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <a href="#top" className="flex items-center gap-2">
-          <Image 
-            src="/images/logo.svg" 
-            alt="YOO SCHOOL" 
-            width={180} 
-            height={48}
-            className="h-10 sm:h-12"
-            style={{ width: "auto", height: "auto" }}
+    <header className="fixed left-0 right-0 top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur-md">
+      <div className="mx-auto flex w-full min-w-0 max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
+        <a href="#top" className="flex min-w-0 shrink items-center gap-2">
+          <Image
+            src="/images/logo.png"
+            alt="YOO SCHOOL"
+            width={280}
+            height={72}
+            className="h-9 w-auto max-w-[min(200px,54vw)] sm:h-11 sm:max-w-[240px] lg:h-12 lg:max-w-[280px]"
             priority
           />
         </a>

@@ -9,7 +9,7 @@ const Icons = [IconChat, IconGlobe, IconChart, IconGraduation, IconHeadphones, I
 export default function Benefits() {
   return (
     <section id="benefits" className="section-padding bg-white">
-      <div className="container-xl">
+      <div className="container-xl min-w-0">
         {/* Section header */}
         <div className="mb-12 lg:mb-16">
           <motion.span
@@ -32,7 +32,7 @@ export default function Benefits() {
         </div>
 
         {/* Grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid min-w-0 grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {siteContent.benefits.map((item, idx) => {
             const IconComponent = Icons[idx % Icons.length];
             return (
@@ -42,9 +42,9 @@ export default function Benefits() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="group"
+                className="group min-w-0"
               >
-                <div className="card flex h-full min-h-[220px] flex-col rounded-2xl p-6 sm:p-8">
+                <div className="card flex h-full min-h-[200px] flex-col rounded-2xl p-6 sm:min-h-[220px] sm:p-8">
                   <IconComponent size={56} className="mb-4 h-12 w-12 sm:h-14 sm:w-14" />
 
                   <h3 className="text-lg font-bold text-[#1A1A2E] sm:text-xl">

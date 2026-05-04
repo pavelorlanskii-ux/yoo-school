@@ -5,24 +5,23 @@ import { siteContent } from "@/data/siteContent";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-      <div className="mx-auto w-full max-w-7xl">
+    <footer className="border-t border-gray-200 bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+      <div className="mx-auto w-full min-w-0 max-w-7xl">
         {/* Tagline */}
-        <p className="mb-10 max-w-2xl text-xl font-semibold text-[#1A1A2E] sm:text-2xl">
+        <p className="mb-8 max-w-2xl text-lg font-semibold leading-snug text-[#1A1A2E] sm:mb-10 sm:text-xl md:text-2xl">
           {siteContent.footer.tagline}
         </p>
 
-        <div className="grid gap-10 md:grid-cols-3">
+        <div className="grid min-w-0 gap-10 md:grid-cols-3">
           {/* Brand */}
           <div>
             <a href="#top" className="inline-block">
-              <Image 
-                src="/images/logo.svg" 
-                alt="YOO SCHOOL" 
-                width={160} 
-                height={40}
-                className="h-10"
-                style={{ width: "auto", height: "auto" }}
+              <Image
+                src="/images/logo.png"
+                alt="YOO SCHOOL"
+                width={240}
+                height={62}
+                className="h-9 w-auto sm:h-10"
               />
             </a>
             <p className="mt-4 text-sm text-gray-500">

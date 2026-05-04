@@ -139,6 +139,7 @@ body {
 
 .input {
   width: 100%;
+  min-width: 0;
   padding: 0.875rem 1rem;
   font-size: 1rem;
   font-weight: 500;
@@ -212,17 +213,17 @@ body {
 /* ===================== */
 
 .heading-xl {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(1.75rem, 5vw + 0.35rem, 3.5rem);
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.12;
   letter-spacing: -0.02em;
   color: #1A1A2E;
 }
 
 .heading-lg {
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-size: clamp(1.45rem, 3.6vw + 0.45rem, 2.75rem);
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.18;
   letter-spacing: -0.01em;
   color: #1A1A2E;
 }
@@ -246,19 +247,6 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-/* ===================== */
-/* DECORATIVE ICONS      */
-/* ===================== */
-
-.icon-float {
-  animation: icon-float 5s ease-in-out infinite;
-}
-
-@keyframes icon-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
 }
 
 /* ===================== */
@@ -303,18 +291,18 @@ body {
 /* ===================== */
 
 .section-padding {
-  padding: 4rem 1rem;
+  padding: 3rem 1rem;
 }
 
 @media (min-width: 640px) {
   .section-padding {
-    padding: 5rem 1.5rem;
+    padding: 4.5rem 1.5rem;
   }
 }
 
 @media (min-width: 1024px) {
   .section-padding {
-    padding: 6rem 2rem;
+    padding: 5.5rem 2rem;
   }
 }
 
@@ -323,13 +311,20 @@ body {
 /* ===================== */
 
 .container-xl {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 max(1rem, env(safe-area-inset-left, 0px)) 0 max(1rem, env(safe-area-inset-right, 0px));
 }
 
 @media (min-width: 640px) {
   .container-xl {
-    padding: 0 1.5rem;
+    padding: 0 max(1.5rem, env(safe-area-inset-left, 0px)) 0 max(1.5rem, env(safe-area-inset-right, 0px));
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-xl {
+    max-width: 1240px;
   }
 }

@@ -13,7 +13,7 @@ import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-x-clip">
+    <main className="relative min-h-screen min-w-0 overflow-x-clip">
       <Header />
       <Hero />
       <DirectionCards />

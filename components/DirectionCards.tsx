@@ -13,7 +13,7 @@ const cardConfigs = [
 export default function DirectionCards() {
   return (
     <section id="directions" className="section-padding bg-white">
-      <div className="container-xl">
+      <div className="container-xl min-w-0">
         {/* Section header */}
         <div className="mb-12 lg:mb-16">
           <motion.span
@@ -37,7 +37,7 @@ export default function DirectionCards() {
         </div>
 
         {/* Cards grid */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid min-w-0 grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {siteContent.directions.map((item, index) => {
             const config = cardConfigs[index];
             const IconComponent = config.Icon;
@@ -48,9 +48,9 @@ export default function DirectionCards() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="group"
+                className="group min-w-0"
               >
-                <div className={`${config.bg} card-elevated flex h-full min-h-[340px] flex-col rounded-2xl p-6 sm:p-8`}>
+                <div className={`${config.bg} card-elevated flex h-full min-h-[280px] flex-col rounded-2xl p-6 sm:min-h-[320px] sm:p-8 lg:min-h-[340px]`}>
                   {/* Icon */}
                   <div className="mb-6">
                     <IconComponent size={80} className="h-16 w-16 sm:h-20 sm:w-20" />
@@ -87,7 +87,7 @@ export default function DirectionCards() {
           viewport={{ once: true }}
           className="mt-10"
         >
-          <div className="card-dark flex flex-col items-center gap-6 rounded-2xl p-8 text-center sm:p-10 lg:flex-row lg:gap-10 lg:text-left">
+          <div className="card-dark flex min-w-0 flex-col items-center gap-6 rounded-2xl p-6 text-center sm:p-8 lg:flex-row lg:gap-10 lg:p-10 lg:text-left">
             {/* Icon */}
             <IconRobot size={96} className="h-20 w-20 shrink-0 sm:h-24 sm:w-24" />
 

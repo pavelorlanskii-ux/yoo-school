@@ -14,7 +14,7 @@ const cardStyles = [
 export default function Pricing() {
   return (
     <section id="pricing" className="section-padding bg-[#F8F9FA]">
-      <div className="container-xl">
+      <div className="container-xl min-w-0">
         {/* Section header */}
         <div className="mb-12 text-center lg:mb-16">
           <motion.span
@@ -37,7 +37,7 @@ export default function Pricing() {
         </div>
 
         {/* Pricing cards */}
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {siteContent.pricing.map((plan, idx) => (
             <motion.div
               key={plan.title}
@@ -45,8 +45,9 @@ export default function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
+              className="min-w-0"
             >
-              <div className={`${cardStyles[idx]} card-elevated flex h-full min-h-[240px] flex-col rounded-2xl p-5 sm:p-6`}>
+              <div className={`${cardStyles[idx]} card-elevated flex h-full min-h-[220px] flex-col rounded-2xl p-5 sm:min-h-[240px] sm:p-6`}>
                 {/* Label */}
                 <span className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-600">
                   {plan.title}
@@ -58,7 +59,7 @@ export default function Pricing() {
                 </p>
 
                 {/* Description */}
-                <p className="mt-3 flex-1 text-sm text-gray-600">
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-600 sm:text-[0.9375rem]">
                   {plan.description}
                 </p>
 
