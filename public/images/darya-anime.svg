@@ -1,0 +1,38 @@
+<svg width="900" height="1100" viewBox="0 0 900 1100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="1100" rx="48" fill="#EAF7A2"/>
+  <circle cx="720" cy="150" r="120" fill="#B975F0" opacity="0.9"/>
+  <circle cx="160" cy="880" r="170" fill="#F34824" opacity="0.88"/>
+  <path d="M213 992C224 818 266 700 354 652H550C640 702 688 819 700 992H213Z" fill="#F6F6F2" stroke="#111111" stroke-width="10"/>
+  <path d="M338 665C363 727 399 758 449 758C500 758 537 726 561 665" stroke="#111111" stroke-width="12" stroke-linecap="round"/>
+  <path d="M342 650C328 684 338 724 363 752" stroke="#111111" stroke-width="10" stroke-linecap="round"/>
+  <path d="M558 650C572 684 562 724 537 752" stroke="#111111" stroke-width="10" stroke-linecap="round"/>
+  <path d="M302 388C300 250 359 162 454 162C550 162 611 251 608 388C606 517 547 638 454 638C360 638 305 517 302 388Z" fill="#F2C7B2" stroke="#111111" stroke-width="10"/>
+  <path d="M290 393C250 385 235 426 255 470C271 505 299 514 312 488" fill="#F2C7B2"/>
+  <path d="M290 393C250 385 235 426 255 470C271 505 299 514 312 488" stroke="#111111" stroke-width="8" stroke-linecap="round"/>
+  <path d="M616 393C657 385 672 426 652 470C636 505 608 514 595 488" fill="#F2C7B2"/>
+  <path d="M616 393C657 385 672 426 652 470C636 505 608 514 595 488" stroke="#111111" stroke-width="8" stroke-linecap="round"/>
+  <path d="M276 397C263 249 314 113 452 106C600 99 650 246 628 406C610 325 582 275 535 244C481 283 390 276 326 232C305 285 291 337 276 397Z" fill="#3B2019" stroke="#111111" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M326 232C391 277 480 284 535 244" stroke="#5B342A" stroke-width="18" stroke-linecap="round"/>
+  <path d="M342 405C365 382 407 383 428 406" stroke="#111111" stroke-width="8" stroke-linecap="round"/>
+  <path d="M479 406C502 383 545 383 566 407" stroke="#111111" stroke-width="8" stroke-linecap="round"/>
+  <ellipse cx="386" cy="442" rx="24" ry="19" fill="#7AA6D9" stroke="#111111" stroke-width="7"/>
+  <ellipse cx="523" cy="442" rx="24" ry="19" fill="#7AA6D9" stroke="#111111" stroke-width="7"/>
+  <path d="M354 430C377 412 407 412 430 430" stroke="#111111" stroke-width="8" stroke-linecap="round"/>
+  <path d="M489 430C513 412 544 413 566 431" stroke="#111111" stroke-width="8" stroke-linecap="round"/>
+  <path d="M455 450C449 491 440 511 421 531" stroke="#111111" stroke-width="8" stroke-linecap="round"/>
+  <path d="M399 566C431 589 480 588 512 565" stroke="#111111" stroke-width="8" stroke-linecap="round"/>
+  <path d="M329 392C365 372 414 372 450 398" stroke="#111111" stroke-width="9" stroke-linecap="round"/>
+  <path d="M459 398C497 372 549 373 581 393" stroke="#111111" stroke-width="9" stroke-linecap="round"/>
+  <path d="M450 398C455 392 460 392 465 398" stroke="#111111" stroke-width="7" stroke-linecap="round"/>
+  <path d="M281 365C252 556 276 773 223 979" stroke="#3B2019" stroke-width="42" stroke-linecap="round"/>
+  <path d="M626 365C660 566 632 778 699 989" stroke="#3B2019" stroke-width="42" stroke-linecap="round"/>
+  <path d="M345 736H558" stroke="#111111" stroke-width="10" stroke-linecap="round"/>
+  <path d="M382 820H522" stroke="#111111" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="456" cy="780" r="12" fill="#111111"/>
+  <circle cx="456" cy="870" r="12" fill="#111111"/>
+  <path d="M158 174L210 142L207 203L260 231L202 251L191 310L155 264L95 272L129 222L103 168L158 174Z" fill="#F34824" stroke="#111111" stroke-width="8" stroke-linejoin="round"/>
+  <path d="M684 715C733 682 780 686 825 728" stroke="#111111" stroke-width="10" stroke-linecap="round"/>
+  <path d="M692 757C731 738 771 741 810 765" stroke="#111111" stroke-width="10" stroke-linecap="round"/>
+  <text x="96" y="1010" fill="#111111" font-family="Arial, sans-serif" font-size="46" font-weight="900" letter-spacing="-2">DARYA</text>
+  <text x="96" y="1058" fill="#111111" font-family="Arial, sans-serif" font-size="46" font-weight="900" letter-spacing="-2">ORLYANSKAYA</text>
+</svg>
