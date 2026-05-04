@@ -24,13 +24,13 @@ export default function Hero() {
                 <span>подготовка к экзаменам</span>
                 <span>взрослый английский</span>
                 <span>корпоративное обучение</span>
-                <span>школа Дарьи Орлянской</span>
+                <span>индивидуальная программа</span>
               </div>
             ))}
           </div>
         </div>
 
-        <div className="grid min-w-0 gap-4 xl:grid-cols-[minmax(0,1.06fr)_minmax(390px,0.94fr)]">
+        <div className="grid min-w-0 gap-4 xl:grid-cols-[minmax(0,1.08fr)_minmax(390px,0.92fr)]">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
@@ -39,13 +39,13 @@ export default function Hero() {
           >
             <span className="badge">
               <Sparkles className="h-4 w-4" />
-              школа Дарьи Орлянской
+              онлайн-школа английского
             </span>
-            <h1 className="mt-6 max-w-[900px] text-[clamp(2.35rem,5.45vw,5rem)] font-extrabold leading-[0.96] tracking-[-0.058em] text-[#111111] text-balance">
+            <h1 className="mt-6 max-w-[780px] text-[clamp(2.1rem,4.75vw,4.35rem)] font-extrabold leading-[1.01] tracking-[-0.052em] text-[#111111] text-balance">
               Английский, который подстраивается под тебя
             </h1>
             <p className="mt-5 max-w-[58ch] text-lg font-extrabold leading-tight text-[#5E5E58] sm:mt-6 sm:text-xl xl:text-2xl">
-              Индивидуальные занятия, диагностика уровня, практика между уроками и методика, которую лично собирает основатель YOO SCHOOL.
+              Индивидуальные занятия, диагностика уровня, практика между уроками и программа, собранная под вашу цель и темп.
             </p>
 
             <div className="mt-7 grid gap-3 sm:grid-cols-3">
@@ -77,11 +77,11 @@ export default function Hero() {
             <div className="creative-lime relative min-h-[500px] overflow-hidden p-5 sm:min-h-[600px] lg:min-h-full lg:p-6">
               <div className="absolute inset-x-6 top-6 z-10 flex flex-wrap items-start justify-between gap-3">
                 <div className="rounded-[1.2rem] bg-[#F6F6F2] px-4 py-3">
-                  <p className="text-xs font-extrabold uppercase tracking-[0.08em] text-[#5E5E58]">методика</p>
-                  <p className="text-xl font-extrabold leading-none tracking-[-0.04em] text-[#111111] sm:text-2xl">Дарьи Орлянской</p>
+                  <p className="text-xs font-extrabold uppercase tracking-[0.08em] text-[#5E5E58]">формат</p>
+                  <p className="text-xl font-extrabold leading-none tracking-[-0.04em] text-[#111111] sm:text-2xl">личный маршрут</p>
                 </div>
                 <div className="rounded-full bg-[#B975F0] px-4 py-2 text-sm font-extrabold text-white">
-                  founder-led school
+                  english for goals
                 </div>
               </div>
 
