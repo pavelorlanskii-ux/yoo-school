@@ -1,53 +1,159 @@
 "use client";
 
 import { motion } from "framer-motion";
-import CharacterBadge from "./CharacterBadge";
-import GlassCard from "./GlassCard";
+import Image from "next/image";
 import { siteContent } from "@/data/siteContent";
+import { IconGlobe, IconGraduation, IconChat } from "./Icons";
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden px-4 pb-20 pt-12 sm:px-6 lg:px-8 lg:pt-16">
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,#c7ff4d_0,#f6f3ea_30%),radial-gradient(circle_at_80%_10%,#8ddcff_0,#f6f3ea_35%),radial-gradient(circle_at_80%_85%,#ffd452_0,#f6f3ea_40%)]" />
-      <div aria-hidden="true" className="orbit-drift pointer-events-none absolute left-[6%] top-20 hidden h-24 w-24 rounded-[2rem] border border-white/60 bg-white/50 shadow-[0_20px_40px_rgba(14,16,23,0.14)] backdrop-blur-xl md:block" />
-      <div aria-hidden="true" className="pointer-events-none absolute right-[7%] top-28 hidden h-20 w-20 rounded-full border border-[#0E1017]/10 bg-[#ffd452]/65 shadow-[0_20px_45px_rgba(255,180,0,0.3)] blur-[1px] md:block" />
-      <div className="mx-auto grid w-full max-w-7xl gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <motion.div initial={{ opacity: 0, y: 26 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-          <p className="mb-5 inline-flex rounded-full bg-[#0E1017] px-5 py-2 text-xs font-bold uppercase tracking-[0.2em] text-white">Modern Creative Education Brand</p>
-          <h1 className="text-balance text-5xl font-black uppercase leading-[0.9] text-[#0E1017] sm:text-6xl lg:text-8xl">{siteContent.hero.title}</h1>
-          <p className="mt-6 max-w-2xl text-lg text-[#2A3142] sm:text-xl">{siteContent.hero.text}</p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="#contact" className="rounded-full bg-[#0066FF] px-8 py-4 text-center text-base font-bold text-white shadow-[0_16px_40px_rgba(0,102,255,0.35)] transition hover:translate-y-[-2px] hover:bg-[#0051cb] hover:shadow-[0_20px_52px_rgba(0,102,255,0.44)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0066FF]">
-              {siteContent.hero.ctaPrimary}
-            </a>
-            <a href="#directions" className="rounded-full border border-[#0E1017]/20 bg-white/80 px-8 py-4 text-center text-base font-bold text-[#0E1017] transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#0066FF]">
-              {siteContent.hero.ctaSecondary}
-            </a>
-          </div>
-          <div className="mt-7 flex flex-wrap gap-3">
-            {siteContent.hero.badges.map((badge) => (
-              <span key={badge} className="rounded-full border border-[#0E1017]/10 bg-white px-4 py-2 text-sm font-semibold text-[#0E1017]">{badge}</span>
-            ))}
-          </div>
-        </motion.div>
+    <section className="relative overflow-hidden bg-white px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pb-24 lg:pt-36">
+      {/* Decorative icons */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="icon-float absolute left-[5%] top-32">
+          <IconGlobe size={80} className="w-14 sm:w-18 lg:w-20" />
+        </div>
+        <div className="icon-float absolute right-[8%] top-40" style={{ animationDelay: "-1s" }}>
+          <IconGraduation size={80} className="w-12 sm:w-16 lg:w-18" />
+        </div>
+        <div className="icon-float absolute bottom-20 left-[10%]" style={{ animationDelay: "-2s" }}>
+          <IconChat size={80} className="w-12 sm:w-14 lg:w-16" />
+        </div>
+      </div>
 
-        <motion.div initial={{ opacity: 0, scale: 0.97 }} whileInView={{ opacity: 1, scale: 1 }} whileHover={{ y: -4, rotate: -0.4 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.1 }} className="relative">
-          <GlassCard className="relative overflow-hidden bg-gradient-to-br from-[#0066ff]/30 via-white/55 to-[#7ce8ff]/35 p-8 sm:p-10">
-            <div aria-hidden="true" className="absolute right-3 top-3 h-24 w-24 rounded-full bg-[#c7ff4d]/90 blur-xl" />
-            <div aria-hidden="true" className="absolute -bottom-10 -left-6 h-32 w-32 rounded-full bg-[#ffd452]/70 blur-2xl" />
-            <div aria-hidden="true" className="pointer-events-none absolute -right-4 bottom-12 h-16 w-16 rounded-2xl border border-white/60 bg-white/45 shadow-[0_12px_30px_rgba(14,16,23,0.2)] backdrop-blur-xl" />
-            <div className="relative rounded-[2rem] border border-white/50 bg-[#0E1017] p-8 text-white shadow-2xl">
-              <p className="text-sm uppercase tracking-[0.16em] text-[#7ce8ff]">YOO interface</p>
-              <p className="mt-4 text-4xl font-black uppercase leading-none sm:text-5xl">ORLIK ONLINE</p>
-              <p className="mt-3 max-w-xs text-sm text-white/80">Стильный digital-помощник рядом с вами на каждом этапе маршрута.</p>
-              <div className="mt-6 flex flex-wrap gap-2">
-                <CharacterBadge character="orlik" />
-                <CharacterBadge character="bee" />
-                <CharacterBadge character="flower" />
+      <div className="relative mx-auto w-full max-w-7xl">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          {/* Left content */}
+          <div className="relative z-10">
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mb-6"
+            >
+              <span className="badge badge-lime">
+                <span className="h-2 w-2 rounded-full bg-[#6B8E00]" />
+                Онлайн-школа английского
+              </span>
+            </motion.div>
+
+            {/* Main headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="heading-xl text-balance"
+            >
+              Программы для любых целей{" "}
+              <span className="text-gradient-lime">с гарантией результата</span>
+            </motion.h1>
+
+            {/* Subheadline */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-6 max-w-lg text-lg text-gray-600 sm:text-xl"
+            >
+              {siteContent.hero.text}
+            </motion.p>
+
+            {/* CTA buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center"
+            >
+              <a
+                href="#contact"
+                className="btn btn-primary px-8 py-4 text-base font-semibold sm:text-lg"
+              >
+                {siteContent.hero.ctaPrimary}
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+              <a
+                href="#directions"
+                className="btn btn-outline px-8 py-4 text-base font-semibold sm:text-lg"
+              >
+                {siteContent.hero.ctaSecondary}
+              </a>
+            </motion.div>
+
+            {/* Stats row */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mt-12 grid grid-cols-3 gap-6"
+            >
+              <div>
+                <p className="text-3xl font-bold text-[#1A1A2E] sm:text-4xl">1000+</p>
+                <p className="mt-1 text-sm text-gray-500">учеников</p>
               </div>
+              <div>
+                <p className="text-3xl font-bold text-[#1A1A2E] sm:text-4xl">10+</p>
+                <p className="mt-1 text-sm text-gray-500">преподавателей</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-[#1A1A2E] sm:text-4xl">98%</p>
+                <p className="mt-1 text-sm text-gray-500">довольных</p>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right visual - Teacher card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 30 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none"
+          >
+            {/* Main card */}
+            <div className="card-elevated relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#F0FFB3] to-[#E8FF8C] p-6 sm:p-8">
+              {/* Photo */}
+              <div className="photo-border-lime relative">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+                  <Image
+                    src="/images/teacher.png"
+                    alt="Дарья Орлянская — основатель YOO SCHOOL"
+                    fill
+                    className="object-cover object-top"
+                    priority
+                  />
+                </div>
+              </div>
+
+              {/* Info overlay */}
+              <div className="mt-6">
+                <p className="text-2xl font-bold text-[#1A1A2E] sm:text-3xl">
+                  {siteContent.teacher.name}
+                </p>
+                <p className="mt-1 text-base text-gray-600 sm:text-lg">
+                  {siteContent.teacher.role}
+                </p>
+              </div>
+
+              {/* Floating badge */}
+              <motion.div
+                animate={{ y: [-6, 6, -6] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -right-3 -top-3 rounded-2xl bg-white px-5 py-3 shadow-lg sm:-right-6 sm:-top-6"
+              >
+                <p className="text-2xl font-bold text-[#FF5C00] sm:text-3xl">10+</p>
+                <p className="text-xs font-medium text-gray-500 sm:text-sm">лет опыта</p>
+              </motion.div>
             </div>
-          </GlassCard>
-        </motion.div>
+
+            {/* Decorative icon */}
+            <div className="absolute -bottom-6 -left-6">
+              <IconChat size={72} className="w-14 sm:w-18" />
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

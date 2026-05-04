@@ -2,31 +2,89 @@
 
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { siteContent } from "@/data/siteContent";
-import SectionTitle from "./SectionTitle";
 
 export default function FAQ() {
   const [active, setActive] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="px-4 py-20 sm:px-6 lg:px-8">
-      <div className="mx-auto w-full max-w-5xl">
-        <SectionTitle overline="FAQ" title="Частые вопросы перед стартом" />
-        <div className="mt-10 space-y-3">
+    <section id="faq" className="section-padding bg-[#F8F9FA]">
+      <div className="container-xl max-w-3xl">
+        {/* Section header */}
+        <div className="mb-10 text-center lg:mb-14">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="badge badge-lime"
+          >
+            FAQ
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="heading-lg mx-auto mt-4"
+          >
+            О чём ещё интересно узнать
+          </motion.h2>
+        </div>
+
+        {/* FAQ items */}
+        <div className="space-y-3">
           {siteContent.faq.map((item, idx) => {
             const opened = active === idx;
             return (
-              <div key={item.q} className="overflow-hidden rounded-3xl border border-[#0E1017]/10 bg-white/80">
-                <button
-                  className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left"
-                  onClick={() => setActive(opened ? null : idx)}
-                  aria-expanded={opened}
+              <motion.div
+                key={item.q}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.05 }}
+                className="overflow-hidden"
+              >
+                <div
+                  className={`rounded-xl bg-white transition-all ${
+                    opened ? "ring-2 ring-[#BFFF00]" : "border border-gray-200"
+                  }`}
                 >
-                  <span className="text-xl font-bold text-[#0E1017]">{item.q}</span>
-                  <ChevronDown className={`transition ${opened ? "rotate-180" : ""}`} />
-                </button>
-                {opened ? <p className="px-5 pb-5 text-[#2A3142]">{item.a}</p> : null}
-              </div>
+                  <button
+                    className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left sm:px-6"
+                    onClick={() => setActive(opened ? null : idx)}
+                    aria-expanded={opened}
+                  >
+                    <span className="text-base font-semibold text-[#1A1A2E] sm:text-lg">
+                      {item.q}
+                    </span>
+                    <div
+                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition ${
+                        opened ? "bg-[#BFFF00] text-[#1A1A2E]" : "bg-gray-100 text-gray-500"
+                      }`}
+                    >
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform duration-300 ${opened ? "rotate-180" : ""}`}
+                      />
+                    </div>
+                  </button>
+
+                  <AnimatePresence>
+                    {opened && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25 }}
+                      >
+                        <p className="px-5 pb-5 text-sm text-gray-600 sm:px-6 sm:pb-6 sm:text-base">
+                          {item.a}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </motion.div>
             );
           })}
         </div>

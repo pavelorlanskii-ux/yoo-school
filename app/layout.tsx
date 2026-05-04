@@ -1,16 +1,31 @@
-import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-space-grotesk",
+const nunito = Nunito({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-nunito",
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
-  title: "YOO SCHOOL | Яркий английский для школы, поступления и жизни",
+  title: "YOO SCHOOL | Английский под вашу цель",
   description:
-    "Современный образовательный бренд по изучению английского языка для детей, подростков и взрослых.",
+    "Современный образовательный бренд. Английский для детей, подростков, взрослых и команд. Индивидуальный маршрут, команда преподавателей, диагностика на старте.",
+  keywords: ["английский язык", "репетитор английского", "подготовка к ЕГЭ", "подготовка к ОГЭ", "английский для детей", "английский для взрослых", "корпоративное обучение"],
+  authors: [{ name: "YOO SCHOOL" }],
+  openGraph: {
+    title: "YOO SCHOOL | Английский под вашу цель",
+    description: "Современный образовательный бренд. Английский для детей, подростков, взрослых и команд.",
+    type: "website",
+    locale: "ru_RU",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#FFFFFF",
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -19,8 +34,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
-      <body className={`${spaceGrotesk.variable} antialiased`}>{children}</body>
+    <html lang="ru" className="bg-white">
+      <body className={`${nunito.variable} font-sans antialiased bg-white text-[#1A1A2E]`}>{children}</body>
     </html>
   );
 }
