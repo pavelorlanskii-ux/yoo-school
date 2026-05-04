@@ -2,9 +2,16 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { siteContent } from "@/data/siteContent";
-import Logo from "./Logo";
+
+function BrandMark() {
+  return (
+    <span className="mb-3 flex h-7 w-7 items-center justify-center rounded-full bg-[#111111] text-xs font-black text-[#EAF7A2]">
+      Y
+    </span>
+  );
+}
 
 export default function Hero() {
   return (
@@ -31,14 +38,11 @@ export default function Hero() {
             transition={{ duration: 0.45 }}
             className="creative-card relative min-w-0 p-5 sm:p-7 lg:p-10 xl:p-12"
           >
-            <div className="absolute right-5 top-5 hidden xl:block">
-              <Logo symbolOnly className="h-20 w-20" />
-            </div>
             <span className="badge">
               <Sparkles className="h-4 w-4" />
               школа Дарьи Орлянской
             </span>
-            <h1 className="mt-6 max-w-[1040px] pr-0 text-[clamp(2.8rem,7vw,6.55rem)] font-extrabold leading-[0.9] tracking-[-0.078em] text-[#111111] text-balance xl:pr-24">
+            <h1 className="mt-6 max-w-[960px] text-[clamp(2.45rem,6.05vw,5.55rem)] font-extrabold leading-[0.94] tracking-[-0.066em] text-[#111111] text-balance">
               Английский, который подстраивается под тебя
             </h1>
             <p className="mt-5 max-w-[58ch] text-lg font-extrabold leading-tight text-[#5E5E58] sm:mt-6 sm:text-xl lg:text-2xl">
@@ -47,8 +51,8 @@ export default function Hero() {
 
             <div className="mt-7 grid gap-3 sm:grid-cols-3">
               {siteContent.hero.badges.map((badge, index) => (
-                <div key={badge} className={`${index === 0 ? "creative-lime" : "creative-soft"} p-4 text-sm font-extrabold leading-tight`}>
-                  <CheckCircle2 className="mb-3 h-5 w-5" />
+                <div key={badge} className={`${index === 0 ? "creative-lime" : "creative-soft"} flex min-h-[94px] flex-col p-4 text-sm font-extrabold leading-tight`}>
+                  <BrandMark />
                   {badge}
                 </div>
               ))}
@@ -71,7 +75,7 @@ export default function Hero() {
             transition={{ duration: 0.45, delay: 0.08 }}
             className="grid min-w-0 gap-4"
           >
-            <div className="relative min-h-[500px] overflow-hidden rounded-[2rem] bg-[#EAF7A2] p-4 sm:min-h-[620px] sm:p-5 xl:min-h-full">
+            <div className="relative min-h-[520px] overflow-hidden rounded-[2rem] bg-[#EAF7A2] p-4 sm:min-h-[640px] sm:p-5 xl:min-h-full">
               <div className="absolute left-4 top-4 z-20 max-w-[72%] rounded-[1.1rem] bg-[#F6F6F2]/95 px-3 py-2.5 sm:left-5 sm:top-5 sm:max-w-none sm:rounded-[1.25rem] sm:px-4 sm:py-3">
                 <p className="text-xs font-extrabold uppercase tracking-[0.08em] text-[#5E5E58]">основатель</p>
                 <p className="text-lg font-extrabold leading-none tracking-[-0.04em] text-[#111111] sm:text-2xl">Дарья Орлянская</p>
@@ -89,10 +93,10 @@ export default function Hero() {
                 </div>
               </div>
               <Image
-                src="/images/teacher.png"
+                src="/images/darya-anime.svg"
                 alt="Дарья Орлянская — основатель YOO SCHOOL"
                 fill
-                className="object-cover object-[54%_18%] sm:object-[54%_14%] xl:object-[52%_14%] sticker-cutout"
+                className="object-cover object-[50%_18%] sticker-cutout"
                 sizes="(max-width: 1024px) 100vw, 42vw"
                 priority
               />
