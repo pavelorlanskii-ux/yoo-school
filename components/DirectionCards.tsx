@@ -6,56 +6,62 @@ import { siteContent } from "@/data/siteContent";
 import { IconGraduation, IconHeadphones, IconChart } from "./Icons";
 
 const icons = [IconGraduation, IconHeadphones, IconChart];
-const labels = ["популярно", "топ", "base"];
+const cardStyles = ["creative-lime", "creative-card", "creative-purple text-white"];
+const labels = ["курс-бестселлер", "экзамены", "base"];
 
 export default function DirectionCards() {
   return (
-    <section id="directions" className="section-padding bg-[#F3F5F6]">
-      <div className="container-xl min-w-0">
-        <div className="mb-7">
-          <motion.h2
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="heading-lg max-w-4xl"
-          >
-            Курсы и программы по целям
-          </motion.h2>
+    <section id="directions" className="section-padding">
+      <div className="creative-shell min-w-0">
+        <div className="mb-8 grid gap-5 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+          <div>
+            <span className="badge">Курсы</span>
+            <motion.h2
+              initial={{ opacity: 0, y: 22 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="heading-lg mt-5 max-w-4xl text-[#F6F6F2]"
+            >
+              Курсы и программы по целям
+            </motion.h2>
+          </div>
           <motion.p
-            initial={{ opacity: 0, y: 18 }}
+            initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.08 }}
-            className="mt-4 max-w-2xl text-lg font-bold leading-tight text-[#5D646B]"
+            className="max-w-2xl text-xl font-extrabold leading-tight text-white/80"
           >
-            Выбирайте направление сами или с нашей помощью. После диагностики соберём программу под ваш уровень, сроки и задачу.
+            После диагностики собираем программу под уровень, сроки и задачу: школа, экзамены, работа, путешествия или уверенное общение.
           </motion.p>
         </div>
 
-        <div className="grid min-w-0 grid-cols-1 gap-3 md:grid-cols-3">
+        <div className="grid min-w-0 grid-cols-1 gap-4 md:grid-cols-3">
           {siteContent.directions.map((item, index) => {
             const Icon = icons[index];
             return (
               <motion.article
                 key={item.title}
-                initial={{ opacity: 0, y: 18 }}
+                initial={{ opacity: 0, y: 22 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.36, delay: index * 0.06 }}
-                className="sky-card min-w-0 p-5"
+                className={`${cardStyles[index]} min-w-0 p-6 sm:p-7`}
               >
                 <div className="flex items-start justify-between gap-4">
-                  <span className="badge bg-[#24C7F4]">{labels[index]}</span>
-                  <Icon size={54} className="h-12 w-12" />
+                  <span className="badge bg-white/80">{labels[index]}</span>
+                  <div className="rounded-3xl bg-white/70 p-3 text-[#111111]">
+                    <Icon size={58} className="h-14 w-14" />
+                  </div>
                 </div>
-                <h3 className="mt-6 text-3xl font-black leading-none tracking-[-0.06em] text-[#050505]">
+                <h3 className="mt-10 text-4xl font-extrabold leading-none tracking-[-0.075em]">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-base font-bold leading-snug text-[#5D646B]">
+                <p className="mt-5 text-base font-extrabold leading-tight opacity-75">
                   {item.description}
                 </p>
-                <a href="#contact" className="mt-6 inline-flex items-center gap-2 text-base font-black text-[#050505]">
-                  Попробовать бесплатно
+                <a href="#contact" className="btn btn-primary mt-8 px-6 py-3 text-sm">
+                  Попробовать
                   <ArrowRight className="h-4 w-4" />
                 </a>
               </motion.article>
@@ -64,30 +70,30 @@ export default function DirectionCards() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 18 }}
+          initial={{ opacity: 0, y: 22 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-3 grid gap-3 lg:grid-cols-[1fr_0.62fr]"
+          className="mt-4 grid gap-4 lg:grid-cols-[1fr_0.64fr]"
         >
-          <div className="sky-panel-dark p-6 sm:p-8">
-            <span className="badge bg-[#24C7F4] text-[#050505]">корпоративное обучение</span>
-            <h3 className="mt-5 max-w-2xl text-4xl font-black leading-none tracking-[-0.06em] text-white sm:text-5xl">
-              Английский для вашей команды
+          <div className="creative-card p-6 sm:p-8 lg:p-10">
+            <span className="badge">для компаний</span>
+            <h3 className="mt-6 max-w-4xl text-5xl font-extrabold leading-[0.9] tracking-[-0.08em] text-[#111111] sm:text-6xl">
+              Корпоративное обучение для вашей команды
             </h3>
-            <p className="mt-4 max-w-3xl text-lg font-bold leading-tight text-white/72">
+            <p className="mt-5 max-w-3xl text-xl font-extrabold leading-tight text-[#5E5E58]">
               {siteContent.corporate.description}
             </p>
-            <a href="#contact" className="btn btn-white mt-7 px-7 py-4">
+            <a href="#contact" className="btn btn-primary mt-8 px-7 py-4">
               {siteContent.corporate.cta}
               <ArrowRight className="h-5 w-5" />
             </a>
           </div>
-          <div className="sky-panel p-6 sm:p-8">
-            <p className="text-5xl font-black leading-none tracking-[-0.07em] text-[#050505]">24/7</p>
-            <p className="mt-3 text-2xl font-black leading-none tracking-[-0.05em] text-[#050505]">
+          <div className="creative-lime p-6 sm:p-8">
+            <p className="text-7xl font-extrabold leading-none tracking-[-0.09em] text-[#111111]">24/7</p>
+            <p className="mt-4 text-4xl font-extrabold leading-none tracking-[-0.075em] text-[#111111]">
               практика между уроками
             </p>
-            <p className="mt-4 text-base font-bold leading-snug text-[#07313D]">
+            <p className="mt-6 text-base font-extrabold leading-tight text-[#5E5E58]">
               Тренажёры, задания, разговорная практика и контроль прогресса помогают не терять темп после занятия.
             </p>
           </div>
