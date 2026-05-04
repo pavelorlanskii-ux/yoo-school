@@ -19,7 +19,7 @@ export default function SectionTitle({
     <div className={cn("max-w-5xl", centered && "mx-auto text-center", className)}>
       {overline ? (
         <p className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#0E1017] px-5 py-2.5 text-xs font-bold uppercase tracking-[0.2em] text-[#F6F3EA] shadow-[0_4px_20px_rgba(14,16,23,0.2)]">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#c7ff4d]" />
+          <span className="dot-indicator h-1.5 w-1.5 rounded-full bg-[#c7ff4d]" />
           {overline}
         </p>
       ) : null}

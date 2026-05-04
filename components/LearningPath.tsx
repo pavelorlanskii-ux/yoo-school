@@ -30,7 +30,7 @@ export default function LearningPath() {
               overline="Как проходит обучение" 
               title="Маршрут без хаоса" 
               subtitle="От знакомства до измеримого результата: шаг за шагом, в комфортном темпе." 
-              className="[&_*]:text-white [&_p:last-child]:text-white/75 [&_.inline-flex]:bg-white/15 [&_.inline-flex]:text-white [&_.h-1\\.5]:bg-[#c7ff4d]" 
+              className="[&_*]:text-white [&_p:last-child]:text-white/75 [&_.inline-flex]:bg-white/15 [&_.inline-flex]:text-white [&_.dot-indicator]:bg-[#c7ff4d]" 
             />
             
             <ol className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

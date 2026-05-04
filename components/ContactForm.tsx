@@ -33,7 +33,7 @@ export default function ContactForm() {
                 overline="Старт"
                 title="Давайте найдём ваш маршрут в английском"
                 subtitle="Расскажите, для кого нужны занятия и какая цель сейчас важнее всего. Мы подберём понятный формат и стартуем с пробного занятия."
-                className="[&_*]:text-white [&_p:last-child]:text-white/75 [&_.inline-flex]:bg-white/15 [&_.inline-flex]:text-white [&_.h-1\\.5]:bg-[#c7ff4d]"
+                className="[&_*]:text-white [&_p:last-child]:text-white/75 [&_.inline-flex]:bg-white/15 [&_.inline-flex]:text-white [&_.dot-indicator]:bg-[#c7ff4d]"
               />
               
               {/* Contact info */}
