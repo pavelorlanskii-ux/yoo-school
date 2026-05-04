@@ -12,15 +12,15 @@ const cardColors = [
 
 export default function Testimonials() {
   return (
-    <section id="reviews" className="relative px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
+    <section id="reviews" className="section-padding relative px-4 sm:px-6 lg:px-8">
       <div className="mx-auto w-full max-w-7xl">
-        {/* Section header - HUGE */}
-        <div className="mb-16 text-center lg:mb-20">
+        {/* Section header */}
+        <div className="mb-20 text-center lg:mb-28">
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block rounded-full border-4 border-[#0E1017] bg-[#FFD452] px-6 py-3 text-lg font-bold text-[#0E1017]"
+            className="inline-block rounded-full border-4 border-[#0E1017] bg-[#FFD452] px-8 py-4 text-xl font-black text-[#0E1017] shadow-[0_4px_0_0_rgba(0,0,0,0.1)]"
           >
             Отзывы
           </motion.span>
@@ -29,30 +29,30 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mx-auto mt-6 max-w-4xl text-balance text-4xl font-black leading-[1.1] tracking-tight text-[#0E1017] sm:text-5xl md:text-6xl lg:text-7xl"
+            className="text-3d mx-auto mt-8 max-w-5xl text-balance text-4xl font-black leading-[1.05] tracking-tight text-[#0E1017] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
           >
             Реальный прогресс
           </motion.h2>
         </div>
         
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-10 md:grid-cols-2">
           {siteContent.testimonials.map((item, idx) => (
             <motion.div
               key={item.text}
-              initial={{ opacity: 0, y: 20, rotate: idx % 2 === 0 ? -2 : 2 }}
+              initial={{ opacity: 0, y: 24, rotate: idx % 2 === 0 ? -2 : 2 }}
               whileInView={{ opacity: 1, y: 0, rotate: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.08 }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
               className="group"
             >
-              <div className={`sticker-lg ${cardColors[idx]} h-full rounded-[2rem] p-8 transition-transform duration-300 group-hover:-translate-y-2 group-hover:rotate-1 sm:p-10`}>
+              <div className={`card-3d ${cardColors[idx]} flex h-full min-h-[320px] flex-col rounded-[2.5rem] p-10 sm:p-12`}>
                 {/* Quote icon */}
-                <div className="mb-6 flex items-center justify-between">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border-4 border-[#0E1017] bg-white text-2xl font-black text-[#0E1017] shadow-[0_4px_0_0_rgba(0,0,0,0.15)]">
+                <div className="mb-8 flex items-center justify-between">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl border-4 border-[#0E1017] bg-white text-3xl font-black text-[#0E1017] shadow-[0_6px_0_0_rgba(0,0,0,0.12)]">
                     {idx + 1}
                   </div>
                   <svg 
-                    className="h-10 w-10 text-[#0E1017]/20" 
+                    className="h-12 w-12 text-[#0E1017]/20" 
                     fill="currentColor" 
                     viewBox="0 0 24 24"
                   >
@@ -60,14 +60,14 @@ export default function Testimonials() {
                   </svg>
                 </div>
                 
-                {/* Quote text - LARGER */}
-                <p className="text-2xl font-black leading-snug text-[#0E1017] sm:text-3xl">
+                {/* Quote text */}
+                <p className="flex-1 text-2xl font-black leading-snug text-[#0E1017] sm:text-3xl lg:text-4xl">
                   {item.text}
                 </p>
                 
                 {/* Author */}
-                <div className="mt-8">
-                  <span className="rounded-full border-4 border-[#0E1017] bg-white px-5 py-3 text-base font-bold text-[#0E1017]">
+                <div className="mt-10">
+                  <span className="rounded-full border-4 border-[#0E1017] bg-white px-6 py-4 text-lg font-bold text-[#0E1017]">
                     {item.author}
                   </span>
                 </div>
