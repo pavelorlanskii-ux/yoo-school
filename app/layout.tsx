@@ -8,21 +8,21 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "YOO SCHOOL | Яркий английский для школы, поступления и жизни",
+  title: "YOO SCHOOL | Английский под вашу цель",
   description:
-    "Современный образовательный бренд по изучению английского языка для детей, подростков и взрослых. Индивидуальный подход, понятный маршрут, комфортный темп.",
-  keywords: ["английский язык", "репетитор английского", "подготовка к ЕГЭ", "подготовка к ОГЭ", "английский для детей", "английский для взрослых"],
+    "Современный образовательный бренд. Английский для детей, подростков, взрослых и команд. Индивидуальный маршрут, команда преподавателей, диагностика на старте.",
+  keywords: ["английский язык", "репетитор английского", "подготовка к ЕГЭ", "подготовка к ОГЭ", "английский для детей", "английский для взрослых", "корпоративное обучение"],
   authors: [{ name: "YOO SCHOOL" }],
   openGraph: {
-    title: "YOO SCHOOL | Яркий английский для школы, поступления и жизни",
-    description: "Современный образовательный бренд по изучению английского языка для детей, подростков и взрослых.",
+    title: "YOO SCHOOL | Английский под вашу цель",
+    description: "Современный образовательный бренд. Английский для детей, подростков, взрослых и команд.",
     type: "website",
     locale: "ru_RU",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F6F3EA",
+  themeColor: "#0A0A0F",
   width: "device-width",
   initialScale: 1,
 };
@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className="bg-[#F6F3EA]">
+    <html lang="ru" className="bg-[#0A0A0F]">
       <body className={`${spaceGrotesk.variable} font-sans antialiased`}>{children}</body>
     </html>
   );

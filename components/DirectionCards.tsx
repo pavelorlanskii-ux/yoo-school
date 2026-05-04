@@ -2,122 +2,120 @@
 
 import { motion } from "framer-motion";
 import { siteContent } from "@/data/siteContent";
-import { OwlIcon, DeerIcon, CorgiIcon } from "./AnimalIcons";
 
 const cardConfigs = [
-  { bg: "bg-[#FFD452]", tiltBg1: "#9D6AFF", tiltBg2: "#7CE8FF", rotate: -3, Icon: OwlIcon },
-  { bg: "bg-[#c7ff4d]", tiltBg1: "#FF6B2B", tiltBg2: "#FFD452", rotate: 2, Icon: DeerIcon },
-  { bg: "bg-[#7CE8FF]", tiltBg1: "#c7ff4d", tiltBg2: "#9D6AFF", rotate: -2, Icon: CorgiIcon },
+  { gradient: "card-gradient-lime", accent: "#BFFF00", icon: "📚" },
+  { gradient: "card-gradient-orange", accent: "#FF5C00", icon: "🎯" },
+  { gradient: "card-gradient-purple", accent: "#A855F7", icon: "💼" },
 ];
 
 export default function DirectionCards() {
   return (
-    <section id="directions" className="section-padding relative px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto w-full max-w-7xl">
-        {/* Section header - HUGE with 3D */}
-        <div className="mb-20 text-center lg:mb-28">
-          <motion.span 
+    <section id="directions" className="section-spacing relative px-4 sm:px-6 lg:px-8">
+      {/* Background elements */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="floating-shape absolute -left-60 top-1/4 h-[500px] w-[500px] bg-[#BFFF00] opacity-30" />
+        <div className="floating-shape absolute -right-40 bottom-1/4 h-[400px] w-[400px] bg-[#FF5C00] opacity-30" />
+      </div>
+
+      <div className="relative mx-auto w-full max-w-7xl">
+        {/* Section header */}
+        <div className="mb-20 lg:mb-28">
+          <motion.span
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block rounded-full border-4 border-[#0E1017] bg-[#FFD452] px-8 py-4 text-xl font-black text-[#0E1017] shadow-[0_4px_0_0_rgba(0,0,0,0.1)]"
+            className="badge-glow"
           >
             Направления
           </motion.span>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3d mx-auto mt-8 max-w-5xl text-balance text-4xl font-black leading-[1.05] tracking-tight text-[#0E1017] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+            className="mt-6 max-w-4xl text-balance text-4xl font-black leading-[0.95] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Форматы под разные цели
+            <span className="text-inflate">Форматы под</span>{" "}
+            <span className="text-inflate-lime">разные цели</span>
           </motion.h2>
         </div>
-        
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
+
+        {/* Cards grid */}
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {siteContent.directions.map((item, index) => {
             const config = cardConfigs[index];
-            const IconComponent = config.Icon;
             return (
-              <motion.div
+              <motion.article
                 key={item.title}
-                initial={{ opacity: 0, y: 30, rotate: config.rotate }}
-                whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="group relative"
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group"
               >
-                {/* Tilted background cards */}
-                <div 
-                  aria-hidden="true" 
-                  className="absolute inset-0 rounded-[2.5rem]" 
-                  style={{ background: config.tiltBg1, transform: "rotate(-6deg) translate(-8px, 8px)" }} 
-                />
-                <div 
-                  aria-hidden="true" 
-                  className="absolute inset-0 rounded-[2.5rem]" 
-                  style={{ background: config.tiltBg2, transform: "rotate(4deg) translate(8px, 10px)" }} 
-                />
-                
-                {/* Main card - larger padding */}
-                <div className={`card-3d relative ${config.bg} rounded-[2.5rem] p-10 sm:p-12`}>
-                  {/* Animated character icon */}
-                  <div className="mb-8 inline-block rounded-3xl border-4 border-[#0E1017] bg-white p-4 shadow-[0_6px_0_0_rgba(0,0,0,0.1)]">
-                    <IconComponent className="h-20 w-20" />
+                <div className={`premium-card ${config.gradient} flex h-full min-h-[420px] flex-col p-8 sm:p-10`}>
+                  {/* Icon */}
+                  <div 
+                    className="mb-8 flex h-20 w-20 items-center justify-center rounded-2xl text-4xl"
+                    style={{ background: `${config.accent}20`, border: `1px solid ${config.accent}40` }}
+                  >
+                    {config.icon}
                   </div>
-                  
-                  <h3 className="text-3xl font-black leading-tight text-[#0E1017] sm:text-4xl lg:text-5xl">
+
+                  <h3 className="text-2xl font-black text-white sm:text-3xl lg:text-4xl">
                     {item.title}
                   </h3>
-                  
-                  <p className="mt-5 min-h-[100px] text-xl leading-relaxed text-[#0E1017]/80 sm:text-2xl">
+
+                  <p className="mt-5 flex-1 text-base leading-relaxed text-white/60 sm:text-lg lg:text-xl">
                     {item.description}
                   </p>
-                  
-                  {/* Action link */}
-                  <a 
-                    href="#contact" 
-                    className="mt-8 inline-flex items-center gap-3 text-xl font-bold text-[#0E1017] underline decoration-4 underline-offset-4 transition hover:decoration-[#FF6B2B]"
+
+                  {/* Action */}
+                  <a
+                    href="#contact"
+                    className="mt-8 inline-flex items-center gap-2 text-base font-bold transition sm:text-lg"
+                    style={{ color: config.accent }}
                   >
                     Записаться
-                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <svg className="h-5 w-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </a>
                 </div>
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>
 
         {/* Corporate banner */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative mt-20 lg:mt-28"
+          className="mt-16 lg:mt-24"
         >
-          {/* Background decoration */}
-          <div aria-hidden="true" className="absolute inset-0 rounded-[3rem] bg-[#9D6AFF]" style={{ transform: "rotate(-2deg) translate(-6px, 6px)" }} />
-          
-          <div className="card-3d relative flex flex-col items-center justify-between gap-10 rounded-[3rem] bg-[#FF6B2B] p-10 text-center sm:p-14 lg:flex-row lg:text-left">
+          <div className="premium-card card-gradient-cyan flex flex-col items-center gap-8 p-10 text-center sm:p-14 lg:flex-row lg:text-left">
             {/* Icon */}
-            <div className="shrink-0 rounded-3xl border-4 border-white bg-white p-5 shadow-[0_6px_0_0_rgba(0,0,0,0.1)]">
-              <span className="block text-6xl">🏢</span>
+            <div className="flex h-24 w-24 shrink-0 items-center justify-center rounded-3xl bg-[#22D3EE]/20 text-5xl">
+              🏢
             </div>
 
             <div className="flex-1">
-              <h3 className="text-3xl font-black text-white sm:text-4xl lg:text-5xl">{siteContent.corporate.title}</h3>
-              <p className="mt-3 text-xl font-bold text-white/90 sm:text-2xl">{siteContent.corporate.subtitle}</p>
-              <p className="mt-5 max-w-2xl text-lg text-white/80 sm:text-xl lg:text-2xl">
+              <h3 className="text-3xl font-black text-white sm:text-4xl">
+                {siteContent.corporate.title}
+              </h3>
+              <p className="mt-2 text-xl font-medium text-[#22D3EE]">
+                {siteContent.corporate.subtitle}
+              </p>
+              <p className="mt-4 max-w-2xl text-base text-white/60 sm:text-lg lg:text-xl">
                 {siteContent.corporate.description}
               </p>
             </div>
 
-            <a 
-              href="#contact" 
-              className="btn-lime shrink-0 rounded-full px-10 py-6 text-xl font-bold"
+            <a
+              href="#contact"
+              className="btn-glossy btn-lime shrink-0 px-10 py-5 text-lg font-bold"
             >
               {siteContent.corporate.cta}
             </a>

@@ -5,91 +5,96 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteContent } from "@/data/siteContent";
 
-const colors = [
-  "bg-[#c7ff4d]",
-  "bg-[#FFD452]",
-  "bg-[#7CE8FF]",
-  "bg-[#FF8DC7]",
-  "bg-[#9D6AFF]",
-  "bg-[#FF6B2B]",
-  "bg-[#c7ff4d]",
-  "bg-[#FFD452]",
-];
-const textColors = [
-  "text-[#0E1017]",
-  "text-[#0E1017]",
-  "text-[#0E1017]",
-  "text-[#0E1017]",
-  "text-white",
-  "text-white",
-  "text-[#0E1017]",
-  "text-[#0E1017]",
-];
+const accents = ["#BFFF00", "#FF5C00", "#22D3EE", "#EC4899", "#A855F7", "#BFFF00", "#FF5C00", "#22D3EE"];
 
 export default function FAQ() {
   const [active, setActive] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="section-padding relative px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto w-full max-w-5xl">
+    <section id="faq" className="section-spacing relative px-4 sm:px-6 lg:px-8">
+      {/* Background */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#A855F7]/5 to-transparent" />
+      </div>
+
+      <div className="relative mx-auto w-full max-w-4xl">
         {/* Section header */}
-        <div className="mb-20 text-center lg:mb-28">
-          <motion.span 
+        <div className="mb-16 text-center lg:mb-24">
+          <motion.span
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-block rounded-full border-4 border-[#0E1017] bg-[#FF8DC7] px-8 py-4 text-xl font-black text-[#0E1017] shadow-[0_4px_0_0_rgba(0,0,0,0.1)]"
+            className="badge-glow"
           >
             FAQ
           </motion.span>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-3d mx-auto mt-8 max-w-4xl text-balance text-4xl font-black leading-[1.05] tracking-tight text-[#0E1017] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+            className="mx-auto mt-6 max-w-4xl text-balance text-4xl font-black leading-[0.95] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Частые вопросы
+            <span className="text-inflate">Частые</span>{" "}
+            <span className="text-inflate-lime">вопросы</span>
           </motion.h2>
         </div>
-        
-        <div className="space-y-6">
+
+        {/* FAQ items */}
+        <div className="space-y-4">
           {siteContent.faq.map((item, idx) => {
             const opened = active === idx;
             return (
-              <motion.div 
+              <motion.div
                 key={item.q}
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className={`card-3d overflow-hidden rounded-[2.5rem] ${opened ? colors[idx % colors.length] : "bg-white"} transition-colors`}
+                className="overflow-hidden"
               >
-                <button
-                  className="flex w-full items-center justify-between gap-6 px-10 py-8 text-left sm:px-12 sm:py-10"
-                  onClick={() => setActive(opened ? null : idx)}
-                  aria-expanded={opened}
+                <div
+                  className={`glass rounded-2xl transition-all duration-300 ${
+                    opened ? "ring-1 ring-white/20" : ""
+                  }`}
+                  style={opened ? { background: `${accents[idx % accents.length]}08` } : {}}
                 >
-                  <span className={`text-xl font-black ${opened ? textColors[idx % textColors.length] : "text-[#0E1017]"} sm:text-2xl lg:text-3xl`}>{item.q}</span>
-                  <div className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border-4 border-[#0E1017] bg-white text-[#0E1017] shadow-[0_4px_0_0_rgba(0,0,0,0.12)] transition`}>
-                    <ChevronDown className={`h-7 w-7 transition-transform duration-300 ${opened ? "rotate-180" : ""}`} />
-                  </div>
-                </button>
-                
-                <AnimatePresence>
-                  {opened && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
+                  <button
+                    className="flex w-full items-center justify-between gap-6 px-6 py-6 text-left sm:px-8"
+                    onClick={() => setActive(opened ? null : idx)}
+                    aria-expanded={opened}
+                  >
+                    <span className="text-lg font-bold text-white sm:text-xl lg:text-2xl">
+                      {item.q}
+                    </span>
+                    <div
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition"
+                      style={{
+                        background: `${accents[idx % accents.length]}20`,
+                        color: accents[idx % accents.length],
+                      }}
                     >
-                      <p className={`px-10 pb-10 text-lg leading-relaxed ${textColors[idx % textColors.length]} opacity-80 sm:px-12 sm:pb-12 sm:text-xl lg:text-2xl`}>
-                        {item.a}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                      <ChevronDown
+                        className={`h-5 w-5 transition-transform duration-300 ${opened ? "rotate-180" : ""}`}
+                      />
+                    </div>
+                  </button>
+
+                  <AnimatePresence>
+                    {opened && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <p className="px-6 pb-6 text-base leading-relaxed text-white/60 sm:px-8 sm:pb-8 sm:text-lg">
+                          {item.a}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               </motion.div>
             );
           })}
