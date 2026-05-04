@@ -1,11 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Nunito } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 
-const nunito = Nunito({
+const manrope = Manrope({
   subsets: ["latin", "cyrillic"],
-  variable: "--font-nunito",
-  weight: ["400", "500", "600", "700", "800", "900"],
+  variable: "--font-manrope",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FFFFFF",
+  themeColor: "#F3F5F6",
   width: "device-width",
   initialScale: 1,
 };
@@ -34,8 +34,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className="bg-white">
-      <body className={`${nunito.variable} font-sans antialiased bg-white text-[#1A1A2E]`}>{children}</body>
+    <html lang="ru" className="bg-[#F3F5F6]">
+      <body className={`${manrope.variable} font-sans antialiased bg-[#F3F5F6] text-[#050505]`}>{children}</body>
     </html>
   );
 }
