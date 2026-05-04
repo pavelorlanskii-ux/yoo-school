@@ -1,10 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Nunito } from "next/font/google";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-space-grotesk",
+const nunito = Nunito({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-nunito",
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -34,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className="bg-white">
-      <body className={`${spaceGrotesk.variable} font-sans antialiased bg-white text-[#1A1A2E]`}>{children}</body>
+      <body className={`${nunito.variable} font-sans antialiased bg-white text-[#1A1A2E]`}>{children}</body>
     </html>
   );
 }
