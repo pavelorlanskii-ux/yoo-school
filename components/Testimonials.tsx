@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { siteContent } from "@/data/siteContent";
-import SectionTitle from "./SectionTitle";
 
 const cardColors = [
   "bg-[#FFD452]",
@@ -13,32 +12,47 @@ const cardColors = [
 
 export default function Testimonials() {
   return (
-    <section id="reviews" className="relative px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+    <section id="reviews" className="relative px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
       <div className="mx-auto w-full max-w-7xl">
-        <SectionTitle 
-          overline="Отзывы" 
-          title="Мини-кейсы и заметный прогресс"
-          centered
-        />
+        {/* Section header - HUGE */}
+        <div className="mb-16 text-center lg:mb-20">
+          <motion.span 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-block rounded-full border-4 border-[#0E1017] bg-[#FFD452] px-6 py-3 text-lg font-bold text-[#0E1017]"
+          >
+            Отзывы
+          </motion.span>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="mx-auto mt-6 max-w-4xl text-balance text-4xl font-black leading-[1.1] tracking-tight text-[#0E1017] sm:text-5xl md:text-6xl lg:text-7xl"
+          >
+            Реальный прогресс
+          </motion.h2>
+        </div>
         
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
-          {siteContent.testimonials.map((quote, idx) => (
+        <div className="grid gap-8 md:grid-cols-2">
+          {siteContent.testimonials.map((item, idx) => (
             <motion.div
-              key={quote}
+              key={item.text}
               initial={{ opacity: 0, y: 20, rotate: idx % 2 === 0 ? -2 : 2 }}
               whileInView={{ opacity: 1, y: 0, rotate: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.08 }}
               className="group"
             >
-              <div className={`sticker ${cardColors[idx]} h-full rounded-[1.5rem] p-6 transition-transform duration-300 group-hover:-translate-y-2 group-hover:rotate-1 sm:p-8`}>
-                {/* Quote number */}
-                <div className="mb-4 flex items-center justify-between">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border-3 border-white bg-white text-lg font-black text-[#0E1017] shadow-[0_2px_0_0_rgba(0,0,0,0.1)]">
+              <div className={`sticker-lg ${cardColors[idx]} h-full rounded-[2rem] p-8 transition-transform duration-300 group-hover:-translate-y-2 group-hover:rotate-1 sm:p-10`}>
+                {/* Quote icon */}
+                <div className="mb-6 flex items-center justify-between">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-2xl border-4 border-[#0E1017] bg-white text-2xl font-black text-[#0E1017] shadow-[0_4px_0_0_rgba(0,0,0,0.15)]">
                     {idx + 1}
                   </div>
                   <svg 
-                    className="h-8 w-8 text-[#0E1017]/20" 
+                    className="h-10 w-10 text-[#0E1017]/20" 
                     fill="currentColor" 
                     viewBox="0 0 24 24"
                   >
@@ -46,15 +60,15 @@ export default function Testimonials() {
                   </svg>
                 </div>
                 
-                {/* Quote text */}
-                <p className="text-xl font-black leading-snug text-[#0E1017] sm:text-2xl">
-                  {quote}
+                {/* Quote text - LARGER */}
+                <p className="text-2xl font-black leading-snug text-[#0E1017] sm:text-3xl">
+                  {item.text}
                 </p>
                 
-                {/* Result badge */}
-                <div className="mt-6">
-                  <span className="badge-sticker text-xs">
-                    Реальный результат
+                {/* Author */}
+                <div className="mt-8">
+                  <span className="rounded-full border-4 border-[#0E1017] bg-white px-5 py-3 text-base font-bold text-[#0E1017]">
+                    {item.author}
                   </span>
                 </div>
               </div>
