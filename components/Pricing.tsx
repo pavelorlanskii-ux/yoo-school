@@ -1,21 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { siteContent } from "@/data/siteContent";
 
 const cardStyles = [
-  "bg-gradient-to-br from-[#F0FFB3] to-[#E8FF8C]",
-  "bg-gradient-to-br from-[#DBEAFE] to-[#BFDBFE]",
-  "bg-gradient-to-br from-[#FFE0CC] to-[#FFD1B3]",
-  "bg-gradient-to-br from-[#FCE7F3] to-[#FBCFE8]",
-  "bg-gradient-to-br from-[#EDE9FE] to-[#DDD6FE]",
+  "from-[#F4FFB8] to-[#BFFF00]",
+  "from-[#DBEAFE] to-[#93C5FD]",
+  "from-[#FFE0CC] to-[#FF9D57]",
+  "from-[#FCE7F3] to-[#F9A8D4]",
+  "from-[#EDE9FE] to-[#BFA9FF]",
 ];
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="section-padding bg-[#F8F9FA]">
+    <section id="pricing" className="section-padding section-gray relative overflow-hidden">
       <div className="container-xl min-w-0">
-        {/* Section header */}
         <div className="mb-12 text-center lg:mb-16">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
@@ -30,65 +30,63 @@ export default function Pricing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="heading-lg mx-auto mt-4 max-w-2xl"
+            className="heading-lg mx-auto mt-4 max-w-4xl"
           >
-            Стоимость обучения
+            Стартуем с диагностики, потом собираем <span className="text-gradient-lime">точный формат</span>
           </motion.h2>
         </div>
 
-        {/* Pricing cards */}
-        <div className="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="grid min-w-0 grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {siteContent.pricing.map((plan, idx) => (
             <motion.div
               key={plan.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 22 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.05 }}
+              transition={{ duration: 0.38, delay: idx * 0.05 }}
               className="min-w-0"
             >
-              <div className={`${cardStyles[idx]} card-elevated flex h-full min-h-[220px] flex-col rounded-2xl p-5 sm:min-h-[240px] sm:p-6`}>
-                {/* Label */}
-                <span className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-600">
+              <div className={`card-elevated relative flex h-full min-h-[270px] flex-col overflow-hidden rounded-[1.8rem] bg-gradient-to-br ${cardStyles[idx]} p-6`}>
+                <div className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-white/42 blur-xl" />
+                <span className="relative z-10 mb-4 text-xs font-black uppercase tracking-[0.08em] text-[#151427]/60">
                   {plan.title}
                 </span>
 
-                {/* Price */}
-                <p className="text-2xl font-bold text-[#1A1A2E] sm:text-3xl">
+                <p className="relative z-10 text-4xl font-black leading-none tracking-[-0.06em] text-[#151427]">
                   {plan.price}
                 </p>
 
-                {/* Description */}
-                <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-600 sm:text-[0.9375rem]">
+                <p className="relative z-10 mt-4 flex-1 text-base font-semibold leading-relaxed text-[#3A3654]/78">
                   {plan.description}
                 </p>
 
-                {/* Free badge */}
-                {idx === 0 && (
-                  <div className="mt-4 inline-flex items-center gap-1.5 self-start rounded-full bg-white/60 px-3 py-1.5 text-xs font-semibold text-green-700">
-                    <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
+                {idx === 0 ? (
+                  <div className="relative z-10 mt-5 inline-flex items-center gap-2 self-start rounded-full bg-white/70 px-4 py-2 text-xs font-black uppercase tracking-[0.06em] text-[#416300] shadow-sm">
+                    <span className="h-2 w-2 rounded-full bg-[#84B800]" />
                     Бесплатно
                   </div>
+                ) : (
+                  <a href="#contact" className="relative z-10 mt-5 inline-flex w-fit items-center gap-2 rounded-full bg-white/70 px-4 py-2 text-sm font-black text-[#151427] shadow-sm transition hover:gap-3">
+                    выбрать
+                    <ArrowRight className="h-4 w-4" />
+                  </a>
                 )}
               </div>
             </motion.div>
           ))}
         </div>
 
-        <p className="mt-8 text-center text-sm text-gray-500 sm:text-base">
-          {siteContent.pricingNote}
-        </p>
+        <div className="mx-auto mt-8 max-w-3xl rounded-full bg-white/70 px-6 py-4 text-center shadow-sm backdrop-blur">
+          <p className="text-base font-bold text-[#68657A]">{siteContent.pricingNote}</p>
+        </div>
 
-        {/* CTA */}
         <div className="mt-10 flex justify-center">
           <a
             href="#contact"
-            className="btn btn-primary px-8 py-4 text-base font-semibold"
+            className="btn btn-primary px-8 py-4 text-base font-black"
           >
             Записаться на пробное занятие
-            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
+            <ArrowRight className="h-5 w-5" />
           </a>
         </div>
       </div>
