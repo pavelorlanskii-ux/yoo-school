@@ -24,24 +24,24 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="grid min-w-0 gap-4 lg:grid-cols-[1.04fr_0.96fr]">
+        <div className="grid min-w-0 gap-4 xl:grid-cols-[minmax(0,1.12fr)_minmax(420px,0.88fr)]">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
-            className="creative-card relative min-w-0 overflow-hidden p-5 sm:p-7 lg:p-10"
+            className="creative-card relative min-w-0 p-5 sm:p-7 lg:p-10 xl:p-12"
           >
-            <div className="absolute right-5 top-5 hidden sm:block">
+            <div className="absolute right-5 top-5 hidden xl:block">
               <Logo symbolOnly className="h-20 w-20" />
             </div>
             <span className="badge">
               <Sparkles className="h-4 w-4" />
               школа Дарьи Орлянской
             </span>
-            <h1 className="heading-xl mt-6 max-w-none text-pretty lg:max-w-[18ch]">
+            <h1 className="mt-6 max-w-[1040px] pr-0 text-[clamp(2.8rem,7vw,6.55rem)] font-extrabold leading-[0.9] tracking-[-0.078em] text-[#111111] text-balance xl:pr-24">
               Английский, который подстраивается под тебя
             </h1>
-            <p className="mt-5 max-w-[52ch] text-lg font-extrabold leading-tight text-[#5E5E58] sm:mt-6 sm:text-xl lg:text-2xl">
+            <p className="mt-5 max-w-[58ch] text-lg font-extrabold leading-tight text-[#5E5E58] sm:mt-6 sm:text-xl lg:text-2xl">
               Индивидуальные занятия, диагностика уровня, практика между уроками и методика, которую лично собирает основатель YOO SCHOOL.
             </p>
 
@@ -71,8 +71,8 @@ export default function Hero() {
             transition={{ duration: 0.45, delay: 0.08 }}
             className="grid min-w-0 gap-4"
           >
-            <div className="relative min-h-[480px] overflow-hidden rounded-[2rem] bg-[#EAF7A2] p-4 sm:min-h-[620px] sm:p-5 lg:min-h-full">
-              <div className="absolute left-4 top-4 z-20 max-w-[70%] rounded-[1.1rem] bg-[#F6F6F2]/95 px-3 py-2.5 sm:left-5 sm:top-5 sm:max-w-none sm:rounded-[1.25rem] sm:px-4 sm:py-3">
+            <div className="relative min-h-[500px] overflow-hidden rounded-[2rem] bg-[#EAF7A2] p-4 sm:min-h-[620px] sm:p-5 xl:min-h-full">
+              <div className="absolute left-4 top-4 z-20 max-w-[72%] rounded-[1.1rem] bg-[#F6F6F2]/95 px-3 py-2.5 sm:left-5 sm:top-5 sm:max-w-none sm:rounded-[1.25rem] sm:px-4 sm:py-3">
                 <p className="text-xs font-extrabold uppercase tracking-[0.08em] text-[#5E5E58]">основатель</p>
                 <p className="text-lg font-extrabold leading-none tracking-[-0.04em] text-[#111111] sm:text-2xl">Дарья Орлянская</p>
               </div>
@@ -92,8 +92,8 @@ export default function Hero() {
                 src="/images/teacher.png"
                 alt="Дарья Орлянская — основатель YOO SCHOOL"
                 fill
-                className="object-cover object-[56%_10%] sm:object-[55%_12%] lg:object-[52%_12%] sticker-cutout"
-                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="object-cover object-[54%_18%] sm:object-[54%_14%] xl:object-[52%_14%] sticker-cutout"
+                sizes="(max-width: 1024px) 100vw, 42vw"
                 priority
               />
             </div>
