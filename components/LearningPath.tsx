@@ -3,65 +3,67 @@
 import { motion } from "framer-motion";
 import { siteContent } from "@/data/siteContent";
 import SectionTitle from "./SectionTitle";
-import CharacterBadge from "./CharacterBadge";
 
 export default function LearningPath() {
   return (
-    <section id="path" className="px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-      <div className="mx-auto w-full max-w-7xl">
-        <div className="relative overflow-hidden rounded-[3rem] bg-gradient-to-br from-[#0E1017] to-[#1a1d26] p-8 sm:p-12 lg:p-16">
-          {/* Decorative elements */}
-          <div aria-hidden="true" className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#c7ff4d]/20 blur-3xl" />
-          <div aria-hidden="true" className="pointer-events-none absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-[#7ce8ff]/20 blur-3xl" />
-          <div aria-hidden="true" className="pointer-events-none absolute right-20 top-20 h-32 w-32 rounded-full bg-[#ffd452]/15 blur-2xl" />
-          
-          {/* Floating Orlik sticker */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="sticker-float absolute -right-4 top-8 hidden h-20 w-20 items-center justify-center rounded-2xl bg-white/95 text-4xl shadow-[0_12px_40px_rgba(0,0,0,0.3)] lg:flex xl:right-8 xl:h-24 xl:w-24 xl:text-5xl"
-          >
-            🦉
-          </motion.div>
-          
-          <div className="relative">
-            <SectionTitle 
-              overline="Как проходит обучение" 
-              title="Маршрут без хаоса" 
-              subtitle="От знакомства до измеримого результата: шаг за шагом, в комфортном темпе." 
-              className="[&_*]:text-white [&_p:last-child]:text-white/75 [&_.inline-flex]:bg-white/15 [&_.inline-flex]:text-white [&_.dot-indicator]:bg-[#c7ff4d]" 
-            />
-            
-            <ol className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {siteContent.learningPath.map((step, idx) => (
-                <motion.li 
-                  key={step}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1 }}
-                  className="group relative overflow-hidden rounded-[1.5rem] border border-white/15 bg-white/8 p-6 backdrop-blur-sm transition hover:border-white/25 hover:bg-white/12"
-                >
-                  {/* Step number glow */}
-                  <div aria-hidden="true" className="absolute -left-4 -top-4 h-20 w-20 rounded-full bg-[#c7ff4d]/10 blur-xl transition group-hover:bg-[#c7ff4d]/20" />
-                  
-                  <p className="relative text-sm font-bold uppercase tracking-[0.2em] text-[#c7ff4d]">
+    <section id="path" className="dark-section px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+      {/* Scattered decorative shapes */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute left-[5%] top-20 h-16 w-16 rounded-full bg-[#9D6AFF] lg:h-20 lg:w-20" />
+        <div className="absolute right-[10%] top-32 h-12 w-12 rounded-full bg-[#FF8DC7]" />
+        <div className="absolute bottom-32 left-[15%] h-20 w-20 rounded-full border-[10px] border-[#FF6B2B] border-b-transparent border-l-transparent rotate-45" />
+        <div className="absolute right-[20%] bottom-20 h-10 w-10 bg-[#FFD452]" style={{ clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }} />
+        <div className="absolute left-[40%] top-16 h-8 w-8 rounded-full bg-[#7CE8FF]" />
+        <div className="absolute right-[8%] top-1/2 h-14 w-14 rounded-full bg-[#c7ff4d]" />
+      </div>
+
+      <div className="relative mx-auto w-full max-w-7xl">
+        <div className="text-center">
+          <span className="badge-sticker mb-6 inline-flex bg-[#FF6B2B] text-white">
+            Как проходит обучение
+          </span>
+          <h2 className="text-balance text-3xl font-black leading-[1.1] text-white sm:text-4xl lg:text-5xl xl:text-6xl">
+            Маршрут без хаоса
+          </h2>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg">
+            От знакомства до измеримого результата: шаг за шагом, в комфортном темпе.
+          </p>
+        </div>
+        
+        {/* Floating eyes sticker */}
+        <motion.div 
+          initial={{ rotate: -5 }}
+          animate={{ rotate: 5 }}
+          transition={{ duration: 2.5, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+          className="absolute -right-4 top-0 hidden h-20 w-20 items-center justify-center rounded-full border-4 border-white bg-white shadow-[0_4px_0_0_rgba(0,0,0,0.2)] lg:flex xl:right-8"
+        >
+          <span className="text-4xl">👀</span>
+        </motion.div>
+        
+        <ol className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {siteContent.learningPath.map((step, idx) => {
+            const colors = ["bg-[#c7ff4d]", "bg-[#FFD452]", "bg-[#7CE8FF]", "bg-[#9D6AFF]"];
+            return (
+              <motion.li 
+                key={step}
+                initial={{ opacity: 0, y: 20, rotate: idx % 2 === 0 ? -3 : 3 }}
+                whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="group"
+              >
+                <div className={`sticker ${colors[idx]} rounded-[1.5rem] p-6 transition-transform duration-300 group-hover:-translate-y-2`}>
+                  <p className="text-sm font-bold uppercase tracking-wider text-[#0E1017]/60">
                     Шаг {idx + 1}
                   </p>
-                  <p className="relative mt-4 text-2xl font-black uppercase leading-tight text-white sm:text-3xl">
+                  <p className="mt-3 text-xl font-black leading-tight text-[#0E1017] sm:text-2xl">
                     {step}
                   </p>
-                </motion.li>
-              ))}
-            </ol>
-            
-            <div className="mt-10 flex flex-wrap gap-3">
-              <CharacterBadge character="orlik" className="bg-white/95 text-[#0E1017]" />
-              <CharacterBadge character="deer" className="bg-white/95 text-[#0E1017]" />
-            </div>
-          </div>
-        </div>
+                </div>
+              </motion.li>
+            );
+          })}
+        </ol>
       </div>
     </section>
   );

@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
-/* Design system for YOO SCHOOL */
+/* Design system for YOO SCHOOL - Playful Sticker Style */
 @theme inline {
   --font-sans: 'Space Grotesk', system-ui, sans-serif;
   --color-cream: #F6F3EA;
   --color-dark: #0E1017;
   --color-text: #2A3142;
-  --color-blue: #0066FF;
-  --color-blue-dark: #0051cb;
   --color-lime: #c7ff4d;
-  --color-yellow: #ffd452;
-  --color-cyan: #7ce8ff;
+  --color-orange: #FF6B2B;
+  --color-purple: #9D6AFF;
+  --color-yellow: #FFD452;
+  --color-cyan: #7CE8FF;
+  --color-pink: #FF8DC7;
 }
 
 :root {
@@ -36,176 +37,234 @@ body {
 }
 
 ::selection {
-  background: #0066ff;
+  background: #FF6B2B;
   color: #fff;
 }
 
-/* Premium glossy glass effect */
-.glossy-surface {
+/* Sticker style - thick white outline with shadow */
+.sticker {
   position: relative;
+  border-radius: 1.5rem;
+  border: 4px solid white;
+  box-shadow: 
+    0 4px 0 0 rgba(14, 16, 23, 0.15),
+    0 8px 24px rgba(14, 16, 23, 0.12);
+}
+
+.sticker-lg {
+  border-width: 5px;
+  box-shadow: 
+    0 6px 0 0 rgba(14, 16, 23, 0.15),
+    0 12px 32px rgba(14, 16, 23, 0.15);
+}
+
+/* Photo sticker cutout effect */
+.photo-sticker {
+  border: 5px solid white;
+  border-radius: 1.5rem;
+  box-shadow: 
+    0 4px 0 0 rgba(14, 16, 23, 0.12),
+    0 8px 24px rgba(14, 16, 23, 0.1);
   overflow: hidden;
 }
 
-.glossy-surface::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto auto -40%;
-  height: 55%;
-  width: 85%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
-  transform: rotate(-5deg);
-  pointer-events: none;
-}
+/* Colorful card backgrounds */
+.card-lime { background: #c7ff4d; }
+.card-orange { background: #FF6B2B; }
+.card-purple { background: #9D6AFF; }
+.card-yellow { background: #FFD452; }
+.card-cyan { background: #7CE8FF; }
+.card-pink { background: #FF8DC7; }
 
-.glossy-surface::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
-  pointer-events: none;
-}
-
-/* Deep 3D glass card */
-.glass-card-deep {
-  background: linear-gradient(145deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.35) 100%);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1.5px solid rgba(255, 255, 255, 0.55);
+/* Premium orange CTA button */
+.btn-orange {
+  background: #FF6B2B;
+  color: white;
+  border: 3px solid white;
   box-shadow: 
-    0 4px 6px rgba(14, 16, 23, 0.03),
-    0 12px 16px rgba(14, 16, 23, 0.06),
-    0 24px 50px rgba(14, 16, 23, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    0 4px 0 0 rgba(14, 16, 23, 0.2),
+    0 8px 24px rgba(255, 107, 43, 0.35);
+  transition: all 0.2s ease;
 }
 
-/* Floating 3D decorative elements */
-.float-element {
-  box-shadow: 
-    0 8px 32px rgba(14, 16, 23, 0.15),
-    0 2px 8px rgba(14, 16, 23, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.5);
-}
-
-/* Premium button styles */
-.btn-primary {
-  background: linear-gradient(135deg, #0066FF 0%, #0051cb 100%);
-  box-shadow: 
-    0 4px 12px rgba(0, 102, 255, 0.3),
-    0 12px 32px rgba(0, 102, 255, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.btn-primary:hover {
+.btn-orange:hover {
   transform: translateY(-2px);
   box-shadow: 
-    0 6px 16px rgba(0, 102, 255, 0.35),
-    0 16px 40px rgba(0, 102, 255, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    0 6px 0 0 rgba(14, 16, 23, 0.2),
+    0 12px 32px rgba(255, 107, 43, 0.4);
 }
 
-.btn-lime {
-  background: linear-gradient(135deg, #c7ff4d 0%, #b2e847 100%);
+.btn-orange:active {
+  transform: translateY(2px);
   box-shadow: 
-    0 4px 12px rgba(199, 255, 77, 0.35),
-    0 12px 32px rgba(199, 255, 77, 0.25),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    0 2px 0 0 rgba(14, 16, 23, 0.2),
+    0 4px 16px rgba(255, 107, 43, 0.3);
+}
+
+/* Lime button variant */
+.btn-lime {
+  background: #c7ff4d;
+  color: #0E1017;
+  border: 3px solid white;
+  box-shadow: 
+    0 4px 0 0 rgba(14, 16, 23, 0.15),
+    0 8px 24px rgba(199, 255, 77, 0.4);
+  transition: all 0.2s ease;
 }
 
 .btn-lime:hover {
   transform: translateY(-2px);
   box-shadow: 
-    0 6px 16px rgba(199, 255, 77, 0.4),
-    0 16px 40px rgba(199, 255, 77, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.4);
+    0 6px 0 0 rgba(14, 16, 23, 0.15),
+    0 12px 32px rgba(199, 255, 77, 0.5);
+}
+
+/* Dark section with scattered shapes */
+.dark-section {
+  background: #0E1017;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative shapes */
+.shape-circle {
+  border-radius: 50%;
+}
+
+.shape-arc {
+  border-radius: 50%;
+  border: 12px solid currentColor;
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+}
+
+.shape-star {
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+/* Badge sticker */
+.badge-sticker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: white;
+  border: 3px solid white;
+  border-radius: 9999px;
+  box-shadow: 
+    0 3px 0 0 rgba(14, 16, 23, 0.1),
+    0 6px 16px rgba(14, 16, 23, 0.08);
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Eyes character icon */
+.eyes-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid white;
+  box-shadow: 0 3px 0 0 rgba(14, 16, 23, 0.15);
 }
 
 /* Animations */
 @keyframes sticker-float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
 }
 
-@keyframes orbit-drift {
-  0%, 100% {
-    transform: translate3d(0, 0, 0);
-  }
-  50% {
-    transform: translate3d(8px, -8px, 0);
-  }
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
 }
 
-@keyframes soft-pulse {
-  0%, 100% {
-    opacity: 0.7;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scale(1.02);
-  }
+@keyframes pulse-scale {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+@keyframes orbit-slow {
+  0% { transform: rotate(0deg) translateX(10px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(10px) rotate(-360deg); }
 }
 
 .sticker-float {
   animation: sticker-float 4s ease-in-out infinite;
 }
 
-.orbit-drift {
-  animation: orbit-drift 6s ease-in-out infinite;
+.wiggle {
+  animation: wiggle 2s ease-in-out infinite;
 }
 
-.soft-pulse {
-  animation: soft-pulse 4s ease-in-out infinite;
+.pulse-scale {
+  animation: pulse-scale 3s ease-in-out infinite;
 }
 
-.gradient-animate {
-  background-size: 200% 200%;
-  animation: gradient-shift 8s ease infinite;
+.orbit-slow {
+  animation: orbit-slow 20s linear infinite;
 }
 
-/* Premium card hover */
+/* Card hover */
 .card-hover {
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-hover:hover {
-  transform: translateY(-4px);
+  transform: translateY(-8px) rotate(1deg);
 }
 
-/* Badge styles */
-.badge-pill {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
-  box-shadow: 
-    0 2px 8px rgba(14, 16, 23, 0.08),
-    0 8px 24px rgba(14, 16, 23, 0.12),
-    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+/* Tilted cards stack */
+.card-stack {
+  position: relative;
 }
 
-/* Character sticker style */
-.character-sticker {
-  background: linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
-  box-shadow: 
-    0 4px 12px rgba(14, 16, 23, 0.1),
-    0 12px 32px rgba(14, 16, 23, 0.15),
-    inset 0 2px 0 rgba(255, 255, 255, 0.9);
+.card-stack::before,
+.card-stack::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
 }
 
-/* Section divider gradient */
-.section-gradient {
-  background: linear-gradient(180deg, transparent 0%, rgba(14, 16, 23, 0.02) 50%, transparent 100%);
+.card-stack::before {
+  background: #9D6AFF;
+  transform: rotate(-4deg) translate(-8px, 4px);
+}
+
+.card-stack::after {
+  background: #FF6B2B;
+  transform: rotate(4deg) translate(8px, 8px);
+}
+
+/* Text with sticker background */
+.text-sticker {
+  display: inline-block;
+  padding: 0.25em 0.5em;
+  background: #FF6B2B;
+  color: white;
+  border-radius: 0.5em;
+  transform: rotate(-2deg);
+}
+
+/* Curved text effect simulation */
+.curved-text {
+  display: inline-block;
+  transform: rotate(-5deg);
+}
+
+/* Glass effect for light sections */
+.glass-light {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(14, 16, 23, 0.08);
 }
