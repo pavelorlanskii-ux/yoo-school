@@ -3,84 +3,69 @@
 import { motion } from "framer-motion";
 import { siteContent } from "@/data/siteContent";
 
-const gradients = [
-  "card-gradient-lime",
-  "card-gradient-cyan",
-  "card-gradient-orange",
-  "card-gradient-pink",
-  "card-gradient-purple",
+const cardStyles = [
+  "bg-gradient-to-br from-[#F0FFB3] to-[#E8FF8C]",
+  "bg-gradient-to-br from-[#DBEAFE] to-[#BFDBFE]",
+  "bg-gradient-to-br from-[#FFE0CC] to-[#FFD1B3]",
+  "bg-gradient-to-br from-[#FCE7F3] to-[#FBCFE8]",
+  "bg-gradient-to-br from-[#EDE9FE] to-[#DDD6FE]",
 ];
-const accents = ["#BFFF00", "#22D3EE", "#FF5C00", "#EC4899", "#A855F7"];
 
 export default function Pricing() {
   return (
-    <section id="pricing" className="section-spacing relative px-4 sm:px-6 lg:px-8">
-      {/* Background */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="floating-shape absolute left-1/3 top-1/4 h-[500px] w-[500px] bg-[#BFFF00] opacity-15" />
-        <div className="floating-shape absolute right-1/4 bottom-1/3 h-[400px] w-[400px] bg-[#FF5C00] opacity-15" />
-      </div>
-
-      <div className="relative mx-auto w-full max-w-7xl">
+    <section id="pricing" className="section-padding bg-[#F8F9FA]">
+      <div className="container-xl">
         {/* Section header */}
-        <div className="mb-20 text-center lg:mb-28">
+        <div className="mb-12 text-center lg:mb-16">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="badge-glow"
+            className="badge badge-lime"
           >
-            Цены
+            Стоимость
           </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mx-auto mt-6 max-w-4xl text-balance text-4xl font-black leading-[0.95] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
+            className="heading-lg mx-auto mt-4 max-w-2xl"
           >
-            <span className="text-inflate">Понятные</span>{" "}
-            <span className="text-inflate-lime">форматы</span>
+            Стоимость обучения
           </motion.h2>
         </div>
 
         {/* Pricing cards */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 lg:gap-6">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {siteContent.pricing.map((plan, idx) => (
             <motion.div
               key={plan.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.08 }}
-              className="group"
+              transition={{ duration: 0.4, delay: idx * 0.05 }}
             >
-              <div className={`premium-card ${gradients[idx]} flex h-full min-h-[350px] flex-col p-7 sm:p-8`}>
+              <div className={`${cardStyles[idx]} card-elevated flex h-full min-h-[240px] flex-col rounded-2xl p-5 sm:p-6`}>
                 {/* Label */}
-                <span
-                  className="mb-4 text-xs font-bold uppercase tracking-wider"
-                  style={{ color: accents[idx] }}
-                >
+                <span className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-600">
                   {plan.title}
                 </span>
 
                 {/* Price */}
-                <p className="text-3xl font-black text-white sm:text-4xl lg:text-5xl">
+                <p className="text-2xl font-bold text-[#1A1A2E] sm:text-3xl">
                   {plan.price}
                 </p>
 
                 {/* Description */}
-                <p className="mt-4 flex-1 text-sm text-white/60 sm:text-base lg:text-lg">
+                <p className="mt-3 flex-1 text-sm text-gray-600">
                   {plan.description}
                 </p>
 
-                {/* Free badge for first item */}
+                {/* Free badge */}
                 {idx === 0 && (
-                  <div
-                    className="mt-6 inline-flex items-center gap-2 self-start rounded-full px-4 py-2 text-xs font-bold uppercase"
-                    style={{ background: `${accents[idx]}20`, color: accents[idx] }}
-                  >
-                    <span className="h-2 w-2 rounded-full" style={{ background: accents[idx] }} />
+                  <div className="mt-4 inline-flex items-center gap-1.5 self-start rounded-full bg-white/60 px-3 py-1.5 text-xs font-semibold text-green-700">
+                    <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
                     Бесплатно
                   </div>
                 )}
@@ -89,19 +74,19 @@ export default function Pricing() {
           ))}
         </div>
 
-        <p className="mt-10 text-center text-base text-white/50 sm:text-lg">
+        <p className="mt-8 text-center text-sm text-gray-500 sm:text-base">
           {siteContent.pricingNote}
         </p>
 
         {/* CTA */}
-        <div className="mt-12 flex justify-center">
+        <div className="mt-10 flex justify-center">
           <a
             href="#contact"
-            className="btn-glossy btn-lime px-10 py-5 text-lg font-bold sm:px-12 sm:py-6 sm:text-xl"
+            className="btn btn-primary px-8 py-4 text-base font-semibold"
           >
             Записаться на пробное занятие
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </a>
         </div>

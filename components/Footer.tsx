@@ -1,42 +1,43 @@
 "use client";
 
+import Image from "next/image";
 import { siteContent } from "@/data/siteContent";
 
 export default function Footer() {
   return (
-    <footer className="relative border-t border-white/10 px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
-      {/* Background gradient */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#BFFF00]/5 to-transparent" />
-
-      <div className="relative mx-auto w-full max-w-7xl">
+    <footer className="bg-white border-t border-gray-200 px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+      <div className="mx-auto w-full max-w-7xl">
         {/* Tagline */}
-        <p className="mb-16 max-w-4xl text-2xl font-bold leading-snug text-white/80 sm:text-3xl lg:text-4xl">
+        <p className="mb-10 max-w-2xl text-xl font-semibold text-[#1A1A2E] sm:text-2xl">
           {siteContent.footer.tagline}
         </p>
 
-        <div className="grid gap-12 md:grid-cols-3">
+        <div className="grid gap-10 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <a href="#top" className="flex items-center gap-3">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#BFFF00]">
-                <span className="text-2xl font-black text-[#0A0A0F]">Y</span>
-              </div>
-              <span className="text-2xl font-black text-white">YOO SCHOOL</span>
+            <a href="#top" className="inline-block">
+              <Image 
+                src="/images/logo.svg" 
+                alt="YOO SCHOOL" 
+                width={160} 
+                height={40}
+                className="h-10 w-auto"
+              />
             </a>
-            <p className="mt-6 text-base text-white/50">
+            <p className="mt-4 text-sm text-gray-500">
               Современный образовательный бренд для детей, подростков, взрослых и команд.
             </p>
           </div>
 
           {/* Navigation */}
           <div>
-            <p className="text-sm font-bold uppercase tracking-wider text-[#BFFF00]">Разделы</p>
-            <div className="mt-6 flex flex-col gap-3">
+            <p className="text-sm font-semibold uppercase tracking-wider text-[#1A1A2E]">Разделы</p>
+            <div className="mt-4 flex flex-col gap-2">
               {siteContent.navigation.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-base text-white/60 transition hover:text-white"
+                  className="text-sm text-gray-600 transition hover:text-[#FF5C00]"
                 >
                   {item.label}
                 </a>
@@ -46,22 +47,22 @@ export default function Footer() {
 
           {/* Contacts */}
           <div>
-            <p className="text-sm font-bold uppercase tracking-wider text-[#BFFF00]">Контакты</p>
-            <div className="mt-6 space-y-4">
+            <p className="text-sm font-semibold uppercase tracking-wider text-[#1A1A2E]">Контакты</p>
+            <div className="mt-4 space-y-3">
               <a
                 href="https://t.me/yoo_school"
-                className="flex items-center gap-3 text-base text-white/60 transition hover:text-white"
+                className="flex items-center gap-2 text-sm text-gray-600 transition hover:text-[#FF5C00]"
               >
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
                 </svg>
                 {siteContent.contacts.telegram}
               </a>
               <a
                 href={`tel:${siteContent.contacts.phone.replace(/\D/g, "")}`}
-                className="flex items-center gap-3 text-base text-white/60 transition hover:text-white"
+                className="flex items-center gap-2 text-sm text-gray-600 transition hover:text-[#FF5C00]"
               >
-                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 {siteContent.contacts.phone}
@@ -71,12 +72,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 flex flex-col items-center justify-between gap-6 border-t border-white/10 pt-10 md:flex-row">
-          <p className="text-sm text-white/40">
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-gray-200 pt-8 md:flex-row">
+          <p className="text-xs text-gray-400">
             © 2026 {siteContent.brand.name}. Все права защищены.
           </p>
-          <div className="flex items-center gap-2 text-sm text-white/40">
-            <span className="h-2 w-2 rounded-full bg-[#BFFF00]" />
+          <div className="flex items-center gap-2 text-xs text-gray-400">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#BFFF00]" />
             Modern Creative Education Brand
           </div>
         </div>

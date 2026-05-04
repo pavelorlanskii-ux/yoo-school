@@ -9,14 +9,16 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 px-4 py-4 sm:px-6 lg:px-8">
-      <div className="glass-strong mx-auto flex w-full max-w-7xl items-center justify-between rounded-2xl px-6 py-4">
-        <a href="#top" className="flex items-center gap-3">
-          {/* Logo */}
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#BFFF00] sm:h-12 sm:w-12">
-            <span className="text-xl font-black text-[#0A0A0F] sm:text-2xl">Y</span>
-          </div>
-          <span className="text-xl font-black text-white sm:text-2xl">YOO SCHOOL</span>
+    <header className="fixed left-0 right-0 top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+      <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <a href="#top" className="flex items-center gap-2">
+          <Image 
+            src="/images/logo.svg" 
+            alt="YOO SCHOOL" 
+            width={180} 
+            height={48}
+            className="h-10 w-auto sm:h-12"
+          />
         </a>
 
         <nav className="hidden items-center gap-1 lg:flex">
@@ -24,7 +26,7 @@ export default function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="rounded-xl px-4 py-2 text-sm font-medium text-white/70 transition hover:bg-white/10 hover:text-white"
+              className="rounded-lg px-4 py-2 text-sm font-medium text-gray-600 transition hover:bg-gray-100 hover:text-gray-900"
             >
               {item.label}
             </a>
@@ -34,30 +36,30 @@ export default function Header() {
         <div className="flex items-center gap-3">
           <a
             href="#contact"
-            className="btn-glossy btn-lime hidden px-6 py-3 text-sm font-bold lg:inline-flex"
+            className="btn btn-primary hidden px-6 py-3 text-sm lg:inline-flex"
           >
             Записаться
           </a>
           <button
             aria-label={open ? "Закрыть меню" : "Открыть меню"}
             onClick={() => setOpen((v) => !v)}
-            className="glass inline-flex h-12 w-12 items-center justify-center rounded-xl text-white lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-gray-200 text-gray-700 lg:hidden"
           >
-            {open ? <X size={24} /> : <Menu size={24} />}
+            {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
       {/* Mobile menu */}
       {open && (
-        <div className="glass-strong mt-2 rounded-2xl px-6 py-6 lg:hidden">
-          <div className="flex flex-col gap-2">
+        <div className="border-t border-gray-100 bg-white px-4 py-4 lg:hidden">
+          <div className="flex flex-col gap-1">
             {siteContent.navigation.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="rounded-xl px-4 py-3 text-lg font-medium text-white/80 transition hover:bg-white/10 hover:text-white"
+                className="rounded-lg px-4 py-3 text-base font-medium text-gray-700 transition hover:bg-gray-100"
               >
                 {item.label}
               </a>
@@ -65,7 +67,7 @@ export default function Header() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="btn-glossy btn-lime mt-4 px-6 py-4 text-center text-lg font-bold"
+              className="btn btn-primary mt-3 px-6 py-3 text-center"
             >
               Записаться
             </a>

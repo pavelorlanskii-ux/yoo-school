@@ -5,26 +5,19 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { siteContent } from "@/data/siteContent";
 
-const accents = ["#BFFF00", "#FF5C00", "#22D3EE", "#EC4899", "#A855F7", "#BFFF00", "#FF5C00", "#22D3EE"];
-
 export default function FAQ() {
   const [active, setActive] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="section-spacing relative px-4 sm:px-6 lg:px-8">
-      {/* Background */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#A855F7]/5 to-transparent" />
-      </div>
-
-      <div className="relative mx-auto w-full max-w-4xl">
+    <section id="faq" className="section-padding bg-[#F8F9FA]">
+      <div className="container-xl max-w-3xl">
         {/* Section header */}
-        <div className="mb-16 text-center lg:mb-24">
+        <div className="mb-10 text-center lg:mb-14">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="badge-glow"
+            className="badge badge-lime"
           >
             FAQ
           </motion.span>
@@ -33,15 +26,14 @@ export default function FAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="mx-auto mt-6 max-w-4xl text-balance text-4xl font-black leading-[0.95] tracking-tight sm:text-5xl md:text-6xl lg:text-7xl"
+            className="heading-lg mx-auto mt-4"
           >
-            <span className="text-inflate">Частые</span>{" "}
-            <span className="text-inflate-lime">вопросы</span>
+            О чём ещё интересно узнать
           </motion.h2>
         </div>
 
         {/* FAQ items */}
-        <div className="space-y-4">
+        <div className="space-y-3">
           {siteContent.faq.map((item, idx) => {
             const opened = active === idx;
             return (
@@ -54,28 +46,25 @@ export default function FAQ() {
                 className="overflow-hidden"
               >
                 <div
-                  className={`glass rounded-2xl transition-all duration-300 ${
-                    opened ? "ring-1 ring-white/20" : ""
+                  className={`rounded-xl bg-white transition-all ${
+                    opened ? "ring-2 ring-[#BFFF00]" : "border border-gray-200"
                   }`}
-                  style={opened ? { background: `${accents[idx % accents.length]}08` } : {}}
                 >
                   <button
-                    className="flex w-full items-center justify-between gap-6 px-6 py-6 text-left sm:px-8"
+                    className="flex w-full items-center justify-between gap-4 px-5 py-5 text-left sm:px-6"
                     onClick={() => setActive(opened ? null : idx)}
                     aria-expanded={opened}
                   >
-                    <span className="text-lg font-bold text-white sm:text-xl lg:text-2xl">
+                    <span className="text-base font-semibold text-[#1A1A2E] sm:text-lg">
                       {item.q}
                     </span>
                     <div
-                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl transition"
-                      style={{
-                        background: `${accents[idx % accents.length]}20`,
-                        color: accents[idx % accents.length],
-                      }}
+                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg transition ${
+                        opened ? "bg-[#BFFF00] text-[#1A1A2E]" : "bg-gray-100 text-gray-500"
+                      }`}
                     >
                       <ChevronDown
-                        className={`h-5 w-5 transition-transform duration-300 ${opened ? "rotate-180" : ""}`}
+                        className={`h-4 w-4 transition-transform duration-300 ${opened ? "rotate-180" : ""}`}
                       />
                     </div>
                   </button>
@@ -86,9 +75,9 @@ export default function FAQ() {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3 }}
+                        transition={{ duration: 0.25 }}
                       >
-                        <p className="px-6 pb-6 text-base leading-relaxed text-white/60 sm:px-8 sm:pb-8 sm:text-lg">
+                        <p className="px-5 pb-5 text-sm text-gray-600 sm:px-6 sm:pb-6 sm:text-base">
                           {item.a}
                         </p>
                       </motion.div>

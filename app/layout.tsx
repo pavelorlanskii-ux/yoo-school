@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0A0A0F",
+  themeColor: "#FFFFFF",
   width: "device-width",
   initialScale: 1,
 };
@@ -33,8 +33,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className="bg-[#0A0A0F]">
-      <body className={`${spaceGrotesk.variable} font-sans antialiased`}>{children}</body>
+    <html lang="ru" className="bg-white">
+      <body className={`${spaceGrotesk.variable} font-sans antialiased bg-white text-[#1A1A2E]`}>{children}</body>
     </html>
   );
 }
