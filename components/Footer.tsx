@@ -21,7 +21,8 @@ export default function Footer() {
                 alt="YOO SCHOOL" 
                 width={160} 
                 height={40}
-                className="h-10 w-auto"
+                className="h-10"
+                style={{ width: "auto", height: "auto" }}
               />
             </a>
             <p className="mt-4 text-sm text-gray-500">

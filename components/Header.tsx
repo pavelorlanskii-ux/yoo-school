@@ -17,7 +17,9 @@ export default function Header() {
             alt="YOO SCHOOL" 
             width={180} 
             height={48}
-            className="h-10 w-auto sm:h-12"
+            className="h-10 sm:h-12"
+            style={{ width: "auto", height: "auto" }}
+            priority
           />
         </a>
 

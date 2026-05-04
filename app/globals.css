@@ -346,6 +346,7 @@ body {
 }
 
 .photo-border-lime {
+  position: relative;
   padding: 4px;
   background: linear-gradient(135deg, #BFFF00 0%, #9ACC00 100%);
   border-radius: 1.5rem;

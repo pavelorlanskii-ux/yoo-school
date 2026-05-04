@@ -69,7 +69,7 @@ export default function ContactForm() {
               className="mt-8"
             >
               <div className="inline-flex items-center gap-4 rounded-xl bg-white/5 p-3">
-                <div className="relative h-12 w-12 overflow-hidden rounded-lg">
+                <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-lg">
                   <Image
                     src="/images/teacher.png"
                     alt={siteContent.teacher.name}

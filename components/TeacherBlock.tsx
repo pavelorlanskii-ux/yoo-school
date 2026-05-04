@@ -40,7 +40,7 @@ export default function TeacherBlock() {
           >
             <div className="card-elevated overflow-hidden rounded-3xl bg-gradient-to-br from-[#EDE9FE] to-[#DDD6FE] p-5 sm:p-6">
               {/* Photo */}
-              <div className="photo-border-lime relative">
+              <div className="photo-border-lime">
                 <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
                   <Image
                     src="/images/teacher.png"
