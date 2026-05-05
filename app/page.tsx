@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const directions = [
   {
     title: "Школа и оценки",
@@ -49,6 +51,19 @@ const faq = [
   ["Сколько длится урок?", "Обычно 45–90 минут, зависит от возраста и цели."],
 ];
 
+function Logo({ className = "" }: { className?: string }) {
+  return (
+    <Image 
+      src="/logo.jpg" 
+      alt="YOO SCHOOL" 
+      width={140} 
+      height={40} 
+      className={`h-auto object-contain ${className}`}
+      priority
+    />
+  );
+}
+
 function MiniArt({ type }: { type: string }) {
   if (type === "book") {
     return (
@@ -78,8 +93,10 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <header className="nav-glass">
-        <div className="flex items-center justify-between gap-3 px-4 py-2.5 sm:px-5 sm:py-3">
-          <a href="#top" className="shrink-0 text-base font-black tracking-tight text-[#0a1b39] sm:text-lg">YOO SCHOOL</a>
+        <div className="flex items-center justify-between gap-3 px-4 py-2 sm:px-5 sm:py-2.5">
+          <a href="#top" className="shrink-0">
+            <Logo className="w-[100px] sm:w-[120px]" />
+          </a>
           <nav className="nav-links flex items-center gap-4 text-sm font-bold text-[#19385f] lg:gap-5">
             <a href="#directions">Направления</a>
             <a href="#path">Как учимся</a>
@@ -181,7 +198,7 @@ export default function Home() {
       <section className="section page-shell">
         <div className="mb-6 max-w-3xl">
           <span className="badge">экосистема</span>
-          <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Больше чем просто уроки</h2>
+          <h2 className="h-section safe-title mt-4 text-[#0f2a57]">��ольше чем просто уроки</h2>
           <p className="lead mt-4">Обучение строится как система: диагностика, преподаватель под цель, домашняя практика, разговорные задания, отслеживание прогресса и поддержка между уроками.</p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
