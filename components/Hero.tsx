@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { siteContent } from "@/data/siteContent";
+import { YooBook, YooOrb, YooPencil, YooSpark, YooSpeech } from "./CreativeArts";
 
 function BrandMark() {
   return (
@@ -36,20 +37,21 @@ export default function Hero() {
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
-            className="creative-card relative min-w-0 p-5 sm:p-7 lg:p-10 xl:p-12"
+            className="creative-card relative min-w-0 overflow-hidden p-5 sm:p-7 lg:p-10 xl:p-12"
           >
-            <span className="badge">
+            <YooScribbleFallback />
+            <span className="badge relative z-10">
               <Sparkles className="h-4 w-4" />
               онлайн-школа английского
             </span>
-            <h1 className="mt-6 max-w-[780px] text-[clamp(2.1rem,4.75vw,4.35rem)] font-extrabold leading-[1.01] tracking-[-0.052em] text-[#111111] text-balance">
+            <h1 className="relative z-10 mt-6 max-w-[780px] text-[clamp(2.1rem,4.75vw,4.35rem)] font-extrabold leading-[1.01] tracking-[-0.052em] text-[#111111] text-balance">
               Английский, который подстраивается под тебя
             </h1>
-            <p className="mt-5 max-w-[58ch] text-lg font-extrabold leading-tight text-[#5E5E58] sm:mt-6 sm:text-xl xl:text-2xl">
+            <p className="relative z-10 mt-5 max-w-[58ch] text-lg font-extrabold leading-tight text-[#5E5E58] sm:mt-6 sm:text-xl xl:text-2xl">
               Индивидуальные занятия, диагностика уровня, практика между уроками и программа, собранная под вашу цель и темп.
             </p>
 
-            <div className="mt-7 grid gap-3 sm:grid-cols-3">
+            <div className="relative z-10 mt-7 grid gap-3 sm:grid-cols-3">
               {siteContent.hero.badges.map((badge, index) => (
                 <div key={badge} className={`${index === 0 ? "creative-lime" : "creative-soft"} flex min-h-[94px] flex-col p-4 text-sm font-extrabold leading-tight`}>
                   <BrandMark />
@@ -58,7 +60,7 @@ export default function Hero() {
               ))}
             </div>
 
-            <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
+            <div className="relative z-10 mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap">
               <a href="#contact" className="btn btn-primary w-full px-6 py-4 text-base sm:w-auto sm:px-7">
                 Записаться на пробный урок
                 <ArrowRight className="h-5 w-5" />
@@ -86,7 +88,10 @@ export default function Hero() {
                   priority
                 />
               </div>
-              <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#EAF7A2] via-[#EAF7A2]/80 to-transparent z-[2]" />
+              <div className="absolute inset-x-0 bottom-0 z-[2] h-44 bg-gradient-to-t from-[#EAF7A2] via-[#EAF7A2]/82 to-transparent" />
+              <YooSpark className="motion-art motion-spin-slow absolute left-4 top-28 z-[3] h-24 w-24 sm:left-6 sm:h-28 sm:w-28" />
+              <YooOrb className="motion-art motion-float absolute right-4 top-24 z-[3] h-24 w-24 sm:right-8 sm:h-32 sm:w-32" />
+              <YooPencil className="motion-art motion-wiggle motion-delay-2 absolute bottom-40 left-5 z-[3] h-14 w-36 sm:h-16 sm:w-44" />
               <div className="absolute inset-x-6 top-6 z-10 flex flex-wrap items-start justify-between gap-3">
                 <div className="rounded-[1.2rem] bg-[#F6F6F2] px-4 py-3">
                   <p className="text-xs font-extrabold uppercase tracking-[0.08em] text-[#5E5E58]">формат</p>
@@ -96,10 +101,6 @@ export default function Hero() {
                   english for goals
                 </div>
               </div>
-
-              <div className="absolute left-[10%] top-[40%] z-[3] hidden h-20 w-20 rotate-12 rounded-[1rem] border-[6px] border-[#111111] bg-[#F6F6F2]/90 sm:block" />
-              <div className="absolute right-[10%] top-[32%] z-[3] hidden h-24 w-24 rounded-full bg-[#B975F0]/90 sm:block" />
-              <div className="absolute bottom-[26%] left-[10%] z-[3] h-12 w-32 -rotate-6 rounded-full bg-[#111111]/92 sm:h-14 sm:w-40" />
 
               <div className="absolute bottom-5 left-5 right-5 z-10 grid gap-3 sm:grid-cols-[0.8fr_1.2fr]">
                 <div className="rounded-[1.1rem] bg-[#111111] p-4 text-[#F6F6F2] sm:rounded-[1.25rem] sm:p-5">
@@ -128,5 +129,13 @@ export default function Hero() {
         </div>
       </div>
     </section>
+  );
+}
+
+function YooScribbleFallback() {
+  return (
+    <div className="pointer-events-none absolute -right-10 bottom-6 hidden opacity-70 lg:block">
+      <YooSpeech className="motion-art motion-float-slow h-36 w-44" />
+    </div>
   );
 }
