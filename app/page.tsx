@@ -53,11 +53,11 @@ const faq = [
 
 function Logo({ className = "" }: { className?: string }) {
   return (
-    <Image 
-      src="/logo.jpg" 
-      alt="YOO SCHOOL" 
-      width={140} 
-      height={40} 
+    <Image
+      src="/images/yoo-school-3d-logo-clean.svg"
+      alt="YOO SCHOOL"
+      width={156}
+      height={48}
       className={`h-auto object-contain ${className}`}
       priority
     />
@@ -67,23 +67,23 @@ function Logo({ className = "" }: { className?: string }) {
 function MiniArt({ type }: { type: string }) {
   if (type === "book") {
     return (
-      <div className="pointer-events-none relative mx-auto h-28 w-40 shrink-0 overflow-hidden">
+      <div className="clean-art relative mx-auto h-28 w-40 shrink-0">
         <div className="orb orb-abs left-2 top-3 h-20 w-20" />
-        <div className="glass absolute bottom-2 left-6 h-16 w-24 rotate-[-8deg] rounded-[20px]" />
+        <div className="mini-glass absolute bottom-2 left-6 h-16 w-24 rotate-[-8deg] rounded-[20px]" />
       </div>
     );
   }
   if (type === "pencil") {
     return (
-      <div className="pointer-events-none relative mx-auto h-28 w-40 shrink-0 overflow-hidden">
+      <div className="clean-art relative mx-auto h-28 w-40 shrink-0">
         <div className="orb orb-abs right-1 top-1 h-16 w-16" />
         <div className="absolute bottom-8 left-2 h-8 w-32 rotate-[-12deg] rounded-full bg-gradient-to-r from-[#ff9d4d] via-[#ff7fae] to-white shadow-xl" />
       </div>
     );
   }
   return (
-    <div className="pointer-events-none relative mx-auto h-28 w-40 shrink-0 overflow-hidden">
-      <div className="glass absolute left-3 top-4 h-20 w-28 rounded-[24px]" />
+    <div className="clean-art relative mx-auto h-28 w-40 shrink-0">
+      <div className="mini-glass absolute left-3 top-4 h-20 w-28 rounded-[24px]" />
       <div className="orb orb-abs bottom-2 right-3 h-14 w-14" />
     </div>
   );
@@ -94,8 +94,8 @@ export default function Home() {
     <main className="min-h-screen">
       <header className="nav-glass">
         <div className="flex items-center justify-between gap-3 px-4 py-2 sm:px-5 sm:py-2.5">
-          <a href="#top" className="shrink-0">
-            <Logo className="w-[100px] sm:w-[120px]" />
+          <a href="#top" className="shrink-0" aria-label="YOO SCHOOL">
+            <Logo className="w-[116px] sm:w-[140px]" />
           </a>
           <nav className="nav-links flex items-center gap-4 text-sm font-bold text-[#19385f] lg:gap-5">
             <a href="#directions">Направления</a>
@@ -108,7 +108,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section id="top" className="page-shell pb-8 pt-24 sm:pt-28 lg:pt-32">
+      <section id="top" className="page-shell pb-8 pt-32 sm:pt-36 lg:pt-40">
         <div className="scene p-5 sm:p-7 lg:p-10">
           <div className="scene-content grid min-w-0 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center lg:gap-8">
             <div className="relative z-10 min-w-0">
@@ -134,7 +134,7 @@ export default function Home() {
               <span className="cloud left-[4%] top-[20%] h-12 w-32" />
               <span className="cloud bottom-[20%] right-[10%] h-14 w-40" />
               <span className="flare right-[8%] top-[10%]" />
-              <div className="glass pointer-events-auto absolute bottom-[8%] left-[6%] z-10 max-w-[240px] p-4">
+              <div className="learning-route-card absolute left-[6%] z-10 max-w-[250px] p-4">
                 <p className="text-[10px] font-bold uppercase tracking-[.1em] text-[#56769a]">learning route</p>
                 <p className="mt-1.5 text-lg font-black leading-tight tracking-tight text-[#0f2a57] sm:text-xl">диагностика → маршрут → практика</p>
               </div>
@@ -198,7 +198,7 @@ export default function Home() {
       <section className="section page-shell">
         <div className="mb-6 max-w-3xl">
           <span className="badge">экосистема</span>
-          <h2 className="h-section safe-title mt-4 text-[#0f2a57]">��ольше чем просто уроки</h2>
+          <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Больше чем просто уроки</h2>
           <p className="lead mt-4">Обучение строится как система: диагностика, преподаватель под цель, домашняя практика, разговорные задания, отслеживание прогресса и поддержка между уроками.</p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -215,8 +215,15 @@ export default function Home() {
       <section className="section page-shell">
         <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
           <div className="glass min-w-0 p-5 sm:p-7">
-            <span className="badge">основатель</span>
-            <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Дарья Орлянская</h2>
+            <div className="founder-row">
+              <div className="founder-avatar">
+                <Image src="/images/teacher.png" alt="Дарья Орлянская" fill className="object-cover object-[50%_16%]" sizes="96px" />
+              </div>
+              <div>
+                <span className="badge">основатель</span>
+                <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Дарья Орлянская</h2>
+              </div>
+            </div>
             <p className="lead mt-4">Основатель и методический лидер YOO SCHOOL. Развивает проект, где английский подбирается под цель, возраст, уровень и темп ученика.</p>
             <div className="mt-6 flex flex-wrap gap-2">
               {["10+ лет опыта", "1–11 класс", "Взрослые любого уровня", "Корпоративное обучение"].map((item) => <div className="badge" key={item}>{item}</div>)}
@@ -270,7 +277,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="page-shell pb-10">
+      <section id="contact" className="page-shell pb-14 sm:pb-16">
         <div className="scene p-5 sm:p-7 lg:p-8">
           <div className="scene-content grid min-w-0 gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center lg:gap-8">
             <div className="min-w-0">
@@ -290,9 +297,9 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="page-shell pb-8">
+      <footer className="page-shell pb-8 pt-2 sm:pt-4">
         <div className="glass flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
-          <p className="text-lg font-black tracking-tight sm:text-xl">YOO SCHOOL</p>
+          <Logo className="w-[124px] sm:w-[148px]" />
           <p className="max-w-xl text-sm font-semibold leading-relaxed text-[#49637f]">Английский для детей, подростков, взрослых и команд. Подбираем преподавателя, формат и маршрут обучения под цель ученика или бизнеса.</p>
         </div>
       </footer>
