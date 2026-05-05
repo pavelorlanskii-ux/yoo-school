@@ -1,78 +1,49 @@
 "use client";
 
 import { siteContent } from "@/data/siteContent";
+import { FloatingStar, LiquidOrb } from "./CreativeArts";
 import Logo from "./Logo";
-
-const footerColumns = [
-  {
-    title: "Обучение",
-    items: ["Школьный английский", "ОГЭ и ЕГЭ", "Взрослый английский", "Корпоративное обучение", "Разговорная практика"],
-  },
-  {
-    title: "Форматы",
-    items: ["Индивидуальные занятия", "Диагностика уровня", "Домашняя практика", "Прогресс-трекинг", "ИИ-помощники"],
-  },
-  {
-    title: "YOO SCHOOL",
-    items: ["О подходе", "Преподаватели", "Стоимость", "FAQ", "Контакты"],
-  },
-];
 
 export default function Footer() {
   return (
-    <footer className="bg-white px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
-      <div className="creative-shell min-w-0">
-        <div className="mb-10 grid gap-6 lg:grid-cols-[1fr_1.1fr] lg:items-end">
-          <div>
-            <Logo className="h-10 w-auto" />
-            <p className="mt-5 max-w-2xl text-2xl font-extrabold leading-tight tracking-[-0.03em] text-[#050505] sm:text-3xl">
-              {siteContent.footer.tagline}
-            </p>
-          </div>
-          <div className="sky-panel p-5 sm:p-6">
-            <p className="text-3xl font-extrabold leading-none tracking-[-0.055em] text-[#050505]">
-              Бесплатно определим уровень и подберём программу обучения
-            </p>
-            <a href="#contact" className="mt-5 inline-flex items-center rounded-xl bg-[#050505] px-5 py-3 text-sm font-extrabold text-white">
-              Записаться на вводный урок
-            </a>
-          </div>
-        </div>
+    <footer className="section-padding pt-10">
+      <div className="creative-shell">
+        <div className="poster-scene p-6 sm:p-8 lg:p-10">
+          <FloatingStar className="floating-object motion-float h-10 w-10 left-6 top-6" />
+          <LiquidOrb className="floating-object motion-float-slow motion-delay-2 h-16 w-16 right-8 top-8" />
 
-        <div className="grid min-w-0 gap-8 border-t border-black/10 pt-8 sm:grid-cols-2 lg:grid-cols-4">
-          <div>
-            <p className="text-sm font-extrabold uppercase tracking-[0.08em] text-[#5D646B]">Контакты</p>
-            <div className="mt-4 space-y-3">
-              <a href="https://t.me/yoo_school" className="block text-base font-extrabold text-[#050505] transition hover:text-[#129FC5]">
-                {siteContent.contacts.telegram}
-              </a>
-              <a href={`tel:${siteContent.contacts.phone.replace(/\D/g, "")}`} className="block text-base font-extrabold text-[#050505] transition hover:text-[#129FC5]">
-                {siteContent.contacts.phone}
+          <div className="grid gap-7 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+            <div>
+              <Logo className="h-10 w-auto" />
+              <p className="mt-5 max-w-2xl text-xl font-extrabold leading-tight tracking-[-0.025em] text-[#0f2a57] sm:text-2xl">
+                {siteContent.footer.tagline}
+              </p>
+            </div>
+            <div className="glass-panel p-5">
+              <p className="text-2xl font-extrabold leading-[0.95] tracking-[-0.03em] text-[#0f2a57]">Бесплатная диагностика уровня и подбор маршрута</p>
+              <a href="#contact" className="btn btn-primary mt-5 px-5 py-3 text-sm">
+                Записаться
               </a>
             </div>
           </div>
 
-          {footerColumns.map((column) => (
-            <div key={column.title}>
-              <p className="text-sm font-extrabold uppercase tracking-[0.08em] text-[#5D646B]">{column.title}</p>
-              <div className="mt-4 flex flex-col gap-2">
-                {column.items.map((item) => (
-                  <a key={item} href="#top" className="text-sm font-bold text-[#5D646B] transition hover:text-[#050505]">
-                    {item}
-                  </a>
-                ))}
+          <div className="mt-8 grid gap-6 border-t border-white/55 pt-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div>
+              <p className="text-xs font-extrabold uppercase tracking-[0.12em] text-[#5f79a0]">Контакты</p>
+              <a href="https://t.me/yoo_school" className="mt-3 block text-base font-extrabold text-[#0f2a57]">{siteContent.contacts.telegram}</a>
+              <a href={`tel:${siteContent.contacts.phone.replace(/\D/g, "")}`} className="mt-2 block text-base font-extrabold text-[#0f2a57]">{siteContent.contacts.phone}</a>
+            </div>
+            {siteContent.navigation.slice(0, 3).map((item) => (
+              <div key={item.href}>
+                <p className="text-xs font-extrabold uppercase tracking-[0.12em] text-[#5f79a0]">{item.label}</p>
+                <a href={item.href} className="mt-3 block text-sm font-bold text-[#0f2a57]/85">Перейти к разделу</a>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
 
-        <div className="mt-10 flex flex-col justify-between gap-4 border-t border-black/10 pt-6 md:flex-row md:items-center">
-          <p className="text-xs font-bold text-[#8A9299]">
-            © 2026 {siteContent.brand.name}. Все права защищены.
-          </p>
-          <p className="text-xs font-bold text-[#8A9299]">
-            Creative education brand · English for kids, adults and teams
-          </p>
+          <div className="mt-6 border-t border-white/55 pt-4 text-xs font-bold text-[#6b84a8]">
+            © 2026 {siteContent.brand.name}. Creative-tech english school.
+          </div>
         </div>
       </div>
     </footer>

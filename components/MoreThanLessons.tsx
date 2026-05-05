@@ -1,60 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { siteContent } from "@/data/siteContent";
-import { IconGraduation, IconHeadphones, IconChat, IconChart, IconRobot, IconGlobe } from "./Icons";
-
-const Icons = [IconRobot, IconGlobe, IconGraduation, IconChat, IconChart, IconHeadphones];
 
 export default function MoreThanLessons() {
   return (
-    <section className="section-padding bg-[#F3F5F6]">
-      <div className="creative-shell min-w-0">
-        <div className="sky-panel-dark mb-3 p-6 sm:p-8 lg:p-10">
-          <motion.h2
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="max-w-none text-4xl font-black leading-[0.94] tracking-[-0.05em] text-white sm:text-5xl lg:max-w-[15ch] lg:text-7xl"
-          >
-            Добейтесь реальных результатов с нашей экосистемой
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.08 }}
-            className="mt-5 max-w-3xl text-lg font-bold leading-tight text-white/72 sm:text-xl"
-          >
-            В одном курсе — комплекс продуктов по английскому, которые помогают держать темп и видеть прогресс.
-          </motion.p>
-        </div>
+    <section className="section-padding">
+      <div className="creative-shell">
+        <div className="poster-scene p-6 sm:p-8 lg:p-10">
+          <h2 className="heading-lg max-w-none text-[#0f2b57] lg:max-w-[15ch]">Экосистема обучения YOO SCHOOL</h2>
+          <p className="mt-4 max-w-3xl text-base font-extrabold leading-tight text-[#355884] sm:text-lg">Уроки, домашняя практика, разговорные сценарии и контроль прогресса работают как единый продукт.</p>
 
-        <div className="grid min-w-0 grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {siteContent.moreThanLessons.items.map((item, idx) => {
-            const IconComponent = Icons[idx % Icons.length];
-            const isWide = idx === 0 || idx === 2;
-            return (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.36, delay: idx * 0.04 }}
-                className={`${isWide ? "lg:col-span-2" : ""} min-w-0`}
-              >
-                <div className={`${idx % 3 === 0 ? "sky-panel" : "sky-card"} flex h-full min-h-[190px] flex-col p-5 sm:p-6`}>
-                  <IconComponent size={54} className="h-12 w-12" />
-                  <h3 className="mt-5 text-2xl font-black leading-[0.94] tracking-[-0.04em] text-[#050505] sm:text-3xl">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-base font-bold leading-snug text-[#07313D]">
-                    {item.desc}
-                  </p>
-                </div>
-              </motion.div>
-            );
-          })}
+          <div className="mt-7 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="liquid-card p-3">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                <Image src="/images/ref/bears-sky.png" alt="3D ecosystem visual" fill className="object-cover" sizes="(max-width: 1024px) 100vw, 55vw" />
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {siteContent.moreThanLessons.items.map((item, idx) => (
+                <motion.article key={item.title} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.05 }} className={`${idx % 3 === 0 ? "creative-lime" : "liquid-card"} min-h-[160px] p-5`}>
+                  <h3 className="text-xl font-black leading-tight text-[#14345f]">{item.title}</h3>
+                  <p className="mt-2 text-sm font-extrabold leading-tight text-[#355884]">{item.desc}</p>
+                </motion.article>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

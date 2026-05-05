@@ -2,63 +2,40 @@
 
 import { motion } from "framer-motion";
 import { siteContent } from "@/data/siteContent";
+import { FloatingStar, GlassSpeechBubble, LiquidOrb } from "./CreativeArts";
 
 export default function LearningPath() {
   return (
-    <section id="path" className="section-padding bg-[#E9EDF0]">
-      <div className="creative-shell min-w-0">
-        <div className="mb-8 grid gap-5 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
-          <div>
-            <motion.span
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="badge badge-dark"
-            >
-              Как проходит обучение
-            </motion.span>
-            <motion.h2
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.08 }}
-              className="heading-lg studio-line mt-4 max-w-none lg:max-w-[16ch]"
-            >
-              От диагностики до результата без лишнего шума
-            </motion.h2>
-          </div>
-          <motion.p
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.14 }}
-            className="max-w-2xl text-base font-bold leading-tight text-[#5D646B] sm:text-lg"
-          >
-            Маршрут строится по этапам: сначала цель и уровень, потом преподаватель, программа, практика и контроль прогресса.
-          </motion.p>
-        </div>
+    <section id="path" className="section-padding">
+      <div className="creative-shell">
+        <div className="poster-scene p-6 sm:p-8 lg:p-10">
+          <h2 className="heading-lg max-w-none text-[#0d2b55] lg:max-w-[14ch]">Как проходит обучение</h2>
+          <p className="mt-4 max-w-3xl text-base font-extrabold leading-tight text-[#345780] sm:text-lg">
+            Маршрут выглядит как трек с контрольными точками: диагностика, подбор преподавателя, индивидуальный план и видимый прогресс.
+          </p>
 
-        <div className="grid min-w-0 grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {siteContent.learningPath.map((item, idx) => (
-            <motion.div
-              key={item.step}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.36, delay: idx * 0.05 }}
-              className="min-w-0"
-            >
-              <div className={`${idx === 0 ? "sky-panel" : "sky-card"} flex h-full min-h-[190px] flex-col p-5 sm:p-6`}>
-                <span className="text-sm font-black text-[#5D646B]">0{idx + 1}</span>
-                <h3 className="mt-5 text-2xl font-extrabold leading-[0.94] tracking-[-0.04em] text-[#050505] sm:text-3xl">
-                  {item.step}
-                </h3>
-                <p className="mt-3 flex-1 text-base font-bold leading-snug text-[#5D646B]">
-                  {item.desc}
-                </p>
-              </div>
-            </motion.div>
-          ))}
+          <div className="relative mt-8">
+            <div className="hidden lg:block absolute left-0 right-0 top-1/2 h-[2px] -translate-y-1/2 bg-gradient-to-r from-transparent via-white/70 to-transparent" aria-hidden="true" />
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {siteContent.learningPath.map((item, idx) => (
+                <motion.div
+                  key={item.step}
+                  initial={{ opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.07 }}
+                  className="glass-panel relative flex min-h-[230px] flex-col p-5"
+                >
+                  <span className="badge w-fit">0{idx + 1}</span>
+                  <h3 className="heading-md mt-6 text-[#12345f]">{item.step}</h3>
+                  <p className="mt-3 text-sm font-extrabold leading-tight text-[#37618d] sm:text-base">{item.desc}</p>
+                  {idx === 0 ? <FloatingStar className="floating-object motion-float h-8 w-8 right-4 top-3" /> : null}
+                  {idx === 2 ? <GlassSpeechBubble className="floating-object motion-float-slow h-12 w-12 right-3 bottom-3" /> : null}
+                  {idx === 3 ? <LiquidOrb className="floating-object motion-pulse h-9 w-9 right-4 top-8" /> : null}
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
