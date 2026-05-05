@@ -30,7 +30,7 @@ const ecosystem = [
 const approach = [
   ["Персонализация", "Не повторяем одну и ту же программу для всех. Подбираем темы, материалы и темп под цель ученика."],
   ["Учитель важнее шаблона", "Технологии помогают, но не заменяют преподавателя. Главная роль остаётся за человеком и методикой."],
-  ["Практика 24/7", "Задача школы — сделать английский частью жизни: не только урок, но и практика между занятиями."],
+  ["Практика между уроками", "Задача школы — сделать английский частью жизни, а не только одним занятием в неделю."],
   ["Понятный результат", "На старте фиксируем цель, уровень и маршрут, чтобы обучение не превращалось в набор случайных уроков."],
 ];
 
@@ -118,17 +118,11 @@ export default function Home() {
         <div className="scene p-5 sm:p-7 lg:p-10">
           <div className="scene-content grid min-w-0 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center lg:gap-8">
             <div className="relative z-10 min-w-0">
-              <span className="badge">online english school</span>
-              <h1 className="h-display mt-5 text-[#0f2a57]">Программы для любых целей с понятным результатом</h1>
+              <h1 className="h-display text-[#0f2a57]">Программы для любых целей с понятным результатом</h1>
               <p className="lead mt-5 max-w-xl">Занимайтесь один на один с преподавателем и практикуйте английский между уроками: для школы, экзаменов, работы, путешествий и уверенного общения.</p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a href="#contact" className="btn btn-primary">Попробовать бесплатно</a>
                 <a href="#directions" className="btn btn-secondary">Смотреть курсы</a>
-              </div>
-              <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                {["Уроки 1 на 1", "Практика между занятиями", "Маршрут под цель"].map((item) => (
-                  <div className="glass flex items-center p-4 text-sm font-bold leading-snug text-[#19385f]" key={item}>{item}</div>
-                ))}
               </div>
             </div>
             <div className="min-w-0">
@@ -142,10 +136,6 @@ export default function Home() {
                 <span className="cloud bottom-[20%] right-[10%] h-14 w-40" />
                 <span className="flare right-[8%] top-[10%]" />
               </div>
-              <div className="learning-route-card max-w-[260px] p-4">
-                <p className="text-[10px] font-bold uppercase tracking-[.1em] text-[#56769a]">learning route</p>
-                <p className="mt-1.5 text-lg font-black leading-tight tracking-tight text-[#0f2a57] sm:text-xl">урок → практика → прогресс</p>
-              </div>
             </div>
           </div>
         </div>
@@ -154,15 +144,13 @@ export default function Home() {
       <section id="directions" className="section page-shell">
         <div className="mb-6 grid min-w-0 gap-4 lg:grid-cols-[minmax(0,.7fr)_minmax(0,1fr)] lg:items-end lg:gap-8">
           <div className="min-w-0">
-            <span className="badge">курсы и программы</span>
-            <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Английский по целям, а не по шаблону</h2>
+            <h2 className="h-section safe-title text-[#0f2a57]">Английский по целям, а не по шаблону</h2>
           </div>
           <p className="lead max-w-2xl">Выберите направление сами или начните с вводного урока. Мы определим уровень, цель и предложим формат занятий.</p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {directions.map((item, index) => (
+          {directions.map((item) => (
             <article className="glass feature-card" key={item.title}>
-              <span className="badge relative z-10">0{index + 1}</span>
               <MiniArt type={item.art} />
               <h3 className="h-card relative z-10 mt-auto text-[#13355f]">{item.title}</h3>
               <p className="lead relative z-10 mt-3">{item.text}</p>
@@ -173,8 +161,7 @@ export default function Home() {
         <div className="scene mt-4 p-5 sm:p-7">
           <div className="scene-content grid min-w-0 gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(200px,.4fr)] lg:items-center lg:gap-6">
             <div className="min-w-0">
-              <span className="badge">для компаний</span>
-              <h3 className="h-section safe-title mt-4 text-[#0f2a57]">Корпоративное обучение для команды</h3>
+              <h3 className="h-section safe-title text-[#0f2a57]">Корпоративное обучение для команды</h3>
               <p className="lead mt-4 max-w-2xl">Соберём программу для рабочих задач: встречи, письма, презентации, переговоры и клиентские коммуникации на английском.</p>
             </div>
             <div className="decor-art hidden lg:block">
@@ -188,14 +175,12 @@ export default function Home() {
       <section id="path" className="section page-shell">
         <div className="scene p-5 sm:p-7 lg:p-8">
           <div className="scene-content min-w-0">
-            <span className="badge">экосистема</span>
-            <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Добейтесь реальных результатов с нашей экосистемой</h2>
+            <h2 className="h-section safe-title text-[#0f2a57]">Добейтесь реальных результатов с нашей экосистемой</h2>
             <p className="lead mt-4 max-w-3xl">В одном формате — уроки с преподавателем, практика между занятиями, интерактивные задания, ИИ-помощник и понятная статистика прогресса.</p>
             <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {ecosystem.map(([title, text], index) => (
+              {ecosystem.map(([title, text]) => (
                 <div className="glass min-w-0 p-5" key={title}>
-                  <span className="badge">0{index + 1}</span>
-                  <h3 className="h-card mt-5 text-[#13355f]">{title}</h3>
+                  <h3 className="h-card text-[#13355f]">{title}</h3>
                   <p className="lead mt-2">{text}</p>
                 </div>
               ))}
@@ -212,8 +197,7 @@ export default function Home() {
                 <Image src="/images/teacher.png" alt="Дарья Орлянская" fill className="object-cover object-[50%_16%]" sizes="96px" />
               </div>
               <div>
-                <span className="badge">основатель</span>
-                <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Дарья Орлянская</h2>
+                <h2 className="h-section safe-title text-[#0f2a57]">Дарья Орлянская</h2>
               </div>
             </div>
             <p className="lead mt-4">Дарья собирает методику YOO SCHOOL вокруг главного: английский должен подстраиваться под человека, его цель, возраст, темп и реальные ситуации, в которых язык понадобится.</p>
@@ -223,8 +207,7 @@ export default function Home() {
           </div>
           <div className="scene relative min-w-0 overflow-hidden p-5 sm:p-7">
             <div className="scene-content relative z-10 max-w-lg">
-              <span className="badge">подход</span>
-              <h3 className="h-section safe-title mt-4 text-[#0f2a57]">Переверните представление об учёбе</h3>
+              <h3 className="h-section safe-title text-[#0f2a57]">Переверните представление об учёбе</h3>
               <p className="lead mt-4">Мы не повторяем одни и те же темы по кругу. Программа собирается вокруг интересов ученика: школа, работа, поездки, IT, маркетинг, собеседования или разговорная практика.</p>
             </div>
             <div className="pointer-events-none absolute inset-0 hidden lg:block">
@@ -236,8 +219,7 @@ export default function Home() {
 
       <section className="section page-shell">
         <div className="mb-6 max-w-3xl">
-          <span className="badge">наш подход</span>
-          <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Больше чем просто уроки</h2>
+          <h2 className="h-section safe-title text-[#0f2a57]">Больше чем просто уроки</h2>
           <p className="lead mt-4">Вы платите не за набор занятий, а за систему: преподаватель, материалы, практика, обратная связь и контроль движения к цели.</p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
@@ -253,15 +235,13 @@ export default function Home() {
 
       <section id="pricing" className="section page-shell">
         <div className="mb-6 max-w-3xl">
-          <span className="badge">стоимость обучения</span>
-          <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Подберём программу и формат под вашу цель</h2>
+          <h2 className="h-section safe-title text-[#0f2a57]">Подберём программу и формат под вашу цель</h2>
           <p className="lead mt-4">Стоимость зависит от задачи, интенсивности и формата. Начните с вводного урока — покажем варианты и соберём план.</p>
         </div>
         <div className="pricing-grid grid gap-3">
-          {prices.map(([title, price, text], index) => (
+          {prices.map(([title, price, text]) => (
             <article className="glass price-card min-w-0" key={title}>
-              <span className="badge">0{index + 1}</span>
-              <h3 className="mt-5 text-lg font-black leading-tight text-[#13355f] sm:text-xl">{title}</h3>
+              <h3 className="text-lg font-black leading-tight text-[#13355f] sm:text-xl">{title}</h3>
               <p className="mt-3 text-2xl font-black tracking-tight text-[#0f2a57] sm:text-3xl">{price}</p>
               <p className="lead mt-3">{text}</p>
               <a className="btn btn-primary mt-auto" href="#contact">Попробовать</a>
@@ -273,8 +253,7 @@ export default function Home() {
       <section id="faq" className="section page-shell">
         <div className="grid min-w-0 gap-6 lg:grid-cols-[minmax(0,.65fr)_minmax(0,1.35fr)] lg:gap-8">
           <div className="min-w-0">
-            <span className="badge">вопрос-ответ</span>
-            <h2 className="h-section safe-title mt-4 text-[#0f2a57]">О чём ещё важно знать</h2>
+            <h2 className="h-section safe-title text-[#0f2a57]">О чём ещё важно знать</h2>
           </div>
           <div className="grid gap-2">
             {faq.map(([q, a]) => (
@@ -291,8 +270,7 @@ export default function Home() {
         <div className="scene p-5 sm:p-7 lg:p-8">
           <div className="scene-content grid min-w-0 gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center lg:gap-8">
             <div className="min-w-0">
-              <span className="badge">start</span>
-              <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Начните путь к свободному английскому</h2>
+              <h2 className="h-section safe-title text-[#0f2a57]">Начните путь к свободному английскому</h2>
               <p className="lead mt-4 max-w-lg">Посетите бесплатный вводный урок. Определим уровень, обсудим цель и предложим программу обучения.</p>
             </div>
             <form className="glass grid min-w-0 gap-3 p-5 sm:p-6">
