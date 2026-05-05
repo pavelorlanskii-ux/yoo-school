@@ -2,53 +2,59 @@ import Image from "next/image";
 
 const directions = [
   {
-    title: "Школа и оценки",
-    text: "Помогаем разобраться со школьной программой, грамматикой, домашними заданиями и уверенностью на уроках. Подходит ученикам 1–11 классов.",
+    title: "+1 уровень английского",
+    text: "Системный курс для тех, кто хочет заметный прогресс: уроки один на один, практика между занятиями и понятная траектория роста.",
     art: "book",
   },
   {
-    title: "Экзамены и поступление",
-    text: "Готовим к ОГЭ, ЕГЭ, вступительным испытаниям и поступлению в российские и зарубежные вузы. Собираем маршрут под цель, сроки и текущий уровень.",
+    title: "Школа и экзамены",
+    text: "Помогаем ученикам 1–11 классов, готовим к ОГЭ, ЕГЭ, вступительным испытаниям и поступлению в российские и зарубежные вузы.",
     art: "pencil",
   },
   {
-    title: "Взрослый английский",
-    text: "Английский с нуля, для путешествий, работы, общения и восстановления уровня после перерыва. Без стресса, с понятной системой и практикой.",
+    title: "Работа, путешествия и жизнь",
+    text: "Английский для собеседований, переговоров, поездок, переезда и повседневного общения без языкового барьера.",
     art: "bubble",
   },
 ];
 
-const path = [
-  ["Диагностика", "Определяем уровень и точки роста"],
-  ["Подбор преподавателя", "Специалист под вашу цель"],
-  ["Индивидуальный маршрут", "Программа под задачу"],
-  ["Практика и прогресс", "Измеримый результат"],
+const ecosystem = [
+  ["Уроки 1 на 1", "Занятия с преподавателем по индивидуальной программе и темпу ученика."],
+  ["Интерактивная практика", "Домашние задания, тренажёры и упражнения, которые помогают закрепить материал."],
+  ["Разговорная среда", "Разговорные задания, мини-диалоги и сценарии из реальной жизни."],
+  ["ИИ-помощник", "Разбор ошибок, подсказки и дополнительная практика между уроками."],
+  ["Статистика прогресса", "Понимаем, что уже получается, и где нужно усилиться."],
+  ["Контент для самостоятельной учёбы", "Видео, аудио, лексика и короткие задания для регулярной практики."],
 ];
 
-const ecosystem = [
-  ["1:1 занятия", "Индивидуальные уроки с преподавателем под уровень и цель"],
-  ["Домашняя практика", "Задания, которые помогают закреплять материал"],
-  ["Разговорная тренировка", "Практика речи, сценарии из жизни и работы"],
-  ["Прогресс-трекинг", "Понимаем, что получается, и где усилиться"],
-  ["Корпоративные сценарии", "Английский для встреч и рабочих задач"],
-  ["ИИ как помощник", "Digital-подход, тренажёры и разбор ошибок"],
+const approach = [
+  ["Персонализация", "Не повторяем одну и ту же программу для всех. Подбираем темы, материалы и темп под цель ученика."],
+  ["Учитель важнее шаблона", "Технологии помогают, но не заменяют преподавателя. Главная роль остаётся за человеком и методикой."],
+  ["Практика 24/7", "Задача школы — сделать английский частью жизни: не только урок, но и практика между занятиями."],
+  ["Понятный результат", "На старте фиксируем цель, уровень и маршрут, чтобы обучение не превращалось в набор случайных уроков."],
 ];
 
 const prices = [
-  ["Пробное занятие", "Бесплатно", "Знакомство, диагностика уровня и подбор формата под вашу цель."],
-  ["Школьный английский", "от 1 700 ₽", "Помощь с программой, грамматикой, домашними заданиями и уверенностью."],
-  ["Экзамены и поступление", "от 2 500 ₽", "Подготовка к ОГЭ, ЕГЭ, вступительным и поступлению в вузы."],
-  ["Взрослый английский", "от 2 000 ₽", "С нуля, для путешествий, работы, общения или восстановления уровня."],
-  ["Корпоративное обучение", "по запросу", "Формат и программа зависят от задач команды и уровня сотрудников."],
+  ["Вводный урок", "Бесплатно", "Определим уровень, цель и предложим маршрут обучения."],
+  ["Индивидуальные занятия", "от 1 700 ₽", "Уроки один на один с преподавателем под уровень и задачу."],
+  ["Экзамены и поступление", "от 2 500 ₽", "Подготовка к ОГЭ, ЕГЭ, вступительным и зарубежным программам."],
+  ["Взрослый английский", "от 2 000 ₽", "Работа, путешествия, переезд, собеседования и свободное общение."],
+  ["Корпоративное обучение", "по запросу", "Программа для команды: встречи, переписка, презентации и клиентские коммуникации."],
 ];
 
 const faq = [
-  ["Можно ли заниматься с нуля?", "Да, маршрут строится от вашей текущей точки."],
-  ["Есть ли занятия для взрослых?", "Да, есть отдельные форматы под личные и рабочие цели."],
-  ["Готовите ли к ОГЭ и ЕГЭ?", "Да, с фокусом на структуру экзамена и устойчивый прогресс."],
-  ["Можно ли готовиться к поступлению за рубеж?", "Да, строим план под конкретный вуз и дедлайны."],
-  ["Занятия проходят онлайн или офлайн?", "Доступны оба формата по согласованию."],
-  ["Сколько длится урок?", "Обычно 45–90 минут, зависит от возраста и цели."],
+  ["Сколько длится один урок?", "Обычно 50 минут. Для детей и интенсивных целей формат можно адаптировать."],
+  ["Можно ли заниматься с нуля?", "Да. Сначала определяем уровень и собираем маршрут от вашей текущей точки."],
+  ["Как подбирается преподаватель?", "Смотрим на цель, возраст, уровень, темп и личный запрос ученика."],
+  ["Что делать, если мало времени?", "Подберём график и короткие практики между уроками, чтобы прогресс не зависел только от занятия."],
+  ["Подходит ли школа детям?", "Да. Есть форматы для учеников 1–11 классов, школьной программы и экзаменов."],
+  ["Можно ли заниматься корпоративно?", "Да. Собираем программу под задачи команды и уровень сотрудников."],
+];
+
+const footerColumns = [
+  ["Курсы", ["+1 уровень английского", "Английский для детей", "Подготовка к экзаменам", "Деловой английский"]],
+  ["Цели", ["Для путешествий", "Для работы", "Для переезда", "Для собеседования"]],
+  ["Школа", ["О подходе", "Преподаватели", "Корпоративное обучение", "Контакты"]],
 ];
 
 function Logo({ className = "" }: { className?: string }) {
@@ -98,13 +104,13 @@ export default function Home() {
             <Logo className="w-[124px] sm:w-[152px]" />
           </a>
           <nav className="nav-links flex items-center gap-4 text-sm font-bold text-[#19385f] lg:gap-5">
-            <a href="#directions">Направления</a>
-            <a href="#path">Как учимся</a>
-            <a href="#pricing">Цены</a>
+            <a href="#directions">Курсы</a>
+            <a href="#path">Экосистема</a>
+            <a href="#pricing">Стоимость</a>
             <a href="#faq">FAQ</a>
             <a href="#contact">Контакты</a>
           </nav>
-          <a href="#contact" className="btn btn-primary hidden px-4 py-2 text-sm sm:inline-flex">Пробный урок</a>
+          <a href="#contact" className="btn btn-primary hidden px-4 py-2 text-sm sm:inline-flex">Вводный урок</a>
         </div>
       </header>
 
@@ -112,15 +118,15 @@ export default function Home() {
         <div className="scene p-5 sm:p-7 lg:p-10">
           <div className="scene-content grid min-w-0 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center lg:gap-8">
             <div className="relative z-10 min-w-0">
-              <span className="badge">modern english school</span>
-              <h1 className="h-display mt-5 text-[#0f2a57]">Английский, который ощущается легко</h1>
-              <p className="lead mt-5 max-w-xl">YOO SCHOOL подбирает английский под вашу цель: школа, экзамены, поступление, работа, путешествия, корпоративные задачи или уверенное общение.</p>
+              <span className="badge">online english school</span>
+              <h1 className="h-display mt-5 text-[#0f2a57]">Программы для любых целей с понятным результатом</h1>
+              <p className="lead mt-5 max-w-xl">Занимайтесь один на один с преподавателем и практикуйте английский между уроками: для школы, экзаменов, работы, путешествий и уверенного общения.</p>
               <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <a href="#contact" className="btn btn-primary">Записаться на вводное занятие</a>
-                <a href="#directions" className="btn btn-secondary">Выбрать направление</a>
+                <a href="#contact" className="btn btn-primary">Попробовать бесплатно</a>
+                <a href="#directions" className="btn btn-secondary">Смотреть курсы</a>
               </div>
               <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                {["Команда преподавателей", "Маршрут под цель", "Диагностика на старте"].map((item) => (
+                {["Уроки 1 на 1", "Практика между занятиями", "Маршрут под цель"].map((item) => (
                   <div className="glass flex items-center p-4 text-sm font-bold leading-snug text-[#19385f]" key={item}>{item}</div>
                 ))}
               </div>
@@ -138,7 +144,7 @@ export default function Home() {
               </div>
               <div className="learning-route-card max-w-[260px] p-4">
                 <p className="text-[10px] font-bold uppercase tracking-[.1em] text-[#56769a]">learning route</p>
-                <p className="mt-1.5 text-lg font-black leading-tight tracking-tight text-[#0f2a57] sm:text-xl">диагностика → маршрут → практика</p>
+                <p className="mt-1.5 text-lg font-black leading-tight tracking-tight text-[#0f2a57] sm:text-xl">урок → практика → прогресс</p>
               </div>
             </div>
           </div>
@@ -148,10 +154,10 @@ export default function Home() {
       <section id="directions" className="section page-shell">
         <div className="mb-6 grid min-w-0 gap-4 lg:grid-cols-[minmax(0,.7fr)_minmax(0,1fr)] lg:items-end lg:gap-8">
           <div className="min-w-0">
-            <span className="badge">направления</span>
-            <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Программы под разные цели</h2>
+            <span className="badge">курсы и программы</span>
+            <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Английский по целям, а не по шаблону</h2>
           </div>
-          <p className="lead max-w-2xl">Не одна универсальная программа, а понятный маршрут после диагностики: для школы, экзаменов, взрослых целей и корпоративных задач.</p>
+          <p className="lead max-w-2xl">Выберите направление сами или начните с вводного урока. Мы определим уровень, цель и предложим формат занятий.</p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {directions.map((item, index) => (
@@ -160,7 +166,7 @@ export default function Home() {
               <MiniArt type={item.art} />
               <h3 className="h-card relative z-10 mt-auto text-[#13355f]">{item.title}</h3>
               <p className="lead relative z-10 mt-3">{item.text}</p>
-              <a href="#contact" className="btn btn-primary relative z-10 mt-6 w-fit">Выбрать</a>
+              <a href="#contact" className="btn btn-primary relative z-10 mt-6 w-fit">Подобрать курс</a>
             </article>
           ))}
         </div>
@@ -169,7 +175,7 @@ export default function Home() {
             <div className="min-w-0">
               <span className="badge">для компаний</span>
               <h3 className="h-section safe-title mt-4 text-[#0f2a57]">Корпоративное обучение для команды</h3>
-              <p className="lead mt-4 max-w-2xl">Переговоры, переписка, презентации, клиентские коммуникации и развитие сотрудников. Формат подбираем под задачи бизнеса и уровень команды.</p>
+              <p className="lead mt-4 max-w-2xl">Соберём программу для рабочих задач: встречи, письма, презентации, переговоры и клиентские коммуникации на английском.</p>
             </div>
             <div className="decor-art hidden lg:block">
               <span className="jelly-bear" />
@@ -182,10 +188,11 @@ export default function Home() {
       <section id="path" className="section page-shell">
         <div className="scene p-5 sm:p-7 lg:p-8">
           <div className="scene-content min-w-0">
-            <span className="badge">как учимся</span>
-            <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Маршрут без хаоса и перегруза</h2>
-            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-              {path.map(([title, text], index) => (
+            <span className="badge">экосистема</span>
+            <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Добейтесь реальных результатов с нашей экосистемой</h2>
+            <p className="lead mt-4 max-w-3xl">В одном формате — уроки с преподавателем, практика между занятиями, интерактивные задания, ИИ-помощник и понятная статистика прогресса.</p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {ecosystem.map(([title, text], index) => (
                 <div className="glass min-w-0 p-5" key={title}>
                   <span className="badge">0{index + 1}</span>
                   <h3 className="h-card mt-5 text-[#13355f]">{title}</h3>
@@ -194,23 +201,6 @@ export default function Home() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="section page-shell">
-        <div className="mb-6 max-w-3xl">
-          <span className="badge">экосистема</span>
-          <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Больше чем просто уроки</h2>
-          <p className="lead mt-4">Обучение строится как система: диагностика, преподаватель под цель, домашняя практика, разговорные задания, отслеживание прогресса и поддержка между уроками.</p>
-        </div>
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {ecosystem.map(([title, text]) => (
-            <div className="glass min-w-0 p-5" key={title}>
-              <span className="orb mb-6 block h-12 w-12" />
-              <h3 className="h-card text-[#13355f]">{title}</h3>
-              <p className="lead mt-2">{text}</p>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -226,16 +216,16 @@ export default function Home() {
                 <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Дарья Орлянская</h2>
               </div>
             </div>
-            <p className="lead mt-4">Основатель и методический лидер YOO SCHOOL. Развивает проект, где английский подбирается под цель, возраст, уровень и темп ученика.</p>
+            <p className="lead mt-4">Дарья собирает методику YOO SCHOOL вокруг главного: английский должен подстраиваться под человека, его цель, возраст, темп и реальные ситуации, в которых язык понадобится.</p>
             <div className="mt-6 flex flex-wrap gap-2">
-              {["10+ лет опыта", "1–11 класс", "Взрослые любого уровня", "Корпоративное обучение"].map((item) => <div className="badge" key={item}>{item}</div>)}
+              {["методический контроль", "команда преподавателей", "маршрут под цель", "обучение без хаоса"].map((item) => <div className="badge" key={item}>{item}</div>)}
             </div>
           </div>
           <div className="scene relative min-w-0 overflow-hidden p-5 sm:p-7">
             <div className="scene-content relative z-10 max-w-lg">
-              <span className="badge">method</span>
-              <h3 className="h-section safe-title mt-4 text-[#0f2a57]">Методика, команда и личный подход</h3>
-              <p className="lead mt-4">Внутри проекта работает команда преподавателей с разным опытом и специализациями. Это позволяет подобрать формат под конкретную задачу: школу, экзамены, поступление, поездки, работу или обучение с нуля.</p>
+              <span className="badge">подход</span>
+              <h3 className="h-section safe-title mt-4 text-[#0f2a57]">Переверните представление об учёбе</h3>
+              <p className="lead mt-4">Мы не повторяем одни и те же темы по кругу. Программа собирается вокруг интересов ученика: школа, работа, поездки, IT, маркетинг, собеседования или разговорная практика.</p>
             </div>
             <div className="pointer-events-none absolute inset-0 hidden lg:block">
               <span className="inflatable-y !left-auto !right-[5%] !top-[15%] !w-[140px] opacity-50" />
@@ -244,10 +234,28 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section page-shell">
+        <div className="mb-6 max-w-3xl">
+          <span className="badge">наш подход</span>
+          <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Больше чем просто уроки</h2>
+          <p className="lead mt-4">Вы платите не за набор занятий, а за систему: преподаватель, материалы, практика, обратная связь и контроль движения к цели.</p>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {approach.map(([title, text]) => (
+            <div className="glass min-w-0 p-5" key={title}>
+              <span className="orb mb-6 block h-12 w-12" />
+              <h3 className="h-card text-[#13355f]">{title}</h3>
+              <p className="lead mt-2">{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section id="pricing" className="section page-shell">
         <div className="mb-6 max-w-3xl">
-          <span className="badge">цены</span>
-          <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Формат подбираем после диагностики</h2>
+          <span className="badge">стоимость обучения</span>
+          <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Подберём программу и формат под вашу цель</h2>
+          <p className="lead mt-4">Стоимость зависит от задачи, интенсивности и формата. Начните с вводного урока — покажем варианты и соберём план.</p>
         </div>
         <div className="pricing-grid grid gap-3">
           {prices.map(([title, price, text], index) => (
@@ -265,8 +273,8 @@ export default function Home() {
       <section id="faq" className="section page-shell">
         <div className="grid min-w-0 gap-6 lg:grid-cols-[minmax(0,.65fr)_minmax(0,1.35fr)] lg:gap-8">
           <div className="min-w-0">
-            <span className="badge">FAQ</span>
-            <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Коротко о главном</h2>
+            <span className="badge">вопрос-ответ</span>
+            <h2 className="h-section safe-title mt-4 text-[#0f2a57]">О чём ещё важно знать</h2>
           </div>
           <div className="grid gap-2">
             {faq.map(([q, a]) => (
@@ -284,8 +292,8 @@ export default function Home() {
           <div className="scene-content grid min-w-0 gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center lg:gap-8">
             <div className="min-w-0">
               <span className="badge">start</span>
-              <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Начните с бесплатного вводного урока</h2>
-              <p className="lead mt-4 max-w-lg">Определим уровень, цель и предложим маршрут занятий. Без давления, с понятной логикой следующего шага.</p>
+              <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Начните путь к свободному английскому</h2>
+              <p className="lead mt-4 max-w-lg">Посетите бесплатный вводный урок. Определим уровень, обсудим цель и предложим программу обучения.</p>
             </div>
             <form className="glass grid min-w-0 gap-3 p-5 sm:p-6">
               <input className="input" placeholder="Имя" />
@@ -300,9 +308,21 @@ export default function Home() {
       </section>
 
       <footer className="footer-section page-shell pb-8">
-        <div className="glass flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
-          <Logo className="w-[132px] sm:w-[156px]" />
-          <p className="max-w-xl text-sm font-semibold leading-relaxed text-[#49637f]">Английский для детей, подростков, взрослых и команд. Подбираем преподавателя, формат и маршрут обучения под цель ученика или бизнеса.</p>
+        <div className="glass grid gap-6 p-5 sm:p-6 lg:grid-cols-[1.1fr_2fr]">
+          <div>
+            <Logo className="w-[132px] sm:w-[156px]" />
+            <p className="mt-4 max-w-sm text-sm font-semibold leading-relaxed text-[#49637f]">YOO SCHOOL — английский для детей, подростков, взрослых и команд. Подбираем преподавателя, формат и маршрут под цель ученика или бизнеса.</p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-3">
+            {footerColumns.map(([title, links]) => (
+              <div key={title as string}>
+                <p className="text-sm font-black text-[#0f2a57]">{title as string}</p>
+                <div className="mt-3 grid gap-2">
+                  {(links as string[]).map((link) => <a className="text-sm font-semibold text-[#49637f]" href="#contact" key={link}>{link}</a>)}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </footer>
     </main>
