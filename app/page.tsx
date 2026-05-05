@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const directions = [
   {
     title: "Школа и оценки",
@@ -49,27 +51,40 @@ const faq = [
   ["Сколько длится урок?", "Обычно 45–90 минут, зависит от возраста и цели."],
 ];
 
+function Logo({ className = "" }: { className?: string }) {
+  return (
+    <Image 
+      src="/logo.jpg" 
+      alt="YOO SCHOOL" 
+      width={140} 
+      height={40} 
+      className={`h-auto object-contain ${className}`}
+      priority
+    />
+  );
+}
+
 function MiniArt({ type }: { type: string }) {
   if (type === "book") {
     return (
-      <div className="relative mx-auto h-32 w-44 shrink-0 overflow-hidden">
-        <div className="orb orb-abs left-2 top-4 h-24 w-24" />
-        <div className="glass absolute bottom-3 left-8 h-20 w-28 rotate-[-8deg] rounded-[24px]" />
+      <div className="pointer-events-none relative mx-auto h-28 w-40 shrink-0 overflow-hidden">
+        <div className="orb orb-abs left-2 top-3 h-20 w-20" />
+        <div className="glass absolute bottom-2 left-6 h-16 w-24 rotate-[-8deg] rounded-[20px]" />
       </div>
     );
   }
   if (type === "pencil") {
     return (
-      <div className="relative mx-auto h-32 w-44 shrink-0 overflow-hidden">
-        <div className="orb orb-abs right-0 top-0 h-20 w-20" />
-        <div className="absolute bottom-10 left-3 h-10 w-36 rotate-[-12deg] rounded-full bg-gradient-to-r from-[#ff9d4d] via-[#ff7fae] to-white shadow-2xl" />
+      <div className="pointer-events-none relative mx-auto h-28 w-40 shrink-0 overflow-hidden">
+        <div className="orb orb-abs right-1 top-1 h-16 w-16" />
+        <div className="absolute bottom-8 left-2 h-8 w-32 rotate-[-12deg] rounded-full bg-gradient-to-r from-[#ff9d4d] via-[#ff7fae] to-white shadow-xl" />
       </div>
     );
   }
   return (
-    <div className="relative mx-auto h-32 w-44 shrink-0 overflow-hidden">
-      <div className="glass absolute left-4 top-5 h-24 w-32 rounded-[28px]" />
-      <div className="orb orb-abs bottom-3 right-4 h-16 w-16" />
+    <div className="pointer-events-none relative mx-auto h-28 w-40 shrink-0 overflow-hidden">
+      <div className="glass absolute left-3 top-4 h-20 w-28 rounded-[24px]" />
+      <div className="orb orb-abs bottom-2 right-3 h-14 w-14" />
     </div>
   );
 }
@@ -78,33 +93,35 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <header className="nav-glass">
-        <div className="flex items-center justify-between gap-4 px-5 py-3">
-          <a href="#top" className="shrink-0 text-lg font-black tracking-[-0.05em] text-[#0a1b39]">YOO SCHOOL</a>
-          <nav className="nav-links flex items-center gap-6 text-sm font-black text-[#19385f]">
+        <div className="flex items-center justify-between gap-3 px-4 py-2 sm:px-5 sm:py-2.5">
+          <a href="#top" className="shrink-0">
+            <Logo className="w-[100px] sm:w-[120px]" />
+          </a>
+          <nav className="nav-links flex items-center gap-4 text-sm font-bold text-[#19385f] lg:gap-5">
             <a href="#directions">Направления</a>
             <a href="#path">Как учимся</a>
             <a href="#pricing">Цены</a>
             <a href="#faq">FAQ</a>
             <a href="#contact">Контакты</a>
           </nav>
-          <a href="#contact" className="btn btn-primary hidden px-5 py-3 text-sm sm:inline-flex">Пробный урок</a>
+          <a href="#contact" className="btn btn-primary hidden px-4 py-2 text-sm sm:inline-flex">Пробный урок</a>
         </div>
       </header>
 
-      <section id="top" className="page-shell pb-8 pt-28 sm:pt-32">
-        <div className="scene p-5 sm:p-8 lg:p-10">
-          <div className="scene-content grid min-w-0 gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-center">
-            <div className="min-w-0">
+      <section id="top" className="page-shell pb-8 pt-24 sm:pt-28 lg:pt-32">
+        <div className="scene p-5 sm:p-7 lg:p-10">
+          <div className="scene-content grid min-w-0 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center lg:gap-8">
+            <div className="relative z-10 min-w-0">
               <span className="badge">modern english school</span>
-              <h1 className="h-display mt-6 max-w-[13ch] text-[#0f2a57]">Английский, который ощущается легко</h1>
-              <p className="lead mt-6 max-w-2xl">YOO SCHOOL подбирает английский под вашу цель: школа, экзамены, поступление, работа, путешествия, корпоративные задачи или уверенное общение.</p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <h1 className="h-display mt-5 text-[#0f2a57]">Английский, который ощущается легко</h1>
+              <p className="lead mt-5 max-w-xl">YOO SCHOOL подбирает английский под вашу цель: школа, экзамены, поступление, работа, путешествия, корпоративные задачи или уверенное общение.</p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <a href="#contact" className="btn btn-primary">Записаться на вводное занятие</a>
                 <a href="#directions" className="btn btn-secondary">Выбрать направление</a>
               </div>
-              <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              <div className="mt-6 grid gap-3 sm:grid-cols-3">
                 {["Команда преподавателей", "Маршрут под цель", "Диагностика на старте"].map((item) => (
-                  <div className="glass min-h-[76px] p-4 text-sm font-black leading-tight text-[#19385f]" key={item}>{item}</div>
+                  <div className="glass flex items-center p-4 text-sm font-bold leading-snug text-[#19385f]" key={item}>{item}</div>
                 ))}
               </div>
             </div>
@@ -112,14 +129,14 @@ export default function Home() {
               <span className="chrome-word">YOO<br />SCHOOL</span>
               <span className="inflatable-y" />
               <span className="jelly-bear" />
-              <span className="orb orb-abs left-[8%] bottom-[20%] h-16 w-16 sm:h-20 sm:w-20" />
-              <span className="orb orb-abs right-[10%] top-[18%] h-20 w-20 sm:h-28 sm:w-28" />
-              <span className="cloud left-[4%] top-[18%] h-16 w-40" />
-              <span className="cloud bottom-[18%] right-[8%] h-20 w-52" />
-              <span className="flare right-[6%] top-[8%]" />
-              <div className="glass absolute bottom-[6%] left-[6%] z-10 max-w-[260px] p-4 sm:p-5">
-                <p className="text-xs font-black uppercase tracking-[.12em] text-[#56769a]">learning route</p>
-                <p className="mt-2 text-xl font-black leading-[.98] tracking-[-.035em] text-[#0f2a57] sm:text-2xl">диагностика → маршрут → практика</p>
+              <span className="orb orb-abs left-[8%] bottom-[22%] h-12 w-12 sm:h-16 sm:w-16" />
+              <span className="orb orb-abs right-[12%] top-[20%] h-16 w-16 sm:h-20 sm:w-20" />
+              <span className="cloud left-[4%] top-[20%] h-12 w-32" />
+              <span className="cloud bottom-[20%] right-[10%] h-14 w-40" />
+              <span className="flare right-[8%] top-[10%]" />
+              <div className="glass pointer-events-auto absolute bottom-[8%] left-[6%] z-10 max-w-[240px] p-4">
+                <p className="text-[10px] font-bold uppercase tracking-[.1em] text-[#56769a]">learning route</p>
+                <p className="mt-1.5 text-lg font-black leading-tight tracking-tight text-[#0f2a57] sm:text-xl">диагностика → маршрут → практика</p>
               </div>
             </div>
           </div>
@@ -127,50 +144,50 @@ export default function Home() {
       </section>
 
       <section id="directions" className="section page-shell">
-        <div className="mb-8 grid min-w-0 gap-5 lg:grid-cols-[minmax(0,.75fr)_minmax(0,1fr)] lg:items-end">
+        <div className="mb-6 grid min-w-0 gap-4 lg:grid-cols-[minmax(0,.7fr)_minmax(0,1fr)] lg:items-end lg:gap-8">
           <div className="min-w-0">
             <span className="badge">направления</span>
-            <h2 className="h-section safe-title mt-5 text-[#0f2a57]">Программы под разные цели</h2>
+            <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Программы под разные цели</h2>
           </div>
-          <p className="lead max-w-3xl">Не одна универсальная программа, а понятный маршрут после диагностики: для школы, экзаменов, взрослых целей и корпоративных задач.</p>
+          <p className="lead max-w-2xl">Не одна универсальная программа, а понятный маршрут после диагностики: для школы, экзаменов, взрослых целей и корпоративных задач.</p>
         </div>
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {directions.map((item, index) => (
-            <article className="glass feature-card flex min-w-0 flex-col" key={item.title}>
+            <article className="glass feature-card" key={item.title}>
               <span className="badge relative z-10">0{index + 1}</span>
               <MiniArt type={item.art} />
               <h3 className="h-card relative z-10 mt-auto text-[#13355f]">{item.title}</h3>
-              <p className="lead relative z-10 mt-4 text-base">{item.text}</p>
-              <a href="#contact" className="btn btn-primary relative z-10 mt-7 w-fit">Выбрать</a>
+              <p className="lead relative z-10 mt-3">{item.text}</p>
+              <a href="#contact" className="btn btn-primary relative z-10 mt-6 w-fit">Выбрать</a>
             </article>
           ))}
         </div>
-        <div className="scene mt-4 p-6 sm:p-8">
-          <div className="scene-content grid min-w-0 gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(260px,.45fr)] lg:items-center">
+        <div className="scene mt-4 p-5 sm:p-7">
+          <div className="scene-content grid min-w-0 gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(200px,.4fr)] lg:items-center lg:gap-6">
             <div className="min-w-0">
               <span className="badge">для компаний</span>
-              <h3 className="h-section safe-title mt-5 text-[#0f2a57]">Корпоративное обучение для команды</h3>
-              <p className="lead mt-5 max-w-3xl">Переговоры, переписка, презентации, клиентские коммуникации и развитие сотрудников. Формат подбираем под задачи бизнеса и уровень команды.</p>
+              <h3 className="h-section safe-title mt-4 text-[#0f2a57]">Корпоративное обучение для команды</h3>
+              <p className="lead mt-4 max-w-2xl">Переговоры, переписка, презентации, клиентские коммуникации и развитие сотрудников. Формат подбираем под задачи бизнеса и уровень команды.</p>
             </div>
             <div className="decor-art hidden lg:block">
               <span className="jelly-bear" />
-              <span className="orb orb-abs bottom-[8%] right-[10%] h-24 w-24" />
+              <span className="orb orb-abs bottom-[10%] right-[12%] h-20 w-20" />
             </div>
           </div>
         </div>
       </section>
 
       <section id="path" className="section page-shell">
-        <div className="scene p-6 sm:p-8 lg:p-10">
+        <div className="scene p-5 sm:p-7 lg:p-8">
           <div className="scene-content min-w-0">
             <span className="badge">как учимся</span>
-            <h2 className="h-section safe-title mt-5 text-[#0f2a57]">Маршрут без хаоса и перегруза</h2>
-            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Маршрут без хаоса и перегруза</h2>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {path.map(([title, text], index) => (
                 <div className="glass min-w-0 p-5" key={title}>
                   <span className="badge">0{index + 1}</span>
-                  <h3 className="h-card mt-6 text-[#13355f]">{title}</h3>
-                  <p className="lead mt-3 text-base">{text}</p>
+                  <h3 className="h-card mt-5 text-[#13355f]">{title}</h3>
+                  <p className="lead mt-2">{text}</p>
                 </div>
               ))}
             </div>
@@ -179,57 +196,57 @@ export default function Home() {
       </section>
 
       <section className="section page-shell">
-        <div className="mb-8 max-w-4xl">
+        <div className="mb-6 max-w-3xl">
           <span className="badge">экосистема</span>
-          <h2 className="h-section safe-title mt-5 text-[#0f2a57]">Больше чем просто уроки</h2>
-          <p className="lead mt-5">Обучение строится как система: диагностика, преподаватель под цель, домашняя практика, разговорные задания, отслеживание прогресса и поддержка между уроками.</p>
+          <h2 className="h-section safe-title mt-4 text-[#0f2a57]">��ольше чем просто уроки</h2>
+          <p className="lead mt-4">Обучение строится как система: диагностика, преподаватель под цель, домашняя практика, разговорные задания, отслеживание прогресса и поддержка между уроками.</p>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {ecosystem.map(([title, text]) => (
-            <div className="glass min-w-0 p-6" key={title}>
-              <span className="orb mb-8 block h-14 w-14" />
+            <div className="glass min-w-0 p-5" key={title}>
+              <span className="orb mb-6 block h-12 w-12" />
               <h3 className="h-card text-[#13355f]">{title}</h3>
-              <p className="lead mt-3 text-base">{text}</p>
+              <p className="lead mt-2">{text}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section className="section page-shell">
-        <div className="grid gap-4 lg:grid-cols-[minmax(0,.9fr)_minmax(0,1.1fr)]">
-          <div className="glass min-h-[420px] min-w-0 p-6 sm:p-8">
+        <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+          <div className="glass min-w-0 p-5 sm:p-7">
             <span className="badge">основатель</span>
-            <h2 className="h-section safe-title mt-5 text-[#0f2a57]">Дарья Орлянская</h2>
-            <p className="lead mt-5">Основатель и методический лидер YOO SCHOOL. Развивает проект, где английский подбирается под цель, возраст, уровень и темп ученика.</p>
-            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Дарья Орлянская</h2>
+            <p className="lead mt-4">Основатель и методический лидер YOO SCHOOL. Развивает проект, где английский подбирается под цель, возраст, уровень и темп ученика.</p>
+            <div className="mt-6 flex flex-wrap gap-2">
               {["10+ лет опыта", "1–11 класс", "Взрослые любого уровня", "Корпоративное обучение"].map((item) => <div className="badge" key={item}>{item}</div>)}
             </div>
           </div>
-          <div className="scene min-h-[420px] p-6 sm:p-8">
-            <div className="scene-content max-w-xl">
+          <div className="scene relative min-w-0 overflow-hidden p-5 sm:p-7">
+            <div className="scene-content relative z-10 max-w-lg">
               <span className="badge">method</span>
-              <h3 className="h-section safe-title mt-5 text-[#0f2a57]">Методика, команда и личный подход</h3>
-              <p className="lead mt-5">Внутри проекта работает команда преподавателей с разным опытом и специализациями. Это позволяет подобрать формат под конкретную задачу: школу, экзамены, поступление, поездки, работу или обучение с нуля.</p>
+              <h3 className="h-section safe-title mt-4 text-[#0f2a57]">Методика, команда и личный подход</h3>
+              <p className="lead mt-4">Внутри проекта работает команда преподавателей с разным опытом и специализациями. Это позволяет подобрать формат под конкретную задачу: школу, экзамены, поступление, поездки, работу или обучение с нуля.</p>
             </div>
-            <div className="decor-art pointer-events-none absolute inset-0 hidden lg:block">
-              <span className="inflatable-y" />
+            <div className="pointer-events-none absolute inset-0 hidden lg:block">
+              <span className="inflatable-y !left-auto !right-[5%] !top-[15%] !w-[140px] opacity-50" />
             </div>
           </div>
         </div>
       </section>
 
       <section id="pricing" className="section page-shell">
-        <div className="mb-8 max-w-4xl">
+        <div className="mb-6 max-w-3xl">
           <span className="badge">цены</span>
-          <h2 className="h-section safe-title mt-5 text-[#0f2a57]">Формат подбираем после диагностики</h2>
+          <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Формат подбираем после диагностики</h2>
         </div>
-        <div className="pricing-grid grid gap-4">
+        <div className="pricing-grid grid gap-3">
           {prices.map(([title, price, text], index) => (
             <article className="glass price-card min-w-0" key={title}>
               <span className="badge">0{index + 1}</span>
-              <h3 className="mt-8 text-xl font-black leading-tight text-[#13355f]">{title}</h3>
-              <p className="mt-5 text-3xl font-black tracking-[-.06em] text-[#0f2a57] sm:text-4xl">{price}</p>
-              <p className="lead mt-5 text-base">{text}</p>
+              <h3 className="mt-5 text-lg font-black leading-tight text-[#13355f] sm:text-xl">{title}</h3>
+              <p className="mt-3 text-2xl font-black tracking-tight text-[#0f2a57] sm:text-3xl">{price}</p>
+              <p className="lead mt-3">{text}</p>
               <a className="btn btn-primary mt-auto" href="#contact">Попробовать</a>
             </article>
           ))}
@@ -237,46 +254,46 @@ export default function Home() {
       </section>
 
       <section id="faq" className="section page-shell">
-        <div className="grid min-w-0 gap-8 lg:grid-cols-[minmax(0,.7fr)_minmax(0,1.3fr)]">
+        <div className="grid min-w-0 gap-6 lg:grid-cols-[minmax(0,.65fr)_minmax(0,1.35fr)] lg:gap-8">
           <div className="min-w-0">
             <span className="badge">FAQ</span>
-            <h2 className="h-section safe-title mt-5 text-[#0f2a57]">Коротко о главном</h2>
+            <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Коротко о главном</h2>
           </div>
-          <div className="grid gap-3">
+          <div className="grid gap-2">
             {faq.map(([q, a]) => (
-              <details className="glass min-w-0 p-5" key={q}>
-                <summary className="cursor-pointer text-lg font-black leading-tight text-[#13355f]">{q}</summary>
-                <p className="lead mt-3 text-base">{a}</p>
+              <details className="glass min-w-0 p-4 sm:p-5" key={q}>
+                <summary className="cursor-pointer text-base font-bold leading-snug text-[#13355f] sm:text-lg">{q}</summary>
+                <p className="lead mt-2">{a}</p>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="contact" className="page-shell pb-12">
-        <div className="scene p-6 sm:p-8 lg:p-10">
-          <div className="scene-content grid min-w-0 gap-6 lg:grid-cols-[minmax(0,.95fr)_minmax(0,1.05fr)] lg:items-center">
+      <section id="contact" className="page-shell pb-10">
+        <div className="scene p-5 sm:p-7 lg:p-8">
+          <div className="scene-content grid min-w-0 gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center lg:gap-8">
             <div className="min-w-0">
               <span className="badge">start</span>
-              <h2 className="h-section safe-title mt-5 text-[#0f2a57]">Начните с бесплатного вводного урока</h2>
-              <p className="lead mt-5 max-w-2xl">Определим уровень, цель и предложим маршрут занятий. Без давления, с понятной логикой следующего шага.</p>
+              <h2 className="h-section safe-title mt-4 text-[#0f2a57]">Начните с бесплатного вводного урока</h2>
+              <p className="lead mt-4 max-w-lg">Определим уровень, цель и предложим маршрут занятий. Без давления, с понятной логикой следующего шага.</p>
             </div>
-            <form className="glass grid min-w-0 gap-4 p-5 sm:p-7">
+            <form className="glass grid min-w-0 gap-3 p-5 sm:p-6">
               <input className="input" placeholder="Имя" />
               <input className="input" placeholder="Телефон" />
               <input className="input" placeholder="Email" />
               <input className="input" placeholder="Цель обучения" />
-              <button className="btn btn-primary" type="submit">Отправить заявку</button>
-              <p className="text-sm font-bold leading-tight text-[#49637f]">Telegram @yoo_school · +7 (900) 000-00-00</p>
+              <button className="btn btn-primary mt-1" type="submit">Отправить заявку</button>
+              <p className="text-center text-sm font-semibold text-[#49637f]">Telegram @yoo_school · +7 (900) 000-00-00</p>
             </form>
           </div>
         </div>
       </section>
 
-      <footer className="page-shell pb-10">
-        <div className="glass flex flex-col gap-4 p-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-xl font-black tracking-[-.05em]">YOO SCHOOL</p>
-          <p className="max-w-2xl text-sm font-bold leading-tight text-[#49637f]">Английский для детей, подростков, взрослых и команд. Подбираем преподавателя, формат и маршрут обучения под цель ученика или бизнеса.</p>
+      <footer className="page-shell pb-8">
+        <div className="glass flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+          <p className="text-lg font-black tracking-tight sm:text-xl">YOO SCHOOL</p>
+          <p className="max-w-xl text-sm font-semibold leading-relaxed text-[#49637f]">Английский для детей, подростков, взрослых и команд. Подбираем преподавателя, формат и маршрут обучения под цель ученика или бизнеса.</p>
         </div>
       </footer>
     </main>
