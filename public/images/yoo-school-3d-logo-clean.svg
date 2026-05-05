@@ -1,33 +1,30 @@
-<svg width="560" height="170" viewBox="0 0 560 170" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="620" height="210" viewBox="0 0 620 210" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="logoChrome" x1="185" y1="20" x2="540" y2="150" gradientUnits="userSpaceOnUse">
+    <linearGradient id="logoChrome" x1="210" y1="40" x2="570" y2="165" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#FFFFFF"/>
-      <stop offset="0.18" stop-color="#8FE4FF"/>
-      <stop offset="0.35" stop-color="#FFFFFF"/>
-      <stop offset="0.62" stop-color="#B99BFF"/>
+      <stop offset="0.2" stop-color="#A5E9FF"/>
+      <stop offset="0.38" stop-color="#FFFFFF"/>
+      <stop offset="0.62" stop-color="#AFA5FF"/>
       <stop offset="0.8" stop-color="#FFFFFF"/>
-      <stop offset="1" stop-color="#64DFFF"/>
+      <stop offset="1" stop-color="#79DFFF"/>
     </linearGradient>
-    <radialGradient id="logoJelly" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(64 28) rotate(47) scale(150)">
+    <radialGradient id="logoJelly" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(94 58) rotate(47) scale(154)">
       <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.98"/>
-      <stop offset="0.28" stop-color="#8FEAFF" stop-opacity="0.92"/>
-      <stop offset="0.58" stop-color="#FF91CC" stop-opacity="0.86"/>
-      <stop offset="1" stop-color="#FFC36F" stop-opacity="0.94"/>
+      <stop offset="0.3" stop-color="#9AECFF" stop-opacity="0.95"/>
+      <stop offset="0.62" stop-color="#FF9BCF" stop-opacity="0.88"/>
+      <stop offset="1" stop-color="#FFC978" stop-opacity="0.96"/>
     </radialGradient>
-    <filter id="logoShadow" x="0" y="0" width="560" height="170" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="14" stdDeviation="13" flood-color="#225C8C" flood-opacity="0.22"/>
-    </filter>
-    <filter id="innerGlow" x="18" y="8" width="150" height="154" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feGaussianBlur stdDeviation="0.2"/>
+    <filter id="logoShadow" x="0" y="0" width="620" height="210" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#2A6B9E" flood-opacity="0.18"/>
     </filter>
   </defs>
   <g filter="url(#logoShadow)">
-    <path filter="url(#innerGlow)" d="M55 22C73 11 96 18 105 39L121 75L138 39C147 18 170 11 188 24C207 38 204 65 183 79L150 101V128C150 147 136 160 117 160C98 160 84 147 84 128V101L51 79C30 65 27 38 46 24C49 22 52 21 55 22Z" fill="url(#logoJelly)" stroke="white" stroke-width="7" stroke-linejoin="round"/>
-    <ellipse cx="86" cy="42" rx="25" ry="10" fill="white" opacity="0.64"/>
-    <path d="M60 35C75 22 96 26 105 45" stroke="white" stroke-width="5" stroke-linecap="round" opacity="0.5"/>
-    <text x="196" y="76" fill="url(#logoChrome)" stroke="white" stroke-width="2.4" font-family="Arial Black, Manrope, sans-serif" font-size="58" font-weight="900" letter-spacing="-4">YOO</text>
-    <text x="196" y="130" fill="url(#logoChrome)" stroke="white" stroke-width="1.9" font-family="Arial Black, Manrope, sans-serif" font-size="50" font-weight="900" letter-spacing="-3">SCHOOL</text>
-    <circle cx="482" cy="38" r="7" fill="white" opacity="0.95"/>
-    <path d="M482 22V54M466 38H498" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.84"/>
+    <path d="M84 43C103 31 126 38 135 61L151 98L169 61C178 38 202 31 220 45C240 60 236 88 214 103L181 126V154C181 171 168 184 151 184C134 184 121 171 121 154V126L88 103C66 88 62 60 82 45C82 44 83 44 84 43Z" fill="url(#logoJelly)"/>
+    <ellipse cx="118" cy="65" rx="27" ry="11" fill="white" opacity="0.56"/>
+    <path d="M94 58C110 46 130 49 140 67" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.42"/>
+    <text x="240" y="95" fill="url(#logoChrome)" font-family="Arial Black, Manrope, sans-serif" font-size="61" font-weight="900" letter-spacing="-4.5">YOO</text>
+    <text x="240" y="150" fill="url(#logoChrome)" font-family="Arial Black, Manrope, sans-serif" font-size="51" font-weight="900" letter-spacing="-3.2">SCHOOL</text>
+    <circle cx="528" cy="58" r="6.5" fill="white" opacity="0.88"/>
+    <path d="M528 44V72M514 58H542" stroke="white" stroke-width="3.4" stroke-linecap="round" opacity="0.7"/>
   </g>
 </svg>
