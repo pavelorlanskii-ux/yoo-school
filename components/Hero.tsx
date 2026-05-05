@@ -2,9 +2,8 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
-import Image from "next/image";
 import { siteContent } from "@/data/siteContent";
-import { YooOrb, YooPencil, YooSpark, YooSpeech } from "./CreativeArts";
+import { YooInflatable, YooSpeech } from "./CreativeArts";
 
 function BrandMark() {
   return (
@@ -32,7 +31,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="grid min-w-0 gap-4 xl:grid-cols-[minmax(0,1.08fr)_minmax(390px,0.92fr)]">
+        <div className="grid min-w-0 gap-4 xl:grid-cols-[minmax(0,1.02fr)_minmax(420px,0.98fr)]">
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
@@ -77,38 +76,28 @@ export default function Hero() {
             transition={{ duration: 0.45, delay: 0.08 }}
             className="grid min-w-0 gap-4"
           >
-            <div className="creative-lime relative min-h-[500px] overflow-hidden p-5 sm:min-h-[600px] lg:min-h-full lg:p-6">
-              <div className="absolute inset-x-0 bottom-0 top-0 z-[1]">
-                <Image
-                  src="/images/teacher.png"
-                  alt="Дарья Орлянская — основатель YOO SCHOOL"
-                  fill
-                  className="object-cover object-[52%_13%] sm:object-[53%_14%] lg:object-[56%_14%]"
-                  sizes="(max-width: 1279px) 100vw, 44vw"
-                  priority
-                />
+            <div className="relative min-h-[500px] overflow-hidden rounded-[2rem] bg-gradient-to-b from-[#9EC9F8] via-[#D8EAFF] to-[#F6F6F2] p-5 sm:min-h-[600px] lg:min-h-full lg:p-6">
+              <div className="absolute left-5 top-5 z-10 rounded-[1.2rem] bg-[#F6F6F2]/80 px-4 py-3 backdrop-blur-md">
+                <p className="text-xs font-extrabold uppercase tracking-[0.08em] text-[#5E5E58]">визуальная система</p>
+                <p className="text-xl font-extrabold leading-none tracking-[-0.04em] text-[#111111] sm:text-2xl">YOO воздушный</p>
               </div>
-              <div className="absolute inset-x-0 bottom-0 z-[2] h-44 bg-gradient-to-t from-[#EAF7A2] via-[#EAF7A2]/82 to-transparent" />
-              <YooSpark className="motion-art motion-spin-slow absolute left-4 top-28 z-[3] h-24 w-24 sm:left-6 sm:h-28 sm:w-28" />
-              <YooOrb className="motion-art motion-float absolute right-4 top-24 z-[3] h-24 w-24 sm:right-8 sm:h-32 sm:w-32" />
-              <YooPencil className="motion-art motion-wiggle motion-delay-2 absolute bottom-40 left-5 z-[3] h-14 w-36 sm:h-16 sm:w-44" />
-              <div className="absolute inset-x-6 top-6 z-10 flex flex-wrap items-start justify-between gap-3">
-                <div className="rounded-[1.2rem] bg-[#F6F6F2] px-4 py-3">
-                  <p className="text-xs font-extrabold uppercase tracking-[0.08em] text-[#5E5E58]">формат</p>
-                  <p className="text-xl font-extrabold leading-none tracking-[-0.04em] text-[#111111] sm:text-2xl">личный маршрут</p>
-                </div>
-                <div className="rounded-full bg-[#B975F0] px-4 py-2 text-sm font-extrabold text-white">
-                  english for goals
-                </div>
+              <div className="absolute right-5 top-5 z-10 rounded-full bg-[#FFF7A8] px-4 py-2 text-sm font-extrabold text-[#111111]">
+                english in motion
               </div>
+
+              <div className="absolute left-[10%] top-[10%] h-16 w-28 rounded-full bg-white/70 blur-sm" />
+              <div className="absolute right-[8%] top-[32%] h-20 w-36 rounded-full bg-white/65 blur-sm" />
+              <div className="absolute bottom-[22%] left-[8%] h-16 w-28 rounded-full bg-white/70 blur-sm" />
+
+              <YooInflatable className="motion-art motion-float-slow absolute left-1/2 top-1/2 z-[3] h-[86%] w-[86%] -translate-x-1/2 -translate-y-1/2" />
 
               <div className="absolute bottom-5 left-5 right-5 z-10 grid gap-3 sm:grid-cols-[0.8fr_1.2fr]">
                 <div className="rounded-[1.1rem] bg-[#111111] p-4 text-[#F6F6F2] sm:rounded-[1.25rem] sm:p-5">
                   <p className="text-4xl font-extrabold leading-none tracking-[-0.08em] sm:text-5xl">10+</p>
                   <p className="mt-2 text-xs font-bold leading-tight text-white/70 sm:text-sm">лет опыта в обучении английскому</p>
                 </div>
-                <div className="rounded-[1.1rem] bg-[#F6F6F2] p-4 text-[#111111] sm:rounded-[1.25rem] sm:p-5">
-                  <p className="text-xl font-extrabold leading-[0.92] tracking-[-0.04em] sm:text-2xl">Личный подход без ощущения школьной обязаловки</p>
+                <div className="rounded-[1.1rem] bg-[#F6F6F2]/88 p-4 text-[#111111] backdrop-blur-md sm:rounded-[1.25rem] sm:p-5">
+                  <p className="text-xl font-extrabold leading-[0.92] tracking-[-0.04em] sm:text-2xl">Лёгкая система без ощущения школьной обязаловки</p>
                 </div>
               </div>
             </div>
