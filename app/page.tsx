@@ -4,17 +4,17 @@ const directions = [
   {
     title: "+1 уровень английского",
     text: "Системный курс для тех, кто хочет заметный прогресс: уроки один на один, практика между занятиями и понятная траектория роста.",
-    art: "book",
+    animal: "bear",
   },
   {
     title: "Школа и экзамены",
     text: "Помогаем ученикам 1–11 классов, готовим к ОГЭ, ЕГЭ, вступительным испытаниям и поступлению в российские и зарубежные вузы.",
-    art: "pencil",
+    animal: "rabbit",
   },
   {
     title: "Работа, путешествия и жизнь",
     text: "Английский для собеседований, переговоров, поездок, переезда и повседневного общения без языкового барьера.",
-    art: "bubble",
+    animal: "cat",
   },
 ];
 
@@ -57,6 +57,8 @@ const footerColumns = [
   ["Школа", ["О подходе", "Преподаватели", "Корпоративное обучение", "Контакты"]],
 ];
 
+type AnimalName = "bear" | "rabbit" | "cat" | "dog" | "elephant" | "duck";
+
 function Logo({ className = "" }: { className?: string }) {
   return (
     <Image
@@ -70,28 +72,17 @@ function Logo({ className = "" }: { className?: string }) {
   );
 }
 
-function MiniArt({ type }: { type: string }) {
-  if (type === "book") {
-    return (
-      <div className="clean-art relative mx-auto h-28 w-40 shrink-0">
-        <div className="orb orb-abs left-2 top-3 h-20 w-20" />
-        <div className="mini-glass absolute bottom-2 left-6 h-16 w-24 rotate-[-8deg] rounded-[20px]" />
-      </div>
-    );
-  }
-  if (type === "pencil") {
-    return (
-      <div className="clean-art relative mx-auto h-28 w-40 shrink-0">
-        <div className="orb orb-abs right-1 top-1 h-16 w-16" />
-        <div className="absolute bottom-8 left-2 h-8 w-32 rotate-[-12deg] rounded-full bg-gradient-to-r from-[#ff9d4d] via-[#ff7fae] to-white shadow-xl" />
-      </div>
-    );
-  }
+function Animal({ name, className = "", priority = false }: { name: AnimalName; className?: string; priority?: boolean }) {
   return (
-    <div className="clean-art relative mx-auto h-28 w-40 shrink-0">
-      <div className="mini-glass absolute left-3 top-4 h-20 w-28 rounded-[24px]" />
-      <div className="orb orb-abs bottom-2 right-3 h-14 w-14" />
-    </div>
+    <Image
+      src={`/images/glass-animals/glass-${name}.svg`}
+      alt=""
+      width={520}
+      height={520}
+      className={`animal-art ${className}`}
+      priority={priority}
+      aria-hidden="true"
+    />
   );
 }
 
@@ -126,15 +117,10 @@ export default function Home() {
               </div>
             </div>
             <div className="min-w-0">
-              <div className="hero-art">
+              <div className="hero-art animal-hero-stage">
                 <span className="chrome-word">YOO<br />SCHOOL</span>
-                <span className="inflatable-y" />
-                <span className="jelly-bear" />
-                <span className="orb orb-abs left-[8%] bottom-[22%] h-12 w-12 sm:h-16 sm:w-16" />
-                <span className="orb orb-abs right-[12%] top-[20%] h-16 w-16 sm:h-20 sm:w-20" />
-                <span className="cloud left-[4%] top-[20%] h-12 w-32" />
-                <span className="cloud bottom-[20%] right-[10%] h-14 w-40" />
-                <span className="flare right-[8%] top-[10%]" />
+                <Animal name="rabbit" className="animal-hero-main" priority />
+                <Animal name="duck" className="animal-hero-small animal-float-delay" priority />
               </div>
             </div>
           </div>
@@ -151,7 +137,9 @@ export default function Home() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {directions.map((item) => (
             <article className="glass feature-card" key={item.title}>
-              <MiniArt type={item.art} />
+              <div className="animal-card-slot">
+                <Animal name={item.animal as AnimalName} className="animal-card" />
+              </div>
               <h3 className="h-card relative z-10 mt-auto text-[#13355f]">{item.title}</h3>
               <p className="lead relative z-10 mt-3">{item.text}</p>
               <a href="#contact" className="btn btn-primary relative z-10 mt-6 w-fit">Подобрать курс</a>
@@ -164,9 +152,8 @@ export default function Home() {
               <h3 className="h-section safe-title text-[#0f2a57]">Корпоративное обучение для команды</h3>
               <p className="lead mt-4 max-w-2xl">Соберём программу для рабочих задач: встречи, письма, презентации, переговоры и клиентские коммуникации на английском.</p>
             </div>
-            <div className="decor-art hidden lg:block">
-              <span className="jelly-bear" />
-              <span className="orb orb-abs bottom-[10%] right-[12%] h-20 w-20" />
+            <div className="animal-side-stage hidden lg:block">
+              <Animal name="dog" className="animal-side" />
             </div>
           </div>
         </div>
@@ -186,6 +173,7 @@ export default function Home() {
               ))}
             </div>
           </div>
+          <Animal name="cat" className="animal-section-corner hidden lg:block" />
         </div>
       </section>
 
@@ -210,9 +198,7 @@ export default function Home() {
               <h3 className="h-section safe-title text-[#0f2a57]">Переверните представление об учёбе</h3>
               <p className="lead mt-4">Мы не повторяем одни и те же темы по кругу. Программа собирается вокруг интересов ученика: школа, работа, поездки, IT, маркетинг, собеседования или разговорная практика.</p>
             </div>
-            <div className="pointer-events-none absolute inset-0 hidden lg:block">
-              <span className="inflatable-y !left-auto !right-[5%] !top-[15%] !w-[140px] opacity-50" />
-            </div>
+            <Animal name="elephant" className="animal-method hidden lg:block" />
           </div>
         </div>
       </section>
@@ -223,9 +209,9 @@ export default function Home() {
           <p className="lead mt-4">Вы платите не за набор занятий, а за систему: преподаватель, материалы, практика, обратная связь и контроль движения к цели.</p>
         </div>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {approach.map(([title, text]) => (
+          {approach.map(([title, text], index) => (
             <div className="glass min-w-0 p-5" key={title}>
-              <span className="orb mb-6 block h-12 w-12" />
+              <Animal name={(["duck", "cat", "bear", "rabbit"] as AnimalName[])[index]} className="animal-mini mb-4" />
               <h3 className="h-card text-[#13355f]">{title}</h3>
               <p className="lead mt-2">{text}</p>
             </div>
@@ -282,6 +268,7 @@ export default function Home() {
               <p className="text-center text-sm font-semibold text-[#49637f]">Telegram @yoo_school · +7 (900) 000-00-00</p>
             </form>
           </div>
+          <Animal name="duck" className="animal-contact hidden lg:block" />
         </div>
       </section>
 
