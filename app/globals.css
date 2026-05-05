@@ -94,6 +94,67 @@ main {
   filter: drop-shadow(0 10px 0 rgba(17,17,17,0.12));
 }
 
+.motion-art {
+  pointer-events: none;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.motion-float {
+  animation: yooFloat 7s ease-in-out infinite;
+}
+
+.motion-float-slow {
+  animation: yooFloat 10s ease-in-out infinite;
+}
+
+.motion-spin-slow {
+  animation: yooSpin 18s linear infinite;
+}
+
+.motion-wiggle {
+  animation: yooWiggle 5.5s ease-in-out infinite;
+}
+
+.motion-pulse-soft {
+  animation: yooPulse 4.5s ease-in-out infinite;
+}
+
+.motion-delay-1 { animation-delay: -1.4s; }
+.motion-delay-2 { animation-delay: -2.8s; }
+.motion-delay-3 { animation-delay: -4.2s; }
+
+@keyframes yooFloat {
+  0%, 100% { transform: translate3d(0,0,0) rotate(var(--r, 0deg)); }
+  50% { transform: translate3d(0,-18px,0) rotate(calc(var(--r, 0deg) + 3deg)); }
+}
+
+@keyframes yooSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes yooWiggle {
+  0%, 100% { transform: rotate(var(--r, 0deg)) translateX(0); }
+  50% { transform: rotate(calc(var(--r, 0deg) + 7deg)) translateX(6px); }
+}
+
+@keyframes yooPulse {
+  0%, 100% { transform: scale(1); opacity: 0.92; }
+  50% { transform: scale(1.06); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .creative-marquee,
+  .motion-float,
+  .motion-float-slow,
+  .motion-spin-slow,
+  .motion-wiggle,
+  .motion-pulse-soft {
+    animation: none !important;
+  }
+}
+
 .studio-line::after {
   content: "";
   display: block;
