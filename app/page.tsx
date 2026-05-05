@@ -75,7 +75,7 @@ function Logo({ className = "" }: { className?: string }) {
 function Animal({ name, className = "", priority = false }: { name: AnimalName; className?: string; priority?: boolean }) {
   return (
     <Image
-      src={`/images/glass-animals/glass-${name}.svg`}
+      src={`/images/glass-animals/glass-${name}.png`}
       alt=""
       width={520}
       height={520}
