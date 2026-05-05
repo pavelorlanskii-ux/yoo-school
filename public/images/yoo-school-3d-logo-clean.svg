@@ -1,0 +1,28 @@
+<svg width="520" height="160" viewBox="0 0 520 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="chrome" x1="18" y1="12" x2="500" y2="142" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.18" stop-color="#8FE4FF"/>
+      <stop offset="0.36" stop-color="#FFFFFF"/>
+      <stop offset="0.58" stop-color="#B99BFF"/>
+      <stop offset="0.76" stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#62D7FF"/>
+    </linearGradient>
+    <linearGradient id="warm" x1="50" y1="20" x2="475" y2="142" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFEFA6"/>
+      <stop offset="0.48" stop-color="#FF8CC8"/>
+      <stop offset="1" stop-color="#FFB65C"/>
+    </linearGradient>
+    <filter id="softShadow" x="0" y="0" width="520" height="160" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="15" flood-color="#225C8C" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <g filter="url(#softShadow)">
+    <path d="M55 26C72 14 93 19 102 39L119 77L136 39C145 19 166 14 183 26C201 39 200 64 181 77L145 101V127C145 144 132 156 115 156C98 156 85 144 85 127V101L49 77C30 64 29 39 47 26C49 25 52 25 55 26Z" fill="url(#warm)" stroke="white" stroke-width="8" stroke-linejoin="round"/>
+    <ellipse cx="86" cy="43" rx="24" ry="10" fill="white" opacity="0.58"/>
+    <text x="196" y="72" fill="url(#chrome)" stroke="white" stroke-width="2.5" font-family="Arial Black, Manrope, sans-serif" font-size="54" font-weight="900" letter-spacing="-4">YOO</text>
+    <text x="196" y="126" fill="url(#chrome)" stroke="white" stroke-width="2" font-family="Arial Black, Manrope, sans-serif" font-size="49" font-weight="900" letter-spacing="-3">SCHOOL</text>
+    <circle cx="455" cy="37" r="7" fill="white" opacity="0.92"/>
+    <path d="M455 22V52M440 37H470" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.85"/>
+  </g>
+</svg>
