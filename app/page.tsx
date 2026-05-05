@@ -56,9 +56,9 @@ function Logo({ className = "" }: { className?: string }) {
     <Image
       src="/images/yoo-school-3d-logo-clean.svg"
       alt="YOO SCHOOL"
-      width={156}
-      height={48}
-      className={`h-auto object-contain ${className}`}
+      width={168}
+      height={51}
+      className={`logo-img h-auto object-contain ${className}`}
       priority
     />
   );
@@ -95,7 +95,7 @@ export default function Home() {
       <header className="nav-glass">
         <div className="flex items-center justify-between gap-3 px-4 py-2 sm:px-5 sm:py-2.5">
           <a href="#top" className="shrink-0" aria-label="YOO SCHOOL">
-            <Logo className="w-[116px] sm:w-[140px]" />
+            <Logo className="w-[124px] sm:w-[152px]" />
           </a>
           <nav className="nav-links flex items-center gap-4 text-sm font-bold text-[#19385f] lg:gap-5">
             <a href="#directions">Направления</a>
@@ -108,7 +108,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section id="top" className="page-shell pb-8 pt-32 sm:pt-36 lg:pt-40">
+      <section id="top" className="hero-section page-shell pb-8">
         <div className="scene p-5 sm:p-7 lg:p-10">
           <div className="scene-content grid min-w-0 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center lg:gap-8">
             <div className="relative z-10 min-w-0">
@@ -125,16 +125,18 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="hero-art min-w-0">
-              <span className="chrome-word">YOO<br />SCHOOL</span>
-              <span className="inflatable-y" />
-              <span className="jelly-bear" />
-              <span className="orb orb-abs left-[8%] bottom-[22%] h-12 w-12 sm:h-16 sm:w-16" />
-              <span className="orb orb-abs right-[12%] top-[20%] h-16 w-16 sm:h-20 sm:w-20" />
-              <span className="cloud left-[4%] top-[20%] h-12 w-32" />
-              <span className="cloud bottom-[20%] right-[10%] h-14 w-40" />
-              <span className="flare right-[8%] top-[10%]" />
-              <div className="learning-route-card absolute left-[6%] z-10 max-w-[250px] p-4">
+            <div className="min-w-0">
+              <div className="hero-art">
+                <span className="chrome-word">YOO<br />SCHOOL</span>
+                <span className="inflatable-y" />
+                <span className="jelly-bear" />
+                <span className="orb orb-abs left-[8%] bottom-[22%] h-12 w-12 sm:h-16 sm:w-16" />
+                <span className="orb orb-abs right-[12%] top-[20%] h-16 w-16 sm:h-20 sm:w-20" />
+                <span className="cloud left-[4%] top-[20%] h-12 w-32" />
+                <span className="cloud bottom-[20%] right-[10%] h-14 w-40" />
+                <span className="flare right-[8%] top-[10%]" />
+              </div>
+              <div className="learning-route-card max-w-[260px] p-4">
                 <p className="text-[10px] font-bold uppercase tracking-[.1em] text-[#56769a]">learning route</p>
                 <p className="mt-1.5 text-lg font-black leading-tight tracking-tight text-[#0f2a57] sm:text-xl">диагностика → маршрут → практика</p>
               </div>
@@ -277,7 +279,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="page-shell pb-14 sm:pb-16">
+      <section id="contact" className="contact-section page-shell">
         <div className="scene p-5 sm:p-7 lg:p-8">
           <div className="scene-content grid min-w-0 gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center lg:gap-8">
             <div className="min-w-0">
@@ -297,9 +299,9 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="page-shell pb-8 pt-2 sm:pt-4">
+      <footer className="footer-section page-shell pb-8">
         <div className="glass flex flex-col gap-4 p-5 sm:flex-row sm:items-center sm:justify-between sm:p-6">
-          <Logo className="w-[124px] sm:w-[148px]" />
+          <Logo className="w-[132px] sm:w-[156px]" />
           <p className="max-w-xl text-sm font-semibold leading-relaxed text-[#49637f]">Английский для детей, подростков, взрослых и команд. Подбираем преподавателя, формат и маршрут обучения под цель ученика или бизнеса.</p>
         </div>
       </footer>
