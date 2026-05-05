@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
 import Image from "next/image";
 import { siteContent } from "@/data/siteContent";
-import { YooBook, YooOrb, YooPencil, YooSpark, YooSpeech } from "./CreativeArts";
+import { YooOrb, YooPencil, YooSpark, YooSpeech } from "./CreativeArts";
 
 function BrandMark() {
   return (
