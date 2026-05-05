@@ -60,7 +60,7 @@ export default function DirectionCards() {
                 <p className="mt-5 flex-1 text-base font-extrabold leading-tight opacity-75">
                   {item.description}
                 </p>
-                <a href="#contact" className="btn btn-primary mt-8 w-fit px-6 py-3 text-sm">
+                <a href="#contact" className="btn btn-primary mt-auto w-fit px-6 py-3 text-sm">
                   Попробовать
                   <ArrowRight className="h-4 w-4" />
                 </a>

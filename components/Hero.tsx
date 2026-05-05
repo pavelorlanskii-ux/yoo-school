@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
+import Image from "next/image";
 import { siteContent } from "@/data/siteContent";
 
 function BrandMark() {
@@ -75,6 +76,17 @@ export default function Hero() {
             className="grid min-w-0 gap-4"
           >
             <div className="creative-lime relative min-h-[500px] overflow-hidden p-5 sm:min-h-[600px] lg:min-h-full lg:p-6">
+              <div className="absolute inset-x-0 bottom-0 top-0 z-[1]">
+                <Image
+                  src="/images/teacher.png"
+                  alt="Дарья Орлянская — основатель YOO SCHOOL"
+                  fill
+                  className="object-cover object-[52%_13%] sm:object-[53%_14%] lg:object-[56%_14%]"
+                  sizes="(max-width: 1279px) 100vw, 44vw"
+                  priority
+                />
+              </div>
+              <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#EAF7A2] via-[#EAF7A2]/80 to-transparent z-[2]" />
               <div className="absolute inset-x-6 top-6 z-10 flex flex-wrap items-start justify-between gap-3">
                 <div className="rounded-[1.2rem] bg-[#F6F6F2] px-4 py-3">
                   <p className="text-xs font-extrabold uppercase tracking-[0.08em] text-[#5E5E58]">формат</p>
@@ -85,11 +97,9 @@ export default function Hero() {
                 </div>
               </div>
 
-              <div className="absolute left-1/2 top-1/2 h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#F34824]" />
-              <div className="absolute left-[14%] top-[34%] h-24 w-24 rotate-12 rounded-[1.2rem] border-[8px] border-[#111111] bg-[#F6F6F2]" />
-              <div className="absolute right-[12%] top-[28%] h-28 w-28 rounded-full bg-[#B975F0]" />
-              <div className="absolute bottom-[22%] left-[18%] h-16 w-48 -rotate-6 rounded-full bg-[#111111]" />
-              <div className="absolute bottom-[18%] right-[10%] h-28 w-28 rotate-12 rounded-[2rem] bg-[#F6F6F2]" />
+              <div className="absolute left-[10%] top-[40%] z-[3] hidden h-20 w-20 rotate-12 rounded-[1rem] border-[6px] border-[#111111] bg-[#F6F6F2]/90 sm:block" />
+              <div className="absolute right-[10%] top-[32%] z-[3] hidden h-24 w-24 rounded-full bg-[#B975F0]/90 sm:block" />
+              <div className="absolute bottom-[26%] left-[10%] z-[3] h-12 w-32 -rotate-6 rounded-full bg-[#111111]/92 sm:h-14 sm:w-40" />
 
               <div className="absolute bottom-5 left-5 right-5 z-10 grid gap-3 sm:grid-cols-[0.8fr_1.2fr]">
                 <div className="rounded-[1.1rem] bg-[#111111] p-4 text-[#F6F6F2] sm:rounded-[1.25rem] sm:p-5">
