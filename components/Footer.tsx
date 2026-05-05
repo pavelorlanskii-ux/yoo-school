@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { siteContent } from "@/data/siteContent";
 import { FloatingStar, LiquidOrb } from "./CreativeArts";
 import Logo from "./Logo";
@@ -39,6 +40,19 @@ export default function Footer() {
                 <a href={item.href} className="mt-3 block text-sm font-bold text-[#0f2a57]/85">Перейти к разделу</a>
               </div>
             ))}
+          </div>
+
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="liquid-card p-2">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+                <Image src="/images/ref/stickers.png" alt="Glossy sticker reference" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+              </div>
+            </div>
+            <div className="liquid-card p-2">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-xl">
+                <Image src="/images/ref/animals-grid.png" alt="3D animals reference" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+              </div>
+            </div>
           </div>
 
           <div className="mt-6 border-t border-white/55 pt-4 text-xs font-bold text-[#6b84a8]">

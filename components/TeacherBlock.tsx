@@ -41,6 +41,18 @@ export default function TeacherBlock() {
               </div>
             </div>
           </div>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2">
+            <div className="liquid-card p-3">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                <Image src="/images/ref/glass-dog.png" alt="Glossy dog reference" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+              </div>
+            </div>
+            <div className="liquid-card p-3">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                <Image src="/images/ref/bears-sky.png" alt="Glossy bears reference" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
