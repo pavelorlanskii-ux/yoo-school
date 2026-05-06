@@ -6,6 +6,7 @@ const manrope = Manrope({
   subsets: ["latin", "cyrillic"],
   variable: "--font-manrope",
   weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,9 +24,10 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#F3F5F6",
+  themeColor: "#a5d8ff",
   width: "device-width",
   initialScale: 1,
+  maximumScale: 5,
 };
 
 export default function RootLayout({
@@ -34,8 +36,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru" className="bg-[#F3F5F6]">
-      <body className={`${manrope.variable} font-sans antialiased bg-[#F3F5F6] text-[#050505]`}>{children}</body>
+    <html lang="ru" className="bg-[#a5d8ff]">
+      <body className={`${manrope.variable} font-sans antialiased text-[#0a1e3d]`}>{children}</body>
     </html>
   );
 }
