@@ -35,17 +35,17 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="heading-xl text-balance"
+              className="heading-xl max-w-3xl text-balance"
             >
-              Программы для любых целей{" "}
-              <span className="text-gradient-lime">с гарантией результата</span>
+              Английский для школы, экзаменов, работы и{" "}
+              <span className="text-gradient-lime">переезда</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-5 max-w-lg text-base leading-relaxed text-gray-600 sm:mt-6 sm:text-lg"
+              className="mt-5 max-w-xl text-base leading-relaxed text-gray-600 sm:mt-6 sm:text-lg"
             >
               {siteContent.hero.text}
             </motion.p>
@@ -80,16 +80,16 @@ export default function Hero() {
               className="mt-10 grid min-w-0 grid-cols-3 gap-3 sm:mt-12 sm:gap-6"
             >
               <div className="min-w-0">
-                <p className="text-2xl font-bold tabular-nums text-[#1A1A2E] sm:text-3xl lg:text-4xl">1000+</p>
-                <p className="mt-1 text-xs text-gray-500 sm:text-sm">учеников</p>
-              </div>
-              <div className="min-w-0">
                 <p className="text-2xl font-bold tabular-nums text-[#1A1A2E] sm:text-3xl lg:text-4xl">10+</p>
-                <p className="mt-1 text-xs text-gray-500 sm:text-sm">преподавателей</p>
+                <p className="mt-1 text-xs text-gray-500 sm:text-sm">лет опыта</p>
               </div>
               <div className="min-w-0">
-                <p className="text-2xl font-bold tabular-nums text-[#1A1A2E] sm:text-3xl lg:text-4xl">98%</p>
-                <p className="mt-1 text-xs text-gray-500 sm:text-sm">довольных</p>
+                <p className="text-2xl font-bold tabular-nums text-[#1A1A2E] sm:text-3xl lg:text-4xl">1-11</p>
+                <p className="mt-1 text-xs text-gray-500 sm:text-sm">классы</p>
+              </div>
+              <div className="min-w-0">
+                <p className="text-2xl font-bold tabular-nums text-[#1A1A2E] sm:text-3xl lg:text-4xl">4</p>
+                <p className="mt-1 text-xs text-gray-500 sm:text-sm">направления</p>
               </div>
             </motion.div>
           </div>
@@ -106,7 +106,7 @@ export default function Hero() {
                 <div className="relative aspect-[4/5] w-full min-w-0 overflow-hidden rounded-2xl">
                   <Image
                     src="/images/teacher.png"
-                    alt="Дарья Орлянская — основатель YOO SCHOOL"
+                    alt="Дарья Орлянская - основатель YOO SCHOOL"
                     fill
                     className="object-cover object-top"
                     sizes="(max-width: 1024px) 100vw, 50vw"
