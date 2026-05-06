@@ -62,10 +62,10 @@ type AnimalName = "bear" | "rabbit" | "cat" | "dog" | "elephant" | "duck";
 function Logo({ className = "" }: { className?: string }) {
   return (
     <Image
-      src="/images/yoo-school-3d-logo-clean.svg"
+      src="/images/yoo-school-logo-new.png"
       alt="YOO SCHOOL"
-      width={168}
-      height={51}
+      width={1024}
+      height={576}
       className={`logo-img h-auto object-contain ${className}`}
       priority
     />
@@ -106,7 +106,7 @@ export default function Home() {
       </header>
 
       <section id="top" className="hero-section page-shell pb-8">
-        <div className="scene p-5 sm:p-7 lg:p-10">
+        <div className="scene hero-scene p-5 sm:p-7 lg:p-10">
           <div className="scene-content grid min-w-0 gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:items-center lg:gap-8">
             <div className="relative z-10 min-w-0">
               <h1 className="h-display text-[#0f2a57]">Программы для любых целей с понятным результатом</h1>
@@ -117,10 +117,18 @@ export default function Home() {
               </div>
             </div>
             <div className="min-w-0">
-              <div className="hero-art animal-hero-stage">
-                <span className="chrome-word">YOO<br />SCHOOL</span>
-                <Animal name="rabbit" className="animal-hero-main" priority />
-                <Animal name="duck" className="animal-hero-small animal-float-delay" priority />
+              <div className="hero-art animal-hero-stage flex items-end justify-center">
+                <video
+                  className="hero-video"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                  aria-label="YOO SCHOOL hero animation"
+                >
+                  <source src="/videos/hero-animation.mp4" type="video/mp4" />
+                </video>
               </div>
             </div>
           </div>
@@ -198,7 +206,6 @@ export default function Home() {
               <h3 className="h-section safe-title text-[#0f2a57]">Переверните представление об учёбе</h3>
               <p className="lead mt-4">Мы не повторяем одни и те же темы по кругу. Программа собирается вокруг интересов ученика: школа, работа, поездки, IT, маркетинг, собеседования или разговорная практика.</p>
             </div>
-            <Animal name="elephant" className="animal-method hidden lg:block" />
           </div>
         </div>
       </section>
@@ -268,7 +275,6 @@ export default function Home() {
               <p className="text-center text-sm font-semibold text-[#49637f]">Telegram @yoo_school · +7 (900) 000-00-00</p>
             </form>
           </div>
-          <Animal name="duck" className="animal-contact hidden lg:block" />
         </div>
       </section>
 
