@@ -1,4 +1,5 @@
 import Image from "next/image";
+import HeroWaveVideo from "@/components/HeroWaveVideo";
 
 const directions = [
   {
@@ -12,7 +13,7 @@ const directions = [
     icon: "/images/direction-book-v2.png",
   },
   {
-    title: "Работа, путешествия и жизнь",
+    title: "Работа и путешествия",
     text: "Английский для собеседований, переговоров, поездок, переезда и повседневного общения без языкового барьера.",
     icon: "/images/direction-sun-v2.png",
   },
@@ -87,6 +88,8 @@ function Animal({ name, className = "", priority = false }: { name: AnimalName; 
 }
 
 export default function Home() {
+  const [introPrice, ...otherPrices] = prices;
+
   return (
     <main className="min-h-screen">
       <header className="nav-glass">
@@ -109,7 +112,7 @@ export default function Home() {
         <div className="scene hero-scene p-6 sm:p-8 lg:p-10">
           <div className="scene-content grid min-w-0 gap-8 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-10">
             <div className="relative z-10 min-w-0">
-              <h1 className="h-display text-[#0a1e3d]">Программы для любых целей с понятным результатом</h1>
+              <h1 className="h-display text-[#0a1e3d]">Английский для любых целей с понятным результатом</h1>
               <p className="lead mt-5 max-w-lg">Занимайтесь один на один с преподавателем и практикуйте английский между уроками: для школы, экзаменов, работы, путешествий и уверенного общения.</p>
               <div className="mt-7 flex max-w-lg flex-col gap-3">
                 <a href="#contact" className="btn btn-primary w-full">Попробовать бесплатно</a>
@@ -118,15 +121,7 @@ export default function Home() {
             </div>
             <div className="min-w-0">
               <div className="hero-art animal-hero-stage flex items-start justify-center lg:justify-end">
-                <Image
-                  src="/images/hero-girl-v2.png"
-                  alt=""
-                  width={768}
-                  height={1024}
-                  className="hero-girl"
-                  priority
-                  aria-hidden="true"
-                />
+                <HeroWaveVideo className="hero-girl" />
               </div>
             </div>
           </div>
@@ -171,7 +166,7 @@ export default function Home() {
                 alt=""
                 width={1024}
                 height={1024}
-                className="animal-side"
+                className="animal-side corporate-dog-run"
                 aria-hidden="true"
               />
             </div>
@@ -220,7 +215,7 @@ export default function Home() {
           <div className="glass min-w-0 p-6 sm:p-8">
             <div className="founder-row">
               <div className="founder-avatar">
-                <Image src="/images/teacher.png" alt="Дарья Орлянская" fill className="object-cover object-[50%_16%]" sizes="88px" />
+                <Image src="/images/teacher-v3.png" alt="Дарья Орлянская" fill className="object-cover object-[50%_34%]" sizes="88px" />
               </div>
               <div>
                 <h2 className="h-section safe-title text-[#0a1e3d]">Дарья Орлянская</h2>
@@ -261,7 +256,7 @@ export default function Home() {
           <p className="lead mt-4">Стоимость зависит от задачи, интенсивности и формата. Начните с вводного урока — покажем варианты и соберём план.</p>
         </div>
         <div className="pricing-grid grid gap-4">
-          {prices.map(([title, price, text]) => (
+          {otherPrices.map(([title, price, text]) => (
             <article className="glass price-card min-w-0" key={title}>
               <h3 className="text-lg font-bold leading-tight text-[#0a1e3d] sm:text-xl">{title}</h3>
               <p className="mt-3 text-2xl font-extrabold tracking-tight text-[#0a1e3d] sm:text-3xl">{price}</p>
@@ -270,6 +265,34 @@ export default function Home() {
             </article>
           ))}
         </div>
+        <article className="scene mt-4 p-6 sm:p-8">
+          <div className="scene-content grid min-w-0 gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(180px,0.35fr)] lg:items-center lg:gap-8">
+            <div className="min-w-0">
+              <h3 className="h-section safe-title text-[#0a1e3d]">{introPrice[0]}</h3>
+              <p className="mt-3 text-3xl font-extrabold tracking-tight text-[#0a1e3d] sm:text-4xl">{introPrice[1]}</p>
+              <p className="lead mt-3 max-w-2xl">{introPrice[2]}</p>
+            </div>
+            <div className="animal-side-stage hidden lg:block">
+              <Image
+                src="/images/pricing-star.png"
+                alt=""
+                width={1024}
+                height={1024}
+                className="animal-side"
+                aria-hidden="true"
+              />
+            </div>
+          </div>
+          <div className="scene-content mt-5">
+            <div className="glass corporate-apply-row p-4 sm:p-5">
+              <p className="text-sm font-bold text-[#0a1e3d] sm:text-base">Оставить заявку</p>
+              <form className="corporate-apply-form" action="#">
+                <input className="input corporate-apply-input" type="email" placeholder="Введите email" />
+                <button className="btn btn-primary corporate-apply-btn" type="submit">Отправить заявку</button>
+              </form>
+            </div>
+          </div>
+        </article>
       </section>
 
       <section id="faq" className="section page-shell">
