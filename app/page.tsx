@@ -4,17 +4,17 @@ const directions = [
   {
     title: "+1 уровень английского",
     text: "Системный курс для тех, кто хочет заметный прогресс: уроки один на один, практика между занятиями и понятная траектория роста.",
-    animal: "bear",
+    icon: "/images/direction-heart-v2.png",
   },
   {
     title: "Школа и экзамены",
     text: "Помогаем ученикам 1–11 классов, готовим к ОГЭ, ЕГЭ, вступительным испытаниям и поступлению в российские и зарубежные вузы.",
-    animal: "rabbit",
+    icon: "/images/direction-book-v2.png",
   },
   {
     title: "Работа, путешествия и жизнь",
     text: "Английский для собеседований, переговоров, поездок, переезда и повседневного общения без языкового барьера.",
-    animal: "cat",
+    icon: "/images/direction-sun-v2.png",
   },
 ];
 
@@ -111,24 +111,22 @@ export default function Home() {
             <div className="relative z-10 min-w-0">
               <h1 className="h-display text-[#0a1e3d]">Программы для любых целей с понятным результатом</h1>
               <p className="lead mt-5 max-w-lg">Занимайтесь один на один с преподавателем и практикуйте английский между уроками: для школы, экзаменов, работы, путешествий и уверенного общения.</p>
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-                <a href="#contact" className="btn btn-primary">Попробовать бесплатно</a>
-                <a href="#directions" className="btn btn-secondary">Смотреть курсы</a>
+              <div className="mt-7 flex max-w-lg flex-col gap-3">
+                <a href="#contact" className="btn btn-primary w-full">Попробовать бесплатно</a>
+                <a href="#directions" className="btn btn-secondary w-full">Смотреть курсы</a>
               </div>
             </div>
             <div className="min-w-0">
-              <div className="hero-art animal-hero-stage flex items-end justify-center">
-                <video
-                  className="hero-video"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
-                  aria-label="YOO SCHOOL hero animation"
-                >
-                  <source src="/videos/hero-animation.mp4" type="video/mp4" />
-                </video>
+              <div className="hero-art animal-hero-stage flex items-start justify-center lg:justify-end">
+                <Image
+                  src="/images/hero-girl-v2.png"
+                  alt=""
+                  width={768}
+                  height={1024}
+                  className="hero-girl"
+                  priority
+                  aria-hidden="true"
+                />
               </div>
             </div>
           </div>
@@ -146,11 +144,18 @@ export default function Home() {
           {directions.map((item) => (
             <article className="glass feature-card" key={item.title}>
               <div className="animal-card-slot">
-                <Animal name={item.animal as AnimalName} className="animal-card" />
+                <Image
+                  src={item.icon}
+                  alt=""
+                  width={1024}
+                  height={1024}
+                  className="animal-card"
+                  aria-hidden="true"
+                />
               </div>
               <h3 className="h-card relative z-10 mt-auto text-[#0a1e3d]">{item.title}</h3>
               <p className="lead relative z-10 mt-3">{item.text}</p>
-              <a href="#contact" className="btn btn-primary relative z-10 mt-6 w-fit">Подобрать курс</a>
+              <a href="#contact" className="btn btn-primary relative z-10 mt-6 w-full">Подобрать курс</a>
             </article>
           ))}
         </div>
@@ -161,7 +166,23 @@ export default function Home() {
               <p className="lead mt-4 max-w-2xl">Соберём программу для рабочих задач: встречи, письма, презентации, переговоры и клиентские коммуникации на английском.</p>
             </div>
             <div className="animal-side-stage hidden lg:block">
-              <Animal name="dog" className="animal-side" />
+              <Image
+                src="/images/corporate-animal-v2.png"
+                alt=""
+                width={1024}
+                height={1024}
+                className="animal-side"
+                aria-hidden="true"
+              />
+            </div>
+          </div>
+          <div className="scene-content mt-5">
+            <div className="glass corporate-apply-row p-4 sm:p-5">
+              <p className="text-sm font-bold text-[#0a1e3d] sm:text-base">Оставить заявку</p>
+              <form className="corporate-apply-form" action="#">
+                <input className="input corporate-apply-input" type="email" placeholder="Введите email" />
+                <button className="btn btn-primary corporate-apply-btn" type="submit">Отправить заявку</button>
+              </form>
             </div>
           </div>
         </div>
@@ -173,15 +194,24 @@ export default function Home() {
             <h2 className="h-section safe-title text-[#0a1e3d]">Добейтесь реальных результатов с нашей экосистемой</h2>
             <p className="lead mt-4 max-w-3xl">В одном формате — уроки с преподавателем, практика между занятиями, интерактивные задания, ИИ-помощник и понятная статистика прогресса.</p>
             <div className="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {ecosystem.map(([title, text]) => (
-                <div className="glass min-w-0 p-5 sm:p-6" key={title}>
+              {ecosystem.map(([title, text], index) => (
+                <div className={`glass min-w-0 p-5 sm:p-6 ${index === 0 ? "ecosystem-card-highlight" : ""}`} key={title}>
+                  {index === 0 && (
+                    <Image
+                      src="/images/ecosystem-bolt-v2.png"
+                      alt=""
+                      width={1024}
+                      height={1024}
+                      className="ecosystem-bolt"
+                      aria-hidden="true"
+                    />
+                  )}
                   <h3 className="h-card text-[#0a1e3d]">{title}</h3>
                   <p className="lead mt-3">{text}</p>
                 </div>
               ))}
             </div>
           </div>
-          <Animal name="cat" className="animal-section-corner hidden lg:block" />
         </div>
       </section>
 
@@ -218,7 +248,6 @@ export default function Home() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {approach.map(([title, text], index) => (
             <div className="glass min-w-0 p-5 sm:p-6" key={title}>
-              <Animal name={(["duck", "cat", "bear", "rabbit"] as AnimalName[])[index]} className="animal-mini mb-4" />
               <h3 className="h-card text-[#0a1e3d]">{title}</h3>
               <p className="lead mt-3">{text}</p>
             </div>
