@@ -1,0 +1,27 @@
+<svg width="640" height="210" viewBox="0 0 640 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="wordFill" x1="235" y1="42" x2="585" y2="152" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#071B38"/>
+      <stop offset="0.42" stop-color="#163D72"/>
+      <stop offset="0.72" stop-color="#2457D6"/>
+      <stop offset="1" stop-color="#0B2346"/>
+    </linearGradient>
+    <radialGradient id="logoJelly" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(95 56) rotate(47) scale(156)">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.98"/>
+      <stop offset="0.28" stop-color="#A0ECFF" stop-opacity="0.96"/>
+      <stop offset="0.58" stop-color="#F6A0C9" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FFC978" stop-opacity="0.96"/>
+    </radialGradient>
+    <filter id="logoShadow" x="0" y="0" width="640" height="210" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#2A6B9E" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <g filter="url(#logoShadow)">
+    <path d="M83 43C102 31 125 38 135 60L151 98L169 60C179 38 202 31 221 45C240 60 236 88 214 103L181 126V154C181 171 168 184 151 184C134 184 121 171 121 154V126L88 103C66 88 62 60 82 45C82 44 82 44 83 43Z" fill="url(#logoJelly)"/>
+    <ellipse cx="118" cy="65" rx="27" ry="11" fill="white" opacity="0.56"/>
+    <path d="M94 58C110 46 130 49 140 67" stroke="white" stroke-width="4" stroke-linecap="round" opacity="0.36"/>
+    <text x="238" y="96" fill="url(#wordFill)" font-family="Arial Black, Manrope, sans-serif" font-size="62" font-weight="900" letter-spacing="-4.2">YOO</text>
+    <text x="238" y="151" fill="url(#wordFill)" font-family="Arial Black, Manrope, sans-serif" font-size="52" font-weight="900" letter-spacing="-3">SCHOOL</text>
+    <path d="M528 46V72M515 59H541" stroke="#F6A0C9" stroke-width="4" stroke-linecap="round" opacity="0.9"/>
+  </g>
+</svg>
